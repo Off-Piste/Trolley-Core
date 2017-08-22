@@ -6,7 +6,7 @@
 //  Copyright © 2017 Off-Piste. All rights reserved.
 //
 
-#import <Trolley/TRLCurrency.h>
+#import <TrolleyCore/TRLCurrency.h>
 
 @implementation TRLCurrency
 

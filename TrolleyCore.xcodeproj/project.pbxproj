@@ -12,6 +12,10 @@
 		C8460FEA1F4C665800CFF7E8 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8460FEF1F4C665800CFF7E8 /* TrolleyCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8460FEE1F4C665800CFF7E8 /* TrolleyCoreTests.m */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C84610011F4C6C8500CFF7E8 /* Trolley_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FFC1F4C6C8500CFF7E8 /* Trolley_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C84610021F4C6C8500CFF7E8 /* TRLCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FFE1F4C6C8500CFF7E8 /* TRLCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C84610031F4C6C8500CFF7E8 /* ObjectiveCSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8460FFF1F4C6C8500CFF7E8 /* ObjectiveCSupport.swift */; };
+		C84610041F4C6C8500CFF7E8 /* TRLCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = C84610001F4C6C8500CFF7E8 /* TRLCurrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		C8460FE91F4C665800CFF7E8 /* TrolleyCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrolleyCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FEE1F4C665800CFF7E8 /* TrolleyCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrolleyCoreTests.m; sourceTree = "<group>"; };
 		C8460FF01F4C665800CFF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8460FFC1F4C6C8500CFF7E8 /* Trolley_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trolley_Private.h; sourceTree = "<group>"; };
+		C8460FFE1F4C6C8500CFF7E8 /* TRLCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLCurrency.h; sourceTree = "<group>"; };
+		C8460FFF1F4C6C8500CFF7E8 /* ObjectiveCSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCSupport.swift; sourceTree = "<group>"; };
+		C84610001F4C6C8500CFF7E8 /* TRLCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLCurrency.m; sourceTree = "<group>"; };
 		CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */,
+				C8460FFA1F4C6C8500CFF7E8 /* Headers */,
+				C8460FFF1F4C6C8500CFF7E8 /* ObjectiveCSupport.swift */,
+				C84610001F4C6C8500CFF7E8 /* TRLCurrency.m */,
 				C8460FE41F4C665800CFF7E8 /* Info.plist */,
 			);
 			path = TrolleyCore;
@@ -118,6 +129,31 @@
 			path = TrolleyCoreTests;
 			sourceTree = "<group>";
 		};
+		C8460FFA1F4C6C8500CFF7E8 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				C8460FFB1F4C6C8500CFF7E8 /* Private */,
+				C8460FFD1F4C6C8500CFF7E8 /* Public */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		C8460FFB1F4C6C8500CFF7E8 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				C8460FFC1F4C6C8500CFF7E8 /* Trolley_Private.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		C8460FFD1F4C6C8500CFF7E8 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				C8460FFE1F4C6C8500CFF7E8 /* TRLCurrency.h */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -125,6 +161,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84610011F4C6C8500CFF7E8 /* Trolley_Private.h in Headers */,
+				C84610021F4C6C8500CFF7E8 /* TRLCurrency.h in Headers */,
 				C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +223,7 @@
 					C8460FDF1F4C665800CFF7E8 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FVT8X28ANV;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					C8460FE81F4C665800CFF7E8 = {
@@ -312,6 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84610031F4C6C8500CFF7E8 /* ObjectiveCSupport.swift in Sources */,
+				C84610041F4C6C8500CFF7E8 /* TRLCurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
@@ -445,9 +487,12 @@
 				INFOPLIST_FILE = TrolleyCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = TrolleyCore/module.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = io.offpiste.TrolleyCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -455,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
@@ -464,9 +510,11 @@
 				INFOPLIST_FILE = TrolleyCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = TrolleyCore/module.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = io.offpiste.TrolleyCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -474,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				INFOPLIST_FILE = TrolleyCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -486,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				INFOPLIST_FILE = TrolleyCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -513,6 +563,7 @@
 				C8460FF61F4C665800CFF7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8460FF71F4C665800CFF7E8 /* Build configuration list for PBXNativeTarget "TrolleyCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +572,7 @@
 				C8460FF91F4C665800CFF7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
