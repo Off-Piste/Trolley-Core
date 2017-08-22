@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
 
   s.name         = "TrolleyCore"
   s.version      = "0.0.1"
-  s.summary      = "Trolley is a mobile and web ecommerce system"
+  s.summary      = "TrolleyCore is a mobile and web ecommerce system"
   s.description  = <<-DESC
-  A very very very very very very short description of Trolley.
-  Trolley is a mobile and web ecommerce system.
+  A very very very very very very short description of TrolleyCore.
+  TrolleyCore is a mobile and web ecommerce system.
                    DESC
 
   s.homepage     = "https://github.com/harrytwright/trolley_core"
@@ -26,9 +26,9 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/module.modulemap'
 
-  s.source_files = "TrolleyCore/**/*.{swift, h, m}"
-  s.public_header_files = "TrolleyCore/Headers/Public/*.h", 'TrolleyCore/TrolleyCore.h'
-  s.private_header_files = "TrolleyCore/Headers/Private/*.h"
+  s.source_files  = 'TrolleyCore/**/**/*.{swift,h,m}'
+  s.public_header_files = 'TrolleyCore/Headers/Public/*.h', 'TrolleyCore/TrolleyCore.h'
+  s.private_header_files = 'TrolleyCore/Headers/Private/*.h'
   s.dependency 'PromiseKit'
 
 end
