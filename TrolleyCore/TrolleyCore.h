@@ -6,14 +6,16 @@
 //  Copyright © 2017 Off-Piste. All rights reserved.
 //
 
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
-
-//! Project version number for TrolleyCore.
-FOUNDATION_EXPORT double TrolleyCoreVersionNumber;
-
-//! Project version string for TrolleyCore.
-FOUNDATION_EXPORT const unsigned char TrolleyCoreVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <TrolleyCore/PublicHeader.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
 #import <TrolleyCore/TRLCurrency.h>

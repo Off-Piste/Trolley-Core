@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/module.modulemap'
 
-  s.source_files  = "TrolleyCore/**/*.{swift, h, m}"
-  s.public_header_files = "TrolleyCore/Headers/Public/*.h"
+  s.source_files = "TrolleyCore/**/*.{swift, h, m}"
+  s.public_header_files = "TrolleyCore/Headers/Public/*.h", 'TrolleyCore/TrolleyCore.h'
   s.private_header_files = "TrolleyCore/Headers/Private/*.h"
   s.dependency 'PromiseKit'
 
