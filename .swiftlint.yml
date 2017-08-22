@@ -1,0 +1,24 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - large_tuple
+  - function_body_length
+  - identifier_name
+  - opening_brace
+  - file_length
+  - force_cast
+  - force_try
+  - todo
+  - type_body_length
+  - line_length
+  - syntactic_sugar
+opt_in_rules:
+  - empty_count
+included:
+  - Trolley
+  - TrolleyDatabase
+excluded:
+  - Trolley/Tests
+  - TrolleyDatabase/Tests
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
