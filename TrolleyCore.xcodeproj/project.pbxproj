@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89FFA16D03BD40A870E8C624 /* Pods_TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */; };
+		A07D6AF544B756FFC3E93866 /* Pods_TrolleyCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */; };
 		C8460FEA1F4C665800CFF7E8 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8460FEF1F4C665800CFF7E8 /* TrolleyCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8460FEE1F4C665800CFF7E8 /* TrolleyCoreTests.m */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,12 +25,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.release.xcconfig"; sourceTree = "<group>"; };
+		1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.debug.xcconfig"; sourceTree = "<group>"; };
+		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrolleyCore.h; sourceTree = "<group>"; };
 		C8460FE41F4C665800CFF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8460FE91F4C665800CFF7E8 /* TrolleyCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrolleyCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FEE1F4C665800CFF7E8 /* TrolleyCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrolleyCoreTests.m; sourceTree = "<group>"; };
 		C8460FF01F4C665800CFF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FFA16D03BD40A870E8C624 /* Pods_TrolleyCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8460FEA1F4C665800CFF7E8 /* TrolleyCore.framework in Frameworks */,
+				A07D6AF544B756FFC3E93866 /* Pods_TrolleyCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3E2044F41ABB193C33AC62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */,
+				CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C67866FEF163ED6DC0361E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */,
+				06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */,
+				7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */,
+				5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C8460FD61F4C665800CFF7E8 = {
 			isa = PBXGroup;
 			children = (
 				C8460FE21F4C665800CFF7E8 /* TrolleyCore */,
 				C8460FED1F4C665800CFF7E8 /* TrolleyCoreTests */,
 				C8460FE11F4C665800CFF7E8 /* Products */,
+				5C67866FEF163ED6DC0361E0 /* Pods */,
+				0A3E2044F41ABB193C33AC62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,10 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8460FF41F4C665800CFF7E8 /* Build configuration list for PBXNativeTarget "TrolleyCore" */;
 			buildPhases = (
+				2620983AA52954AB3E82DA07 /* [CP] Check Pods Manifest.lock */,
 				C8460FDB1F4C665800CFF7E8 /* Sources */,
 				C8460FDC1F4C665800CFF7E8 /* Frameworks */,
 				C8460FDD1F4C665800CFF7E8 /* Headers */,
 				C8460FDE1F4C665800CFF7E8 /* Resources */,
+				BE5094A6E3DD7A7C88202B57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8460FF71F4C665800CFF7E8 /* Build configuration list for PBXNativeTarget "TrolleyCoreTests" */;
 			buildPhases = (
+				E0C8C5F86D4E9BC2C2C7CAF0 /* [CP] Check Pods Manifest.lock */,
 				C8460FE51F4C665800CFF7E8 /* Sources */,
 				C8460FE61F4C665800CFF7E8 /* Frameworks */,
 				C8460FE71F4C665800CFF7E8 /* Resources */,
+				CB8B50FC2802971BDDB7D86A /* [CP] Embed Pods Frameworks */,
+				DA4A5FE572286D9056CE209F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +228,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2620983AA52954AB3E82DA07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE5094A6E3DD7A7C88202B57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB8B50FC2802971BDDB7D86A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA4A5FE572286D9056CE209F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0C8C5F86D4E9BC2C2C7CAF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8460FDB1F4C665800CFF7E8 /* Sources */ = {
@@ -319,6 +434,7 @@
 		};
 		C8460FF51F4C665800CFF7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -337,6 +453,7 @@
 		};
 		C8460FF61F4C665800CFF7E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -355,6 +472,7 @@
 		};
 		C8460FF81F4C665800CFF7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				INFOPLIST_FILE = TrolleyCoreTests/Info.plist;
@@ -366,6 +484,7 @@
 		};
 		C8460FF91F4C665800CFF7E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				INFOPLIST_FILE = TrolleyCoreTests/Info.plist;

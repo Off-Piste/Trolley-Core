@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char TrolleyCoreVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TrolleyCore/PublicHeader.h>
 
-
+#import <TrolleyCore/TRLCurrency.h>

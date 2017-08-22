@@ -16,18 +16,19 @@ Pod::Spec.new do |s|
   Trolley is a mobile and web ecommerce system.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/TrolleyCore"
+  s.homepage     = "https://github.com/harrytwright/trolley_core"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "harrytwright" => "haroldtomwright@gmail.com" }
 
-  s.platform     = :ios
-  s.source       = { :git => "http://EXAMPLE/TrolleyCore.git", :tag => "#{s.version}" }
+  s.platform     = :ios, 10.0
+  s.source       = { :git => "https://github.com/harrytwright/trolley_core.git", :tag => "#{s.version}" }
 
   s.module_map = 'TrolleyCore/module.modulemap'
 
-  s.source_files  = "TrolleyCore/**/**/*.{swift, h, m}"
+  s.source_files  = "TrolleyCore/**/*.{swift, h, m}"
   s.public_header_files = "TrolleyCore/Headers/Public/*.h"
   s.private_header_files = "TrolleyCore/Headers/Private/*.h"
+  s.dependency 'PromiseKit'
 
 end
