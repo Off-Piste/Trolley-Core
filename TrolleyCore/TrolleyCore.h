@@ -28,3 +28,4 @@
 #import "TRLURLParameterEncoding.h"
 #import "TRLURLRequest.h"
 #import "TRLURLSessionManager.h"
+#import "NSMutableURLRequest+Trolley.h"

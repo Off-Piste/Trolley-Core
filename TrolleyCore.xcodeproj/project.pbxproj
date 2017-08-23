@@ -11,14 +11,15 @@
 		A07D6AF544B756FFC3E93866 /* Pods_TrolleyCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */; };
 		C84166431F4DFB5F0097EB3E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84166421F4DFB5F0097EB3E /* PromiseKit.framework */; };
 		C841664D1F4E01460097EB3E /* TRLURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C841664B1F4E01460097EB3E /* TRLURLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C841664E1F4E01460097EB3E /* TRLURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C841664C1F4E01460097EB3E /* TRLURLRequest.m */; };
 		C84166511F4E02910097EB3E /* TRLURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C841664F1F4E02910097EB3E /* TRLURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C84166521F4E02910097EB3E /* TRLURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C84166501F4E02910097EB3E /* TRLURLSessionManager.m */; };
-		C84166541F4E033B0097EB3E /* TRLNetworkingConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C84166531F4E033B0097EB3E /* TRLNetworkingConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C841665D1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.h in Headers */ = {isa = PBXBuildFile; fileRef = C841665B1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C841665E1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.m in Sources */ = {isa = PBXBuildFile; fileRef = C841665C1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.m */; };
 		C84166611F4E15D30097EB3E /* TRLNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C841665F1F4E15D30097EB3E /* TRLNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C84166621F4E15D30097EB3E /* TRLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C84166601F4E15D30097EB3E /* TRLNetworking.m */; };
+		C84166641F4E2C700097EB3E /* TRLURLRequest_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C84166631F4E2C700097EB3E /* TRLURLRequest_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C84166661F4E33BC0097EB3E /* TRLNetworkingConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C84166651F4E33BC0097EB3E /* TRLNetworkingConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C841666B1F4E33D80097EB3E /* NSMutableURLRequest+Trolley.m in Sources */ = {isa = PBXBuildFile; fileRef = C84166671F4E33D70097EB3E /* NSMutableURLRequest+Trolley.m */; };
+		C841666C1F4E33D80097EB3E /* TRLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C84166681F4E33D70097EB3E /* TRLNetworking.m */; };
+		C841666D1F4E33D80097EB3E /* TRLURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C84166691F4E33D80097EB3E /* TRLURLRequest.m */; };
+		C841666E1F4E33D80097EB3E /* TRLURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C841666A1F4E33D80097EB3E /* TRLURLSessionManager.m */; };
 		C8460FEA1F4C665800CFF7E8 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8460FEF1F4C665800CFF7E8 /* TrolleyCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8460FEE1F4C665800CFF7E8 /* TrolleyCoreTests.m */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +36,7 @@
 		C8E17ABA1F4D821100A5C468 /* ParsedURL.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AB81F4D821100A5C468 /* ParsedURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8E17AC11F4D8A3100A5C468 /* Trolley.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E17AC01F4D8A3100A5C468 /* Trolley.swift */; };
 		C8E17AC31F4D945100A5C468 /* TRLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E17AC21F4D945100A5C468 /* TRLError.swift */; };
-		C8E17AC61F4D990900A5C468 /* TRLNetworkInfo_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AC51F4D990900A5C468 /* TRLNetworkInfo_Private.h */; };
+		C8E17AC61F4D990900A5C468 /* TRLNetworkInfo_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AC51F4D990900A5C468 /* TRLNetworkInfo_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C8E17AC81F4D9AB000A5C468 /* TRLNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AC71F4D9AB000A5C468 /* TRLNetwork.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C8E17ACB1F4D9ABF00A5C468 /* TRLNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E17AC91F4D9ABF00A5C468 /* TRLNetwork.m */; };
 		C8E17ACC1F4D9ABF00A5C468 /* ParsedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E17ACA1F4D9ABF00A5C468 /* ParsedURL.m */; };
@@ -67,14 +68,15 @@
 		B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84166421F4DFB5F0097EB3E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TrolleyCore-hezepbvoslfaqgcqonxuosaxhypv/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		C841664B1F4E01460097EB3E /* TRLURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLURLRequest.h; sourceTree = "<group>"; };
-		C841664C1F4E01460097EB3E /* TRLURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLURLRequest.m; sourceTree = "<group>"; };
 		C841664F1F4E02910097EB3E /* TRLURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLURLSessionManager.h; sourceTree = "<group>"; };
-		C84166501F4E02910097EB3E /* TRLURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLURLSessionManager.m; sourceTree = "<group>"; };
-		C84166531F4E033B0097EB3E /* TRLNetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRLNetworkingConstants.h; path = ../Private/TRLNetworkingConstants.h; sourceTree = "<group>"; };
 		C841665B1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Trolley.h"; sourceTree = "<group>"; };
-		C841665C1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Trolley.m"; sourceTree = "<group>"; };
 		C841665F1F4E15D30097EB3E /* TRLNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetworking.h; sourceTree = "<group>"; };
-		C84166601F4E15D30097EB3E /* TRLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLNetworking.m; sourceTree = "<group>"; };
+		C84166631F4E2C700097EB3E /* TRLURLRequest_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRLURLRequest_Internal.h; path = TrolleyCore/Headers/Private/TRLURLRequest_Internal.h; sourceTree = SOURCE_ROOT; };
+		C84166651F4E33BC0097EB3E /* TRLNetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetworkingConstants.h; sourceTree = "<group>"; };
+		C84166671F4E33D70097EB3E /* NSMutableURLRequest+Trolley.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Trolley.m"; sourceTree = "<group>"; };
+		C84166681F4E33D70097EB3E /* TRLNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLNetworking.m; sourceTree = "<group>"; };
+		C84166691F4E33D80097EB3E /* TRLURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLURLRequest.m; sourceTree = "<group>"; };
+		C841666A1F4E33D80097EB3E /* TRLURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLURLSessionManager.m; sourceTree = "<group>"; };
 		C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrolleyCore.h; sourceTree = "<group>"; };
 		C8460FE41F4C665800CFF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,17 +158,13 @@
 		C84166441F4DFD100097EB3E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C84166531F4E033B0097EB3E /* TRLNetworkingConstants.h */,
+				C84166651F4E33BC0097EB3E /* TRLNetworkingConstants.h */,
 				C841665F1F4E15D30097EB3E /* TRLNetworking.h */,
-				C84166601F4E15D30097EB3E /* TRLNetworking.m */,
 				C8E17ADF1F4DD6B200A5C468 /* TRLURLParameterEncoding.h */,
 				C8E17ADE1F4DD6B200A5C468 /* TRLURLEncoding.h */,
 				C841664B1F4E01460097EB3E /* TRLURLRequest.h */,
 				C841664F1F4E02910097EB3E /* TRLURLSessionManager.h */,
-				C84166501F4E02910097EB3E /* TRLURLSessionManager.m */,
 				C841665B1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.h */,
-				C841665C1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.m */,
-				C841664C1F4E01460097EB3E /* TRLURLRequest.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -197,6 +195,10 @@
 				C8460FFA1F4C6C8500CFF7E8 /* Headers */,
 				C8E17AAB1F4D776100A5C468 /* Utils */,
 				C8E17AC01F4D8A3100A5C468 /* Trolley.swift */,
+				C84166671F4E33D70097EB3E /* NSMutableURLRequest+Trolley.m */,
+				C84166681F4E33D70097EB3E /* TRLNetworking.m */,
+				C84166691F4E33D80097EB3E /* TRLURLRequest.m */,
+				C841666A1F4E33D80097EB3E /* TRLURLSessionManager.m */,
 				C8E17AE41F4DD6BB00A5C468 /* TRLURLEncoding.m */,
 				C8E17AE51F4DD6BB00A5C468 /* TRLURLQueryParameters.m */,
 				C8E17AC91F4D9ABF00A5C468 /* TRLNetwork.m */,
@@ -283,6 +285,7 @@
 			children = (
 				C8E17AC71F4D9AB000A5C468 /* TRLNetwork.h */,
 				C8E17AB61F4D7DEB00A5C468 /* TRLNetworkInfo_Internal.h */,
+				C84166631F4E2C700097EB3E /* TRLURLRequest_Internal.h */,
 				C8E17AC51F4D990900A5C468 /* TRLNetworkInfo_Private.h */,
 				C8E17ACD1F4D9BDC00A5C468 /* ParsedURL_Internal.h */,
 			);
@@ -331,12 +334,13 @@
 				C8E17AE11F4DD6B200A5C468 /* TRLURLEncoding.h in Headers */,
 				C8E17ABA1F4D821100A5C468 /* ParsedURL.h in Headers */,
 				C8E17AE21F4DD6B200A5C468 /* TRLURLParameterEncoding.h in Headers */,
-				C84166541F4E033B0097EB3E /* TRLNetworkingConstants.h in Headers */,
 				C8E17ACE1F4D9BDC00A5C468 /* ParsedURL_Internal.h in Headers */,
 				C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */,
 				C8E17AAE1F4D77A200A5C468 /* TRLLogger.h in Headers */,
+				C84166661F4E33BC0097EB3E /* TRLNetworkingConstants.h in Headers */,
 				C8E17ADB1F4DCFFB00A5C468 /* TRLURLQueryParameters.h in Headers */,
 				C8E17AC81F4D9AB000A5C468 /* TRLNetwork.h in Headers */,
+				C84166641F4E2C700097EB3E /* TRLURLRequest_Internal.h in Headers */,
 				C8E17AB31F4D7D6100A5C468 /* TRLNetworkInfo.h in Headers */,
 				C84166611F4E15D30097EB3E /* TRLNetworking.h in Headers */,
 				C8E17AAF1F4D77A200A5C468 /* TRLLoggerLevel.h in Headers */,
@@ -542,19 +546,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C841666C1F4E33D80097EB3E /* TRLNetworking.m in Sources */,
 				C8E17ACC1F4D9ABF00A5C468 /* ParsedURL.m in Sources */,
 				C8E17AE81F4DD6BB00A5C468 /* TRLURLQueryParameters.m in Sources */,
 				C846100E1F4C8B0E00CFF7E8 /* TRLLogger.m in Sources */,
+				C841666D1F4E33D80097EB3E /* TRLURLRequest.m in Sources */,
+				C841666E1F4E33D80097EB3E /* TRLURLSessionManager.m in Sources */,
 				C8E17ACB1F4D9ABF00A5C468 /* TRLNetwork.m in Sources */,
-				C84166621F4E15D30097EB3E /* TRLNetworking.m in Sources */,
-				C841664E1F4E01460097EB3E /* TRLURLRequest.m in Sources */,
+				C841666B1F4E33D80097EB3E /* NSMutableURLRequest+Trolley.m in Sources */,
 				C8E17AB51F4D7DC000A5C468 /* TRLNetworkInfo.m in Sources */,
-				C841665E1F4E0C7D0097EB3E /* NSMutableURLRequest+Trolley.m in Sources */,
 				C8E17AE71F4DD6BB00A5C468 /* TRLURLEncoding.m in Sources */,
 				C8E17AC11F4D8A3100A5C468 /* Trolley.swift in Sources */,
 				C84610031F4C6C8500CFF7E8 /* ObjectiveCSupport.swift in Sources */,
 				C8E17AEA1F4DD6E800A5C468 /* NSArray+Map.m in Sources */,
-				C84166521F4E02910097EB3E /* TRLURLSessionManager.m in Sources */,
 				C84610071F4C79F600CFF7E8 /* Logger.swift in Sources */,
 				C8E17AC31F4D945100A5C468 /* TRLError.swift in Sources */,
 			);

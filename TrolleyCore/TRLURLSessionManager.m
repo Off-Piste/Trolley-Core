@@ -8,8 +8,8 @@
 
 #import "TRLURLSessionManager.h"
 #import "NSMutableURLRequest+Trolley.h"
-#import "TRLURLRequest.h"
 #import "TRLURLParameterEncoding.h"
+#import "TRLURLRequest_Internal.h"
 
 @implementation TRLURLSessionManager
 
