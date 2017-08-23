@@ -18,4 +18,13 @@
 #endif
 #endif
 
-#import <TrolleyCore/TRLCurrency.h>
+//#import <TrolleyCore/TRLCurrency.h>
+#import <TrolleyCore/TRLNetworkInfo.h>
+#import <TrolleyCore/ParsedURL.h>
+#import "NSArray+Map.h"
+#import "TRLURLEncoding.h"
+#import "TRLNetworking.h"
+#import "TRLNetworkingConstants.h"
+#import "TRLURLParameterEncoding.h"
+#import "TRLURLRequest.h"
+#import "TRLURLSessionManager.h"

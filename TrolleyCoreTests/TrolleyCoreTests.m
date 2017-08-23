@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 @import TrolleyCore;
+@import TrolleyCore.Private;
 
 @interface TrolleyCoreTests : XCTestCase
 
@@ -29,9 +30,12 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-    TRLCurrency *currency = [[TRLCurrency alloc] init];
-    XCTAssert(currency.code == TRLCurrencyCodeUSD);
+//    TRLCurrency *currency = [[TRLCurrency alloc] init];
+//    XCTAssert(currency.code == TRLCurrencyCodeUSD);
 
+    [[Trolley shared] setLogging:YES];
+    CoreLogger(TRLLoggerLevelInfo, @"Hello World")
+    CoreLogger(TRLLoggerLevelInfo, @"Hello My Friend")
 }
 
 - (void)testPerformanceExample {

@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, 10.0
   s.source       = { :git => "https://github.com/harrytwright/trolley_core.git", :tag => "#{s.version}" }
 
-  s.module_map = 'TrolleyCore/module.modulemap'
+  s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
   s.source_files  = 'TrolleyCore/**/**/*.{swift,h,m}'
   s.public_header_files = 'TrolleyCore/Headers/Public/*.h', 'TrolleyCore/TrolleyCore.h'

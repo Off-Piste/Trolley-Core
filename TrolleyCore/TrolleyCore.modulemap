@@ -5,6 +5,6 @@ framework module TrolleyCore {
   module * { export * }
 
   explicit module Private {
-    header "Trolley_Private.h"
+    umbrella header "Trolley_Private.h"
    }
 }

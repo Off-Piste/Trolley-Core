@@ -16,8 +16,7 @@ disabled_rules: # rule identifiers to exclude from running
 opt_in_rules:
   - empty_count
 included:
-  - Trolley
-  - TrolleyDatabase
+  - TrolleyCore
 excluded:
   - Trolley/Tests
   - TrolleyDatabase/Tests

@@ -7,6 +7,7 @@
 //
 
 #import <TrolleyCore/TRLCurrency.h>
+#import <TrolleyCore/TrolleyCore-Swift.h>
 
 @implementation TRLCurrency
 
@@ -28,6 +29,7 @@
     self = [super init];
     if (self) {
         self->_code = codeForCurrencyCode(currencyCode);
+//        [TRLLogger.default_ ]
     }
     return self;
 }
