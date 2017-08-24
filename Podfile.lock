@@ -1,4 +1,5 @@
 PODS:
+  - Nimble (7.0.1)
   - PromiseKit (4.2.2):
     - PromiseKit/Foundation (= 4.2.2)
     - PromiseKit/QuartzCore (= 4.2.2)
@@ -10,13 +11,18 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.2.2):
     - PromiseKit/CorePromise
+  - Quick (1.1.0)
 
 DEPENDENCIES:
+  - Nimble
   - PromiseKit
+  - Quick
 
 SPEC CHECKSUMS:
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
 
-PODFILE CHECKSUM: 6ecf7ad531f5a0491685ddc882bcf4d51c1e564d
+PODFILE CHECKSUM: 1d7b6576fd2f640ab82d48a93812c394465b4805
 
 COCOAPODS: 1.2.0.beta.3

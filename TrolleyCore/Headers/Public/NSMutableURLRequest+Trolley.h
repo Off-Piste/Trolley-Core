@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
                      method:(NSString *)method
                     headers:(HTTPHeaders *_Nullable)headers;
 
-- (instancetype _Nullable)initWithURL:(NSString *)URL
+- (nullable instancetype)initWithURL:(NSString *)URL
                      method:(NSString *)method
                     headers:(HTTPHeaders *_Nullable)headers
-                      error:(NSError **)error;
+                      error:(NSError *__autoreleasing *)error;
 
 @end
 

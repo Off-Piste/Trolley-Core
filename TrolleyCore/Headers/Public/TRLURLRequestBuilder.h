@@ -1,5 +1,5 @@
 //
-//  TRLURLSessionManager.h
+//  TRLURLRequestBuilder.h
 //  TrolleyCore
 //
 //  Created by Harry Wright on 23.08.17.
@@ -14,9 +14,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TRLURLSessionManager : NSObject
+@interface TRLURLRequestBuilder : NSObject
 
-@property (strong, class, readonly) TRLURLSessionManager *defaultSessionManager;
+@property (strong, class, readonly) TRLURLRequestBuilder *defaultRequestBuilder;
 
 @property (strong, class, readonly) HTTPHeaders *defaultHTTPHeaders;
 

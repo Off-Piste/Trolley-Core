@@ -11,22 +11,25 @@
 
 TRLLoggerService kTRLLoggerCore = @"[Trolley/Core]";
 
+static TRLLogger *aLogger;
+
 @implementation TRLLogger
 
 + (TRLLogger *)defaultLogger {
-    TRLLogger *aLogger __block;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if (aLogger) {
+        return aLogger;
+    }
+
+    @synchronized (self) {
         aLogger = [[TRLLogger alloc] init];
-    });
-    return aLogger;
+        return aLogger;
+    }
 }
 
 - (BOOL)isLogging {
     BOOL logging = [Trolley shared].isLogging;
     return logging;
 }
-
 
 - (void)printItems:(NSArray *)items
            service:(TRLLoggerService)service
@@ -39,8 +42,6 @@ TRLLoggerService kTRLLoggerCore = @"[Trolley/Core]";
         NSLog(@"%i", [Trolley shared].isLogging);
         return;
     }
-
-    
 
     NSString *levelString;
     switch (lvl) {

@@ -1,29 +1,50 @@
 //
-//  TRLURLSessionManager.m
+//  TRLURLRequestBuilder.m
 //  TrolleyCore
 //
 //  Created by Harry Wright on 23.08.17.
 //  Copyright © 2017 Off-Piste. All rights reserved.
 //
 
-#import "TRLURLSessionManager.h"
+#import "TRLURLRequestBuilder.h"
 #import "NSMutableURLRequest+Trolley.h"
 #import "TRLURLParameterEncoding.h"
 #import "TRLURLRequest_Internal.h"
+#import "TRLLogger.h"
 
-@implementation TRLURLSessionManager
+static TRLURLRequestBuilder *aBuilder;
 
-+ (TRLURLSessionManager *)defaultSessionManager {
-    TRLURLSessionManager *aSession __block;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        aSession = [[TRLURLSessionManager alloc] init];
-    });
-    return aSession;
+@implementation TRLURLRequestBuilder
+
+// Consider removing this and changing - to
+// + for requestWithURL...
++ (TRLURLRequestBuilder *)defaultRequestBuilder {
+    if (aBuilder) {
+        return aBuilder;
+    }
+    @synchronized (self) {
+        aBuilder = [[TRLURLRequestBuilder alloc] init];
+        return aBuilder;
+    }
+
+    // This old lump causes a memery leak
+    // keeping it here so I know to avoid it.
+//    TRLURLRequestBuilder *aSession;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        aSession = [[TRLURLRequestBuilder alloc] init];
+//    });
+//    return aSession;
 }
 
 + (HTTPHeaders *)defaultHTTPHeaders {
     return @{ };
+}
+
+- (void)dealloc {
+    @synchronized (self) {
+        aBuilder = nil;
+    }
 }
 
 - (TRLURLRequest *)requestWithURL:(NSString *)url

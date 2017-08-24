@@ -61,8 +61,8 @@
                                     [self query:parameters]];
                     }
 
-                    [comp setPercentEncodedQuery:newQuery];
-                    [mutableRequest setURL:comp.URL];
+                    comp.percentEncodedQuery = newQuery;
+                    mutableRequest.URL = comp.URL;
                 }
             } else {
                 *error = [TRLError parameterEncodingFailedWithReason:@"Missing URL"];
@@ -73,9 +73,9 @@
                 [mutableRequest setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
             }
 
-            [mutableRequest setHTTPBody:[[self query:parameters]
+            mutableRequest.HTTPBody = [[self query:parameters]
                                          dataUsingEncoding:kCFStringEncodingUTF8
-                                         allowLossyConversion:NO]];
+                                         allowLossyConversion:NO];
         }
         return mutableRequest;
     }

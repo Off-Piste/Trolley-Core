@@ -8,6 +8,7 @@
 
 #import "NSMutableURLRequest+Trolley.h"
 #import <TrolleyCore/TrolleyCore-Swift.h>
+#import "TRLLogger.h"
 
 @implementation NSMutableURLRequest (Trolley)
 
@@ -15,7 +16,7 @@
                      method:(NSString *)method
                     headers:(HTTPHeaders *)headers {
     self = [self initWithURL:URL];
-    [self setHTTPMethod:method];
+    self.HTTPMethod = method;
 
     if (headers) {
         [headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

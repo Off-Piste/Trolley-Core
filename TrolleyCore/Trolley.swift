@@ -25,7 +25,7 @@ import TrolleyCore.Private
     ///                   or not, defaults at false
     @objc public func setLogging(_ bool: Bool) {
         self.isLogging = bool
-        Logger(service: kTRLLoggerCore, level: .info, items: "Logging is set to \(bool)")
+        Logger(service: kTRLLoggerCore, level: .info, items: "Logging is set to \(isLogging)")
     }
 
 }

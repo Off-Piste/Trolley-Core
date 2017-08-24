@@ -43,7 +43,7 @@ NS_DESIGNATED_INITIALIZER;
 
 static inline bool nsnumber_is_like_integer(__unsafe_unretained NSNumber *const obj)
 {
-    char data_type = [obj objCType][0];
+    char data_type = obj.objCType[0];
     return data_type == *@encode(bool) ||
     data_type == *@encode(char) ||
     data_type == *@encode(short) ||
@@ -60,12 +60,12 @@ static inline bool nsnumber_is_like_bool(__unsafe_unretained NSNumber *const obj
 {
     // @encode(BOOL) is 'B' on iOS 64 and 'c'
     // objcType is always 'c'. Therefore compare to "c".
-    if ([obj objCType][0] == 'c') {
+    if (obj.objCType[0] == 'c') {
         return true;
     }
 
     if (nsnumber_is_like_integer(obj)) {
-        int value = [obj intValue];
+        int value = obj.intValue;
         return value == 0 || value == 1;
     }
 

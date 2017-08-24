@@ -18,9 +18,11 @@ NS_SWIFT_NAME(Request)
     NSError *_error;
 }
 
-@property (strong, nullable, readonly) NSURLRequest *request;
+@property (weak, nullable, readonly) NSURLRequest *request;
 
-@property (strong, nullable, readonly) NSError *error;
+@property (weak, nullable, readonly) NSError *error;
+
+@property (readonly) dispatch_queue_t queue;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -30,7 +32,7 @@ NS_SWIFT_NAME(Request)
  @param url <#url description#>
  @return <#return value description#>
  */
-+ (TRLURLRequest *)request:(NSString *)url __attribute__((unused));
++ (TRLURLRequest *)request:(NSString *)url;
 
 /**
  <#Description#>
@@ -40,7 +42,7 @@ NS_SWIFT_NAME(Request)
  @return <#return value description#>
  */
 + (TRLURLRequest *)request:(NSString *)url
-                    method:(NSString *)method __attribute__((unused));
+                    method:(NSString *)method;
 
 /**
  <#Description#>
@@ -50,7 +52,7 @@ NS_SWIFT_NAME(Request)
  @return <#return value description#>
  */
 + (TRLURLRequest *)request:(NSString *)url
-                parameters:(Parameters *_Nullable)parameters __attribute__((unused));
+                parameters:(Parameters *_Nullable)parameters;
 
 /**
  <#Description#>
@@ -62,7 +64,7 @@ NS_SWIFT_NAME(Request)
  */
 + (TRLURLRequest *)request:(NSString *)url
                     method:(NSString *)method
-                parameters:(Parameters *_Nullable)parameters __attribute__((unused));
+                parameters:(Parameters *_Nullable)parameters;
 
 /**
  <#Description#>
@@ -76,7 +78,7 @@ NS_SWIFT_NAME(Request)
 + (TRLURLRequest *)request:(NSString *)url
                     method:(NSString *)method
                 parameters:(Parameters *_Nullable)parameters
-                  encoding:(id <TRLURLParameterEncoding>)encoding __attribute__((unused));
+                  encoding:(id <TRLURLParameterEncoding>)encoding;
 
 /**
  <#Description#>
@@ -92,7 +94,7 @@ NS_SWIFT_NAME(Request)
                     method:(NSString *)method
                 parameters:(Parameters *_Nullable)parameters
                   encoding:(id <TRLURLParameterEncoding>)encoding
-                    header:(HTTPHeaders *_Nullable)headers __attribute__((unused));
+                    header:(HTTPHeaders *_Nullable)headers;
 
 @end
 

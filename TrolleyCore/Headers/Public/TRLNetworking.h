@@ -10,10 +10,10 @@
 #import "TRLNetworkingConstants.h"
 #import "TRLURLParameterEncoding.h"
 #import "TRLURLRequest.h"
-#import "TRLURLSessionManager.h"
+#import "TRLURLRequestBuilder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-TRLURLRequest *request(NSString *url, NSString *method, Parameters *_Nullable parameters, id<TRLURLParameterEncoding> encoding, HTTPHeaders *_Nullable headers);
+//TRLURLRequest *request(NSString *url, NSString *method, Parameters *_Nullable parameters, id<TRLURLParameterEncoding> encoding, HTTPHeaders *_Nullable headers);
 
 NS_ASSUME_NONNULL_END

@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Workaround for not having touples in Objc
+ */
 @interface TRLURLQueryParameters : NSObject
 
 @property (readwrite, nonatomic, strong) id field;
 
 @property (readwrite, nonatomic, strong) id value;
 
-- (instancetype)initWithField:(id)field value:(id)value;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *URLEncodedStringValue;
 
-- (NSString *)URLEncodedStringValue;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithField:(id)field value:(id)value NS_DESIGNATED_INITIALIZER;
 
 @end
