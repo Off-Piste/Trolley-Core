@@ -21,10 +21,10 @@ import TrolleyCore.Private
     ///            `.configure()` if you wish to recive
     ///            all Logs to your console
     ///
-    /// - Parameter bool: Bool value for if you want logging 
-    ///                   or not, defaults at false
-    @objc public func setLogging(_ bool: Bool) {
-        self.isLogging = bool
+    /// - Parameter boolean: Bool value for if you want logging
+    ///                      or not, defaults at false
+    @objc public func setLogging(_ boolean: Bool) {
+        self.isLogging = boolean
         Logger(service: kTRLLoggerCore, level: .info, items: "Logging is set to \(isLogging)")
     }
 

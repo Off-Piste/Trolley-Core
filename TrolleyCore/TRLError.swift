@@ -25,4 +25,13 @@ import Foundation
         return NSError(domain: "io.trolley", code: -200, userInfo: [NSLocalizedDescriptionKey:msg])
     }
 
+    @objc public static func invalidJSON(_ str: String?) -> Error {
+        let msg: String!
+        if str != nil {
+            msg = "The current JSON: \(str!) is invalid, please check"
+        } else {
+            msg = "The current JSON being passed through is invalid, please check"
+        }
+        return NSError(domain: "io.trolley", code: ErrorInvalidJSON, userInfo: [NSLocalizedDescriptionKey:msg])
+    }
 }

@@ -34,6 +34,8 @@
 		C8BF28F11F4ED86F00488612 /* NSString+Data.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BF28EF1F4ED86F00488612 /* NSString+Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8BF28F41F4EDBBD00488612 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF28F31F4EDBBD00488612 /* SwiftyJSON.swift */; };
 		C8BF28F61F4EDF5500488612 /* TRLJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF28F51F4EDF5500488612 /* TRLJSON.swift */; };
+		C8CC99441F50264200C23E5C /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CC99431F50264200C23E5C /* UserAgent.swift */; };
+		C8CC99461F502A1E00C23E5C /* NSLocale+HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CC99451F502A1E00C23E5C /* NSLocale+HTTPHeader.swift */; };
 		C8E17AAE1F4D77A200A5C468 /* TRLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AAC1F4D77A200A5C468 /* TRLLogger.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C8E17AAF1F4D77A200A5C468 /* TRLLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AAD1F4D77A200A5C468 /* TRLLoggerLevel.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C8E17AB31F4D7D6100A5C468 /* TRLNetworkInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E17AB21F4D7D6100A5C468 /* TRLNetworkInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +103,8 @@
 		C8BF28EF1F4ED86F00488612 /* NSString+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Data.h"; sourceTree = "<group>"; };
 		C8BF28F31F4EDBBD00488612 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SwiftyJSON.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C8BF28F51F4EDF5500488612 /* TRLJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TRLJSON.swift; path = TrolleyCore/TRLJSON.swift; sourceTree = SOURCE_ROOT; };
+		C8CC99431F50264200C23E5C /* UserAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
+		C8CC99451F502A1E00C23E5C /* NSLocale+HTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+HTTPHeader.swift"; sourceTree = "<group>"; };
 		C8E17AAC1F4D77A200A5C468 /* TRLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLLogger.h; sourceTree = "<group>"; };
 		C8E17AAD1F4D77A200A5C468 /* TRLLoggerLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLLoggerLevel.h; sourceTree = "<group>"; };
 		C8E17AB21F4D7D6100A5C468 /* TRLNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetworkInfo.h; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				C8460FFA1F4C6C8500CFF7E8 /* Headers */,
 				C8E17AAB1F4D776100A5C468 /* Utils */,
 				C8E17AC01F4D8A3100A5C468 /* Trolley.swift */,
+				C8CC99431F50264200C23E5C /* UserAgent.swift */,
 				C84166671F4E33D70097EB3E /* NSMutableURLRequest+Trolley.m */,
 				C84166681F4E33D70097EB3E /* TRLNetworking.m */,
 				C84166691F4E33D80097EB3E /* TRLURLRequest.m */,
@@ -284,6 +289,7 @@
 				C8BF28F31F4EDBBD00488612 /* SwiftyJSON.swift */,
 				C8BF28F51F4EDF5500488612 /* TRLJSON.swift */,
 				C838A09F1F4F1CBD008B54B8 /* TRLMutableJSON.swift */,
+				C8CC99451F502A1E00C23E5C /* NSLocale+HTTPHeader.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8BF28F61F4EDF5500488612 /* TRLJSON.swift in Sources */,
+				C8CC99441F50264200C23E5C /* UserAgent.swift in Sources */,
 				C841666C1F4E33D80097EB3E /* TRLNetworking.m in Sources */,
+				C8CC99461F502A1E00C23E5C /* NSLocale+HTTPHeader.swift in Sources */,
 				C8E17ACC1F4D9ABF00A5C468 /* ParsedURL.m in Sources */,
 				C8E17AE81F4DD6BB00A5C468 /* TRLURLQueryParameters.m in Sources */,
 				C846100E1F4C8B0E00CFF7E8 /* TRLLogger.m in Sources */,

@@ -24,6 +24,8 @@ NS_SWIFT_NAME(Request)
 
 @property (readonly) dispatch_queue_t queue;
 
+@property (weak, readonly) NSURLSession *session;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 /**

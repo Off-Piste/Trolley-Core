@@ -11,6 +11,7 @@
 #import "TRLURLParameterEncoding.h"
 #import "TRLURLRequest_Internal.h"
 #import "TRLLogger.h"
+#import <TrolleyCore/TrolleyCore-Swift.h>
 
 static TRLURLRequestBuilder *aBuilder;
 
@@ -38,7 +39,12 @@ static TRLURLRequestBuilder *aBuilder;
 }
 
 + (HTTPHeaders *)defaultHTTPHeaders {
-    return @{ };
+    NSString *acceptEncoding = @"gzip;q=1.0, compress;q=0.5";
+    NSString *userAgent = [[UserAgent shared] header];
+    NSString *acceptLanguage = [NSLocale acceptLanguage];
+
+    NSLog(@"%@", userAgent);
+    return @{@"Accept-Encoding": acceptEncoding, @"Accept-Language": acceptLanguage, @"User-Agent": userAgent };
 }
 
 - (void)dealloc {

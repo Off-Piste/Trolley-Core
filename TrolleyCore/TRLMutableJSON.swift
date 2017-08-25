@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TRLMutableJSON: TRLJSON {
+public final class TRLMutableJSON: TRLJSON {
 
     public var dictionaryObject: [String : Any] {
         get { return self.dictionary }
