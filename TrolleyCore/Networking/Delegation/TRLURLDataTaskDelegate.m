@@ -27,6 +27,8 @@
 #import "TRLURLDataTaskDelegate.h"
 
 #import "TRLURLSessionManager.h"
+
+#import "Log.h"
 #import <TrolleyCore/TrolleyCore-Swift.h>
 
 @implementation TRLURLDataTaskDelegate
@@ -67,6 +69,7 @@
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called", __FUNCTION__);
     NSURLSessionResponseDisposition disposition = NSURLSessionResponseAllow;
     expectedContentLength = response.expectedContentLength;
 
@@ -81,6 +84,7 @@ didReceiveResponse:(NSURLResponse *)response
           dataTask:(NSURLSessionDataTask *)dataTask
 didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called", __FUNCTION__);
     _dataTaskDidBecomeDownloadTask(session, dataTask, downloadTask);
 }
 
@@ -89,6 +93,7 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask
  willCacheResponse:(NSCachedURLResponse *)proposedResponse
  completionHandler:(void (^)(NSCachedURLResponse * _Nullable))completionHandler
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called", __FUNCTION__);
     NSCachedURLResponse * _Nullable cachedResponse = proposedResponse;
     if (_dataTaskWillCacheResponse) {
         cachedResponse = _dataTaskWillCacheResponse(session, dataTask, proposedResponse);
@@ -101,6 +106,7 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask
           dataTask:(NSURLSessionDataTask *)dataTask
     didReceiveData:(NSData *)data
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called", __FUNCTION__);
     if (self.initialResponseTime == NSNotFound) {
         self.initialResponseTime = CFAbsoluteTimeGetCurrent();
     }

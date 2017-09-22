@@ -16,6 +16,9 @@
 
 #import "Reachability.h"
 
+#import "Log.h"
+#import "Swift-Fixed-Header.h"
+
 #pragma mark IPv6 Support
 //Reachability fully support IPv6.  For full details, see ReadMe.md.
 
@@ -66,6 +69,8 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
 	NSCAssert([(__bridge NSObject*) info isKindOfClass: [Reachability class]], @"info was wrong class in ReachabilityCallback");
 
+    TRLDebugLogger(TRLLoggerServiceCore, @"ReachabilityCallback called with target: %@, flags:%@", target, flags);
+
     Reachability* noteObject = (__bridge Reachability *)info;
     NetworkStatus status = noteObject.currentReachabilityStatus;
 
@@ -73,8 +78,6 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSDictionary *userInfo = @{@"Status": NetworkReachabilityStatus(status)};
     [center postNotificationName:kReachabilityChangedNotification object:noteObject userInfo:userInfo];
-
-//    [[NSNotificationCenter defaultCenter] postNotificationName: kReachabilityChangedNotification object: noteObject];
 }
 
 #pragma mark - Reachability implementation
@@ -84,16 +87,15 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 + (instancetype)reachabilityWithHostName:(NSString *)hostName {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Creating Reachabilty for: %@", hostName);
+
 	Reachability* returnValue = NULL;
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, hostName.UTF8String);
-	if (reachability != NULL)
-	{
+	if (reachability != NULL) {
 		returnValue= [[self alloc] init];
-		if (returnValue != NULL)
-		{
+		if (returnValue != NULL) {
 			returnValue->_reachabilityRef = reachability;
-		}
-        else {
+		} else {
             CFRelease(reachability);
         }
 	}
@@ -102,18 +104,16 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 
 + (instancetype)reachabilityWithAddress:(const struct sockaddr *)hostAddress {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Creating Reachabilty for: %@", hostAddress);
+
+    Reachability* returnValue = NULL;
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, hostAddress);
 
-	Reachability* returnValue = NULL;
-
-	if (reachability != NULL)
-	{
+	if (reachability != NULL) {
 		returnValue = [[self alloc] init];
-		if (returnValue != NULL)
-		{
+		if (returnValue != NULL) {
 			returnValue->_reachabilityRef = reachability;
-		}
-        else {
+		} else {
             CFRelease(reachability);
         }
 	}
@@ -123,13 +123,13 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 #pragma mark - Start and stop notifier
 
 - (BOOL)startNotifier {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to start notifier");
 	BOOL returnValue = NO;
 	SCNetworkReachabilityContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
 
-	if (SCNetworkReachabilitySetCallback(_reachabilityRef, ReachabilityCallback, &context))
-	{
-		if (SCNetworkReachabilityScheduleWithRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode))
-		{
+	if (SCNetworkReachabilitySetCallback(_reachabilityRef, ReachabilityCallback, &context)) {
+		if (SCNetworkReachabilityScheduleWithRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode)) {
+            TRLDebugLogger(TRLLoggerServiceCore, @"Starting notifier");
 			returnValue = YES;
 		}
 	}
@@ -139,8 +139,9 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 
 - (void)stopNotifier {
-	if (_reachabilityRef != NULL)
-	{
+    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to stop notifier");
+	if (_reachabilityRef != NULL) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"Stopping notifier");
 		SCNetworkReachabilityUnscheduleFromRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 	}
 }
@@ -148,8 +149,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 - (void)dealloc {
 	[self stopNotifier];
-	if (_reachabilityRef != NULL)
-	{
+	if (_reachabilityRef != NULL) {
 		CFRelease(_reachabilityRef);
 	}
 }

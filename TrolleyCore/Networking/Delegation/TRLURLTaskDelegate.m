@@ -27,6 +27,7 @@
 #import "TRLURLTaskDelegate.h"
 #import "TRLURLTaskDelegate_Dynamic.h"
 
+#import "Log.h"
 #import <TrolleyCore/TrolleyCore-Swift.h>
 
 @implementation TRLURLTaskDelegate
@@ -69,6 +70,7 @@
 didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called,didReceiveChallenge:%@", __FUNCTION__, challenge);
     TChallenge *_challengeTouple = [[TChallenge alloc] init];
 
     if (_taskDidReceiveChallenge) {
@@ -99,6 +101,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         newRequest:(NSURLRequest *)request
  completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called, newRequest:%@", __FUNCTION__, request);
     NSURLRequest *_Nullable redirectRequest = request;
 
     if (_taskWillPerformHTTPRedirection) {
@@ -112,6 +115,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
               task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called, error:%@", __FUNCTION__, error);
     if (_taskDidCompleteWithError) {
         _taskDidCompleteWithError(session, task, error);
     } else {
@@ -128,6 +132,7 @@ didCompleteWithError:(NSError *)error
               task:(NSURLSessionTask *)task
  needNewBodyStream:(void (^)(NSInputStream * _Nullable))completionHandler
 {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called", __FUNCTION__);
     NSInputStream *bodyStream;
     if (_taskNeedNewBodyStream) {
         bodyStream = _taskNeedNewBodyStream(session, task);

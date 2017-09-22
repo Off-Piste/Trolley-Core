@@ -55,6 +55,12 @@ extension TRLURLDataRequest {
     {
         delegate.queue.addOperation {
             (queue ??  DispatchQueue.main).async {
+                TRLDebugLogger(
+                    for: .core,
+                    "DataRequest: %@, has recvied response with code:%lu",
+                    self, self.response?.statusCode ?? 0
+                )
+
                 let resp = TRLURLResponse.init(
                     request: (self.request as URLRequest?),
                     response: self.response,

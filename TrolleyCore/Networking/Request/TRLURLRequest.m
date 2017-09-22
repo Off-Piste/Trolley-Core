@@ -75,6 +75,8 @@
                     requestTask:(TRLURLRequestTaskType *)requestTask
                           error:(NSError *)error {
     if (self = [super init]) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"TRLURLRequest is been created with session:%@", session);
+
         self->_session = session;
         self->taskDelegateLock = [[NSLock alloc] init];
         self->_retryCount = 0;
@@ -139,6 +141,7 @@
         startTime = CFAbsoluteTimeGetCurrent();
     }
 
+    TRLLog(TRLLoggerServiceCore, @"Resuming task:%@", self.task);
     [self.task resume];
 }
 
@@ -147,6 +150,7 @@
         return;
     }
 
+    TRLLog(TRLLoggerServiceCore, @"Suspending task:%@", self.task);
     [self.task suspend];
 }
 
@@ -155,6 +159,7 @@
         return;
     }
 
+    TRLLog(TRLLoggerServiceCore, @"Canceling task:%@", self.task);
     [self.task cancel];
 }
 

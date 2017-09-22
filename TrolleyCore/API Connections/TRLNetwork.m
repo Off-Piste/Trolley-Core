@@ -33,7 +33,12 @@
 
 #import "TRLRequest.h"
 
-@implementation TRLNetwork
+#import "Log.h"
+#import "Swift-Fixed-Header.h"
+
+@implementation TRLNetwork {
+    TRLNetworkConnection *connection;
+}
 
 - (NSURL *)url {
     return self.parsedURL.url;
@@ -50,6 +55,7 @@
 - (instancetype)initWithURLString:(NSString *)url {
     self = [super init];
     if (self) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: @{private}%", url);
         self->_parsedURL = [[TRLParsedURL alloc] initWithURLString:url];
     }
     return self;
@@ -69,6 +75,10 @@
                                 parameters:_param
                                   encoding:encoding
                                    headers:_headers];
+}
+
+- (void)open {
+    [connection open];
 }
 
 @end

@@ -25,13 +25,13 @@
 //
 
 #import "TRLURLSessionManager.h"
-//#import "TRLURLSessionManager_Requests.h"
 
 #import "TRLURLParameterEncoding.h"
 #import "TRLURLEncoding.h"
 #import "NSMutableURLRequest+Reqestable.h"
 #import "TRLURLDataRequest.h"
 
+#import "Log.h"
 #import <Swift-Fixed-Header.h>
 
 TRLURLSessionManager *aManager;
@@ -141,11 +141,14 @@ TRLURLSessionManager *aManager;
                     parameters:(Parameters *)parameters
                       encoding:(id<TRLURLParameterEncoding>)encoding
                        headers:(HTTPHeaders *)headers {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to build data request for: %@", url);
+
     NSError *error;
-    NSMutableURLRequest *orignalRequest = [[NSMutableURLRequest alloc] initWithURL:url
-                                                                            method:method
-                                                                           headers:headers
-                                                                             error:&error];
+    NSMutableURLRequest *orignalRequest = [[NSMutableURLRequest alloc]
+                                           initWithURL:url
+                                                method:method
+                                               headers:headers
+                                                 error:&error];
 
     if (error) {
         return [self requestForURLRequest:orignalRequest failedWithError:error];
@@ -164,6 +167,8 @@ TRLURLSessionManager *aManager;
 }
 
 - (TRLURLDataRequest *)requestForURLRequest:(NSURLRequest *)request {
+    TRLDebugLogger(TRLLoggerServiceCore, @"NSURLRequest: %@ has been built", request);
+
     TRLURLDataRequestHelper *originalTask = [[TRLURLDataRequestHelper alloc]
                                              initWithUrlRequest:request];
 
@@ -195,6 +200,9 @@ TRLURLSessionManager *aManager;
 
 - (TRLURLDataRequest *)requestForURLRequest:(NSURLRequest *_Nullable)urlRequest
                             failedWithError:(NSError *)error {
+    TRLDebugLogger(TRLLoggerServiceCore, @"requestForURLRequest:%@ failedWithError:%@",
+                   urlRequest, error);
+
     TRLURLRequestTaskTypeData *task = [[TRLURLRequestTaskTypeData alloc]
                                        initWithOriginalTask:NULL
                                        sessionTask:NULL];

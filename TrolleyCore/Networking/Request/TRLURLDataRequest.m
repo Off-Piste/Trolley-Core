@@ -40,6 +40,8 @@
                     requestTask:(TRLURLRequestTaskType *)requestTask
                           error:(NSError *)error {
     if (self = [super init]) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"TRLURLDataRequest is been created with session:%@", session);
+        
         self.session = session;
         self->taskDelegateLock = [[NSLock alloc] init];
         self.retryCount = 0;

@@ -16,6 +16,8 @@
 
 
 #import "TSRWebSocket.h"
+#import "Log.h"
+#import "Swift-Fixed-Header.h"
 
 #if TARGET_OS_IPHONE
 #define HAS_ICU
@@ -1778,21 +1780,14 @@ static const size_t TSRFrameHeaderOverhead = 32;
 
 @end
 
-//#define TSR_ENABLE_LOG
-
 static inline void TSRFastLog(NSString *format, ...)  {
-//#ifdef TSR_ENABLE_LOG
-    if (kLoggingEnabled) {
-        __block va_list arg_list;
-        va_start (arg_list, format);
+    __block va_list arg_list;
+    va_start (arg_list, format);
+    NSString *formattedString = [[NSString alloc] initWithFormat:format arguments:arg_list];
+    va_end(arg_list);
 
-        NSString *formattedString = [[NSString alloc] initWithFormat:format arguments:arg_list];
-
-        va_end(arg_list);
-
-        NSLog(@"[TSR] %@", formattedString);
-    }
-//#endif
+    [[TRLLogger loggerForService:TRLLoggerServiceCore] log:formattedString
+                                                     level:TRLLoggerLevelDebug];
 }
 
 
