@@ -7,7 +7,7 @@ target 'TrolleyCore' do
 
   # Pods for TrolleyCore
   pod 'PromiseKit'
-
+  
   target 'TrolleyCoreTests' do
     inherit! :search_paths
     # Pods for testing

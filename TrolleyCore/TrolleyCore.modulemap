@@ -4,7 +4,12 @@ framework module TrolleyCore {
   export *
   module * { export * }
 
-  explicit module Private {
-    umbrella header "Trolley_Private.h"
-   }
+  link framework "CFNetwork"
+  link framework "Security"
+  link framework "SystemConfiguration"
+
+  explicit module Dynamic {
+    header "TRLJSONBase_Dynamic.h"
+    header "TRLNetworkManager_Options.h"
+  }
 }

@@ -1,44 +1,70 @@
+/////////////////////////////////////////////////////////////////////////////////
 //
 //  TrolleyCore.h
 //  TrolleyCore
 //
 //  Created by Harry Wright on 22.08.17.
-//  Copyright © 2017 Off-Piste. All rights reserved.
+//  Copyright © 2017 Off-Piste.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
 //
 
-#ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#else
-#ifndef FOUNDATION_EXPORT
-#if defined(__cplusplus)
-#define FOUNDATION_EXPORT extern "C"
-#else
-#define FOUNDATION_EXPORT extern
-#endif
-#endif
-#endif
-
-//#import <TrolleyCore/TRLCurrency.h>
-//#import <TrolleyCore/TRLNetworkInfo.h>
+//#import <TrolleyCore/TRLURLRequestBuilder.h>
+//#import <TrolleyCore/NSArray+Map.h>
+//#import <TrolleyCore/TRLURLRequest_Response.h>
+//#import <TrolleyCore/NSMutableURLRequest+Trolley.h>
+//#import <TrolleyCore/TRLURLRequest.h>
+//#import <TrolleyCore/TRLURLEncoding.h>
 //#import <TrolleyCore/ParsedURL.h>
-//#import <TrolleyCore/NSArray+Map.h"
-//#import <TrolleyCore/TRLURLEncoding.h"
-//#import <TrolleyCore/TRLNetworking.h"
-//#import <TrolleyCore/TRLNetworkingConstants.h"
-//#import <TrolleyCore/TRLURLParameterEncoding.h"
-//#import <TrolleyCore/TRLURLRequest.h"
-//#import <TrolleyCore/TRLURLRequestBuilder.h"
-//#import <TrolleyCore/NSMutableURLRequest+Trolley.h"
+//#import <TrolleyCore/TRLURLParameterEncoding.h>
+//#import <TrolleyCore/NSString+Data.h>
+//#import <TrolleyCore/TRLNetworkingConstants.h>
+//#import <TrolleyCore/TRLNetworkManager.h>
+//#import <TrolleyCore/TRLNetworkInfo.h>
+//#import <TrolleyCore/Networkable.h>
+//#import <TrolleyCore/TRLRequest.h>
 
-#import <TrolleyCore/TRLURLRequestBuilder.h>
-#import <TrolleyCore/NSArray+Map.h>
-#import <TrolleyCore/TRLURLRequest_Response.h>
-#import <TrolleyCore/NSMutableURLRequest+Trolley.h>
-#import <TrolleyCore/TRLURLRequest.h>
-#import <TrolleyCore/TRLURLEncoding.h>
-#import <TrolleyCore/ParsedURL.h>
-#import <TrolleyCore/TRLURLParameterEncoding.h>
-#import <TrolleyCore/TRLNetworkingConstants.h>
-#import <TrolleyCore/TRLNetworkInfo.h>
-#import <TrolleyCore/TRLNetworking.h>
-#import <TrolleyCore/NSString+Data.h>
+//#import "TNT_Header.h"
+//#import "TRLNetwork_Header.h"
+//#import "TRLError.h"
+//#import "Log.h"
+//#import "Trolley.h"
+
+#import "TRLURLRequest.h"
+#import "NSMutableURLRequest+Reqestable.h"
+#import "TRLMutableArray.h"
+#import "TRLRequest.h"
+#import "TRLJSONBase.h"
+#import "TRLNetworkManager.h"
+#import "Reachability.h"
+#import "TRLURLTaskDelegate.h"
+#import "TRLURLSessionManager.h"
+#import "NSArray+Map.h"
+#import "TRLMutableJSON.h"
+#import "TRLJSON.h"
+#import "TRLURLParameterEncoding.h"
+#import "Log.h"
+#import "TRLURLEncoding.h"
+#import "TRLBlocks.h"
+#import "TRLURLDataTaskDelegate.h"
+#import "Trolley.h"
+#import "TRLMutableDictionary.h"
+#import "TNTUtils.h"
+#import "TRLURLDataRequest.h"
+#import "TRLError.h"
