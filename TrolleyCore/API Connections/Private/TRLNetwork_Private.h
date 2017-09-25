@@ -26,10 +26,9 @@
 #import "TRLNetwork.h"
 #import "TNTUtils.h"
 
-@class TRLParsedURL;
-@class TRLRequest;
-@protocol TRLNetworkConnectionDelegate;
-@class TRLRetryHelper;
+#import "TRLNetworkConnection.h"
+
+@class TRLParsedURL, TRLRequest, TRLRetryHelper;
 
 typedef enum {
     ConnectionStateDisconnected,
@@ -88,6 +87,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)canSendWrites;
 
 - (BOOL)shouldReconnect;
+
+#pragma mark Delegate Methods
+- (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
+          withMessage:(NSDictionary *)message;
+
+- (void)onDisconnect:(TRLNetworkConnection *)trlNetworkConnection
+          withReason:(TRLDisconnectReason)reason;
+
+- (void)onKill:(TRLNetworkConnection *)trlNetworkConnection
+    withReason:(NSString *)reason;
 
 @end
 

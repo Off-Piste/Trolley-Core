@@ -39,7 +39,7 @@ open class TRLURLSessionDelegate: NSObject {
     open var sessionDidReceiveChallengeWithCompletion: ((URLSession, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionDelegate method `urlSessionDidFinishEvents(forBackgroundURLSession:)`.
-    open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
+    @objc open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
 
     // MARK: URLSessionTaskDelegate Overrides
 
@@ -96,13 +96,13 @@ open class TRLURLSessionDelegate: NSObject {
     // MARK: Properties
 
 //    var retrier: RequestRetrier?
-    public weak var sessionManager: TRLURLSessionManager?
+    @objc public weak var sessionManager: TRLURLSessionManager?
 
     private var requests: [Int: TRLURLRequest] = [:]
     private let lock = NSLock()
 
     /// Access the task delegate for the specified task in a thread-safe manner.
-    open subscript(task: URLSessionTask) -> TRLURLRequest? {
+    @objc open subscript(task: URLSessionTask) -> TRLURLRequest? {
         get {
             lock.lock() ; defer { lock.unlock() }
             return requests[task.taskIdentifier]

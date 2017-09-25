@@ -81,4 +81,28 @@
     [connection open];
 }
 
+- (BOOL)canSendWrites {
+    return YES;
+}
+
+- (BOOL)shouldReconnect {
+    return YES;
+}
+
+- (BOOL)connected {
+    return YES;
+}
+
+- (void)onKill:(TRLNetworkConnection *)trlNetworkConnection withReason:(NSString *)reason{
+    //
+}
+
+- (void)onDisconnect:(TRLNetworkConnection *)trlNetworkConnection withReason:(TRLDisconnectReason)reason {
+    
+}
+
+- (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection withMessage:(NSDictionary *)message {
+    //
+}
+
 @end

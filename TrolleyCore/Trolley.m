@@ -37,15 +37,16 @@ NSString *AppleDeviceUUIDKey = @"io.trolley.device_key";
 
 NSString *kLastConnectionIDUserDefaultsKey = @"";
 
-static NSString *trl_device_uuid_get() {
-    NSError *error;
-    TRLDefaultsManager *dm = [TRLDefaultsManager managerForKey:kLastConnectionIDUserDefaultsKey];
-    NSString *conectionID = [dm retriveObject:&error];
+//static NSString *trl_device_uuid_get() {
+//    NSError *error;
+//    TRLDefaultsManager *dm = [TRLDefaultsManager managerForKey:kLastConnectionIDUserDefaultsKey];
+//    NSString *conectionID = [dm retriveObject:&error];
+//
+//    if (error) {
+//        TRLErrorLogger(TRLLoggerServiceCore, @"%@, This error is to be expected on the first install of an app. If this persists please contact us!", error);
+//        conectionID = [[NSUUID UUID] UUIDString];
+//        [dm setObject:conectionID];
+//    }
+//    return conectionID;
+//}
 
-    if (error) {
-        TRLErrorLogger(TRLLoggerServiceCore, @"%@, This error is to be expected on the first install of an app. If this persists please contact us!", error);
-        conectionID = [[NSUUID UUID] UUIDString];
-        [dm setObject:conectionID];
-    }
-    return conectionID;
-}

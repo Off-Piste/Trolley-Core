@@ -199,7 +199,8 @@ static NSString *kLastSessionUDKey = @"";
 //                                                             options:kNilOptions
 //                                                               error:nil];
 
-        TRLJSON *trljson = [TRLJSON parseJSON:[frame dataUsingEncoding:NSUTF8StringEncoding]];
+
+        TRLJSON *trljson = [[TRLJSON alloc] initWithData:[frame dataUsingEncoding:NSUTF8StringEncoding]];
         NSDictionary* json = TRLJSONBaseRawValueForType(trljson, JSONTypeDictionary);
 
         frame = nil;

@@ -48,7 +48,7 @@ extension JSONType: CustomStringConvertible {
 
     public var newObject: Any?
 
-    public init(newObject: Any?, error: Error?) {
+    @objc public init(newObject: Any?, error: Error?) {
         self.underlyingError = error
         self.newObject = newObject
     }

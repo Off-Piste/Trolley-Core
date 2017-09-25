@@ -74,5 +74,9 @@ Pod::Spec.new do |s|
   s.public_header_files = public_header_files
 
   s.dependency 'PromiseKit'
+  s.library = 'icucore'
+  s.framework = 'CFNetwork'
+  s.framework = 'Security'
+  s.framework = 'SystemConfiguration'
 
 end
