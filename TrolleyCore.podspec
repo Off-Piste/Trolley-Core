@@ -26,51 +26,51 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
-  public_header_files   =   # Networking Headers
-                            'TrolleyCore/Networking/**/TRLURLRequest.h',
-                            'TrolleyCore/Networking/**/TRLURLDataRequest.h',
-                            'TrolleyCore/Networking/**/TRLURLDataTaskDelegate.h',
-                            'TrolleyCore/Networking/**/TRLURLTaskDelegate.h',
-                            'TrolleyCore/Networking/**/TRLURLEncoding.h',
-                            'TrolleyCore/Networking/**/TRLURLParameterEncoding.h',
-                            'TrolleyCore/Networking/**/TRLJSON.h',
-                            'TrolleyCore/Networking/**/TRLJSONBase.h',
-                            'TrolleyCore/Networking/**/TRLMutableJSON.h',
-                            'TrolleyCore/Networking/**/TRLMutableArray.h',
-                            'TrolleyCore/Networking/**/TRLMutableDictionary.h',
-                            'TrolleyCore/Networking/**/Reachability.h',
-                            'TrolleyCore/Networking/**/NSMutableURLRequest+Reqestable.h',
-                            'TrolleyCore/Networking/**/TNTUtils.h',
-                            'TrolleyCore/Networking/**/TRLBlocks.h',
+  public_header_files   =   ['TrolleyCore/**/**/TRLURLRequest.h',
+                            'TrolleyCore/**/**/TRLURLDataRequest.h',
+                            'TrolleyCore/**/**/TRLURLDataTaskDelegate.h',
+                            'TrolleyCore/**/**/TRLURLTaskDelegate.h',
+                            'TrolleyCore/**/**/TRLURLEncoding.h',
+                            'TrolleyCore/**/**/TRLURLParameterEncoding.h',
+                            'TrolleyCore/**/**/TRLJSON.h',
+                            'TrolleyCore/**/**/TRLJSONBase.h',
+                            'TrolleyCore/**/**/TRLMutableJSON.h',
+                            'TrolleyCore/**/**/TRLMutableArray.h',
+                            'TrolleyCore/**/**/TRLMutableDictionary.h',
+                            'TrolleyCore/**/**/Reachability.h',
+                            'TrolleyCore/**/**/NSMutableURLRequest+Reqestable.h',
+                            'TrolleyCore/**/**/TNTUtils.h',
+                            'TrolleyCore/**/**/TRLBlocks.h',
+                            'TrolleyCore/**/**/TRLURLSessionManager.h',
+                            'TrolleyCore/**/**/NSArray+Map.h',
 
                             # API Connections Headers
-                            'TrolleyCore/API Connections/TRLRequest.h',
-                            'TrolleyCore/API Connections/TRLNetworkManager.h',
+                            'TrolleyCore/**/TRLRequest.h',
+                            'TrolleyCore/**/TRLNetworkManager.h',
 
                             # Core Headers
-                            'TrolleyCore/**/**/Error.h',
-                            'TrolleyCore/**/**/Trolley.h',
-                            'TrolleyCore/**/**/Log.h',
+                            'TrolleyCore/TRLError.h',
+                            'TrolleyCore/Trolley.h',
+                            'TrolleyCore/Log.h',
+                            'TrolleyCore/TrolleyCore.h',
 
                             #Dynamic Header
-                            'TrolleyCore/Networking/**/TRLJSONBase_Dynamic.h',
-                            'TrolleyCore/TRLNetworkManager_Options.h'
+                            'TrolleyCore/**/**/TRLJSONBase_Dynamic.h',
+                            'TrolleyCore/TRLNetworkManager_Options.h']
 
-  private_header_files =    # Networking
-                            'TrolleyCore/Networking/**/TRLJSONBase_Private.h',
+  private_header_files =    ['TrolleyCore/**/**/TRLJSONBase_Private.h',
 
                             # API Connections
-                            'TrolleyCore/API Connections/TRLNetwork.h',
-                            'TrolleyCore/API Connections/**/TRLNetworkConnection.h',
-                            'TrolleyCore/API Connections/**/TRLWebSocketConnection.h',
-                            'TrolleyCore/API Connections/**/*_Private.h',
-                            'TrolleyCore/API Connections/**/TRLNetworkInfo.h',
-                            'TrolleyCore/API Connections/**/TRLParsedURL.h'
+                            'TrolleyCore/**/TRLNetwork.h',
+                            'TrolleyCore/**/**/TRLNetworkConnection.h',
+                            'TrolleyCore/**/**/TRLWebSocketConnection.h',
+                            'TrolleyCore/**/**/*_Private.h',
+                            'TrolleyCore/**/**/TRLNetworkInfo.h',
+                            'TrolleyCore/**/**/TRLParsedURL.h']
 
-  source_files = 'TrolleyCore/**/**/*.{swift, m}'
+  source_files = ['TrolleyCore/**/**/*.{swift, m}']
 
-  s.source_files = source_files + private_header_files
-  s.private_header_files = private_header_files
+  s.source_files = source_files + public_header_files
   s.public_header_files = public_header_files
 
   s.dependency 'PromiseKit'

@@ -25,6 +25,7 @@
 //  SOFTWARE.
 
 import Foundation
+import TrolleyCore.Dynamic
 
 extension JSON: _ObjectiveCBridgeable {
     
