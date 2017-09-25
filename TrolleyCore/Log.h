@@ -13,13 +13,13 @@
 @class TRLLoggerService;
 
 /**
- <#Description#>
+ The level for the Log message.
 
- - TRLLoggerLevelDefault: <#TRLLoggerLevelDefault description#>
- - TRLLoggerLevelInfo: <#TRLLoggerLevelInfo description#>
- - TRLLoggerLevelDebug: <#TRLLoggerLevelDebug description#>
- - TRLLoggerLevelError: <#TRLLoggerLevelError description#>
- - TRLLoggerLevelFault: <#TRLLoggerLevelFault description#>
+ - TRLLoggerLevelDefault:   OS_LOG_TYPE_DEFAULT
+ - TRLLoggerLevelInfo:      OS_LOG_TYPE_INFO
+ - TRLLoggerLevelDebug:     OS_LOG_TYPE_DEBUG
+ - TRLLoggerLevelError:     OS_LOG_TYPE_ERROR
+ - TRLLoggerLevelFault:     OS_LOG_TYPE_FAULT
  */
 typedef NS_ENUM(uint8_t, TRLLoggerLevel) {
     TRLLoggerLevelDefault = OS_LOG_TYPE_DEFAULT,

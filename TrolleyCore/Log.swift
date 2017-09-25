@@ -81,7 +81,8 @@ internal typealias LoggerService = __LoggerService
 internal var isLogging: Bool = false
 
 // MARK: - Logger
-@objc(TRLLogger) public final class __Logger: NSObject {
+@objc(TRLLogger)
+public final class __Logger: NSObject {
 
     /// The service for the Logger
     private var service: __LoggerService

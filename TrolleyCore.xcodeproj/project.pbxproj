@@ -12,7 +12,7 @@
 		C84166431F4DFB5F0097EB3E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84166421F4DFB5F0097EB3E /* PromiseKit.framework */; };
 		C8460FEA1F4C665800CFF7E8 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C84AEE611F754FF5009E6019 /* TRLNetworkManager_Options.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEDF41F754FF2009E6019 /* TRLNetworkManager_Options.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C84AEE611F754FF5009E6019 /* TRLNetworkManager_Options.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEDF41F754FF2009E6019 /* TRLNetworkManager_Options.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE621F754FF5009E6019 /* Trolley.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEDF51F754FF2009E6019 /* Trolley.m */; };
 		C84AEE631F754FF5009E6019 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEDF61F754FF2009E6019 /* Log.m */; };
 		C84AEE641F754FF5009E6019 /* TRLURLDataTaskDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEDF91F754FF2009E6019 /* TRLURLDataTaskDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +31,7 @@
 		C84AEE711F754FF5009E6019 /* TRLJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE081F754FF2009E6019 /* TRLJSON.m */; };
 		C84AEE721F754FF5009E6019 /* TRLJSONBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE091F754FF2009E6019 /* TRLJSONBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE731F754FF5009E6019 /* TRLJSONBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE0A1F754FF2009E6019 /* TRLJSONBase.m */; };
-		C84AEE741F754FF5009E6019 /* TRLJSONBase_Dynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE0B1F754FF2009E6019 /* TRLJSONBase_Dynamic.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C84AEE741F754FF5009E6019 /* TRLJSONBase_Dynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE0B1F754FF2009E6019 /* TRLJSONBase_Dynamic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE751F754FF5009E6019 /* TRLJSONBase_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE0C1F754FF2009E6019 /* TRLJSONBase_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C84AEE761F754FF5009E6019 /* TRLMutableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE0D1F754FF2009E6019 /* TRLMutableArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE771F754FF5009E6019 /* TRLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE0E1F754FF2009E6019 /* TRLMutableArray.m */; };

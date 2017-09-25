@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TrolleyCore"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "TrolleyCore is a mobile and web ecommerce system"
   s.description  = <<-DESC
   A very very very very very very short description of TrolleyCore.
@@ -26,9 +26,53 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
-  s.source_files  = 'TrolleyCore/**/**/*.{swift,h,m}'
-  s.public_header_files = 'TrolleyCore/Headers/Public/*.h', 'TrolleyCore/TrolleyCore.h'
-  s.private_header_files = 'TrolleyCore/Headers/Private/*.h'
+  public_header_files   =   # Networking Headers
+                            'TrolleyCore/Networking/**/TRLURLRequest.h',
+                            'TrolleyCore/Networking/**/TRLURLDataRequest.h',
+                            'TrolleyCore/Networking/**/TRLURLDataTaskDelegate.h',
+                            'TrolleyCore/Networking/**/TRLURLTaskDelegate.h',
+                            'TrolleyCore/Networking/**/TRLURLEncoding.h',
+                            'TrolleyCore/Networking/**/TRLURLParameterEncoding.h',
+                            'TrolleyCore/Networking/**/TRLJSON.h',
+                            'TrolleyCore/Networking/**/TRLJSONBase.h',
+                            'TrolleyCore/Networking/**/TRLMutableJSON.h',
+                            'TrolleyCore/Networking/**/TRLMutableArray.h',
+                            'TrolleyCore/Networking/**/TRLMutableDictionary.h',
+                            'TrolleyCore/Networking/**/Reachability.h',
+                            'TrolleyCore/Networking/**/NSMutableURLRequest+Reqestable.h',
+                            'TrolleyCore/Networking/**/TNTUtils.h',
+                            'TrolleyCore/Networking/**/TRLBlocks.h',
+
+                            # API Connections Headers
+                            'TrolleyCore/API Connections/TRLRequest.h',
+                            'TrolleyCore/API Connections/TRLNetworkManager.h',
+
+                            # Core Headers
+                            'TrolleyCore/**/**/Error.h',
+                            'TrolleyCore/**/**/Trolley.h',
+                            'TrolleyCore/**/**/Log.h',
+
+                            #Dynamic Header
+                            'TrolleyCore/Networking/**/TRLJSONBase_Dynamic.h',
+                            'TrolleyCore/TRLNetworkManager_Options.h'
+
+  private_header_files =    # Networking
+                            'TrolleyCore/Networking/**/TRLJSONBase_Private.h',
+
+                            # API Connections
+                            'TrolleyCore/API Connections/TRLNetwork.h',
+                            'TrolleyCore/API Connections/**/TRLNetworkConnection.h',
+                            'TrolleyCore/API Connections/**/TRLWebSocketConnection.h',
+                            'TrolleyCore/API Connections/**/*_Private.h',
+                            'TrolleyCore/API Connections/**/TRLNetworkInfo.h',
+                            'TrolleyCore/API Connections/**/TRLParsedURL.h'
+
+  source_files = 'TrolleyCore/**/**/*.{swift, m}'
+
+  s.source_files = source_files + private_header_files
+  s.private_header_files = private_header_files
+  s.public_header_files = public_header_files
+
   s.dependency 'PromiseKit'
 
 end
