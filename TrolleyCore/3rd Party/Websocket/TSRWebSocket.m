@@ -17,7 +17,7 @@
 
 #import "TSRWebSocket.h"
 #import "Log.h"
-#import "Swift-Fixed-Header.h"
+#import "TrolleyCore-Swift-Fixed.h"
 
 #if TARGET_OS_IPHONE
 #define HAS_ICU

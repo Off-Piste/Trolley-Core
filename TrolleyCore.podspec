@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "harrytwright" => "haroldtomwright@gmail.com" }
 
-  s.platform     = :ios, 10.0
+  s.platform     = :ios, 10.3
   s.source       = { :git => "https://github.com/harrytwright/trolley_core.git", :tag => "#{s.version}" }
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
@@ -68,15 +68,22 @@ Pod::Spec.new do |s|
                             'TrolleyCore/**/**/TRLNetworkInfo.h',
                             'TrolleyCore/**/**/TRLParsedURL.h']
 
-  source_files = ['TrolleyCore/**/**/*.{swift, m}']
+  source_files = ['TrolleyCore/**/*.{swift, m}']
 
-  s.source_files = source_files + public_header_files
+  s.source_files = source_files + public_header_files + private_header_files
   s.public_header_files = public_header_files
 
   s.dependency 'PromiseKit'
   s.library = 'icucore'
+  s.library = 'c++'
   s.framework = 'CFNetwork'
   s.framework = 'Security'
   s.framework = 'SystemConfiguration'
+
+  s.pod_target_xcconfig = {
+    'CLANG_ENABLE_MODULES' => 'YES',
+    'OTHER_LDFLAGS' => '$(inherited)',
+    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+  }
 
 end

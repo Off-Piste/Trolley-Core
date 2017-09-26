@@ -17,7 +17,7 @@
 #import "Reachability.h"
 
 #import "Log.h"
-#import "Swift-Fixed-Header.h"
+#import "TrolleyCore-Swift-Fixed.h"
 
 #pragma mark IPv6 Support
 //Reachability fully support IPv6.  For full details, see ReadMe.md.

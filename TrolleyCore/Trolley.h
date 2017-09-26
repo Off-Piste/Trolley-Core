@@ -32,5 +32,5 @@ extern NSNotificationName TRLTrolleyStartingUpNotification;
 /** @warning Please do not mutate, this is for internal purposes, changes can be done via Trolley/Auth */
 extern NSString *AppleDeviceUUIDKey;
 
-//static NSString *trl_device_uuid_get();
+extern NSString *trl_device_uuid_get(void);
 

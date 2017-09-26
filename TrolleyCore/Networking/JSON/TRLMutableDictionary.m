@@ -97,13 +97,13 @@
 }
 
 - (id)objectForKeyedSubscript:(id<NSCopying>)key {
-  // The method this calls is already synchronized.
-  return self[key];
+    // The method this calls is already synchronized.
+    return [self objectForKey:key];
 }
 
 - (void)setObject:(id)obj forKeyedSubscript:(id<NSCopying>)key {
   // The method this calls is already synchronized.
-  self[key] = obj;
+    [self setObject:obj forKey: key];
 }
 
 - (NSDictionary *)dictionary {

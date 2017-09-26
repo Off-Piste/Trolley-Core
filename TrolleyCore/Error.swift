@@ -46,6 +46,8 @@ extension Trolley {
 
         public static let NSUDNilReturnValue: Code = .nsudNilReturnValue
 
+        public static let couldNotFindFile : Code = .optionsCouldNotFindFile
+
         /// :nodoc:
         public var code: Code {
             return (_nsError as! TRLError).code

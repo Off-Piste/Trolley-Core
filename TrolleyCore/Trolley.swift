@@ -40,7 +40,7 @@ import TrolleyCore.Dynamic
     @objc public internal(set) var isLightweight: Bool = false
 
     @objc public var shopName: String {
-        return options["io.trolley.shopName"]
+        return options.shopID
     }
 
 }

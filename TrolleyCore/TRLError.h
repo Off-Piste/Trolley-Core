@@ -60,6 +60,8 @@ typedef TRL_ERROR_ENUM(NSInteger, TRLError, TRLErrorDomain) {
 
     TRLErrorNSUDNilReturnValue = 500,
     TRLErrorNSUDCouldNotUnarchive = 502,
+
+    TRLErrorOptionsCouldNotFindFile = 404,
 };
 
 NSException *TRLException(NSString *reason, NSDictionary *_Nullable additionalUserInfo);

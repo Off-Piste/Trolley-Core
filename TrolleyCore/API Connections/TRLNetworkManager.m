@@ -37,7 +37,7 @@
 
 #import "TRLURLEncoding.h"
 
-#import "Swift-Fixed-Header.h"
+#import "TrolleyCore-Swift-Fixed.h"
 
 @implementation TRLNetworkManager
 
@@ -56,7 +56,7 @@
 }
 
 - (instancetype)initWithOptions:(TRLOptions *)options {
-    return [self initWithURL:options.url APIKey:options.key];
+    return [self initWithURL:options.shopURL APIKey:options.shopID];
 }
 
 - (TRLRequest *)get:(NSString *)path {

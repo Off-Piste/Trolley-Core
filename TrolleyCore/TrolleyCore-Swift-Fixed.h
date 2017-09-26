@@ -1,5 +1,5 @@
 //
-//  Swift-Fixed-Header.h
+//  TrolleyCore-Swift-Fixed.h
 //  TRLNetwork
 //
 //  Created by Harry Wright on 14.09.17.
@@ -29,3 +29,6 @@
 #import <TrolleyCore/TrolleyCore-Swift.h>
 
 #endif /* Swift_Fixed_Header_h */
+
+//TrolleyCore-Swift-Fixed
+

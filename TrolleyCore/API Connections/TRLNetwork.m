@@ -34,7 +34,8 @@
 #import "TRLRequest.h"
 
 #import "Log.h"
-#import "Swift-Fixed-Header.h"
+#import "Trolley.h"
+#import "TrolleyCore-Swift-Fixed.h"
 
 @implementation TRLNetwork {
     TRLNetworkConnection *connection;
@@ -57,6 +58,9 @@
     if (self) {
         TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: @{private}%", url);
         self->_parsedURL = [[TRLParsedURL alloc] initWithURLString:url];
+        self->connection = [[TRLNetworkConnection alloc] initWithNetwork:self
+                                                        andDispatchQueue:dispatch_get_main_queue()
+                                                              deviceUUID:trl_device_uuid_get()];
     }
     return self;
 }

@@ -32,7 +32,7 @@
 #import "TRLURLDataRequest.h"
 
 #import "Log.h"
-#import <Swift-Fixed-Header.h>
+#import <TrolleyCore-Swift-Fixed.h>
 
 TRLURLSessionManager *aManager;
 

@@ -26,24 +26,75 @@
 
 import Foundation
 
+typealias XML = JSON
+
+internal var kXMLShopIDKey: String = ""
+internal var kXMLShopURLKey: String = ""
+internal var kXMLShopDefaultCurrencyKey: String = ""
+
 @objc public final class TRLOptions: NSObject {
 
     @objc public static var `default`: TRLOptions = TRLOptions()
 
-    public func validateOrRaiseExcpetion() {
-        //
+    var xml: XML
+
+    var error: Error?
+
+    @objc public convenience override init() {
+        self.init(plistName: "trolley_config")
     }
 
-    subscript (key: String) -> String {
-        return ""
+    @nonobjc public init(plistName: String) {
+        do {
+            self.xml = try XMLDecoder(for: plistName).xml
+        } catch {
+            self.xml = .null
+            self.error = error
+        }
     }
 
-    @objc public var key: String {
-        return "default"
+    @available(swift, introduced: 1.0, obsoleted: 1.2)
+    @objc(optionsForPlist:)
+    public static func optionsForPlist(_ plist: String) -> TRLOptions {
+        return TRLOptions(plistName: plist)
     }
 
-    @objc public var url: String {
-        return "http://localhost:8080/API"
+    func validateOrRaiseExcpetion() {
+        guard let error = self.error else {
+            return
+        }
+
+        if Trolley.Error.couldNotFindFile ~= error {
+            fatalError(error.localizedDescription)
+        }
     }
 
+}
+
+extension TRLOptions {
+
+    @objc public var shopID: String {
+        return self.xml[kXMLShopIDKey]._bridgeToObjectiveC().stringValue
+    }
+
+    @objc public var shopURL: String {
+        return self.xml[kXMLShopURLKey]._bridgeToObjectiveC().stringValue
+    }
+
+}
+
+private class XMLDecoder {
+
+    var xml: XML
+
+    init(for obj: String) throws {
+        guard let path = Bundle.main.path(forResource: obj, ofType: ".plist") else {
+            throw TRLMakeError(Trolley.Error.couldNotFindFile, "Could not find a valid plist")
+        }
+
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        let propertyList = try PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil)
+
+        xml = XML(propertyList)
+    }
 }
