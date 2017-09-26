@@ -103,7 +103,6 @@
 		C84AEEBD1F754FF5009E6019 /* TRLTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE5F1F754FF4009E6019 /* TRLTimer.swift */; };
 		C84AEEBF1F755AF7009E6019 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C84AEEBE1F755AF6009E6019 /* libicucore.tbd */; };
 		C86590021F56EA26004DA57D /* TRLOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86590011F56EA26004DA57D /* TRLOptions.swift */; };
-		C8DEC3691F7A491700BDAF3D /* TrolleyCore-Swift-Bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DEC3681F7A491700BDAF3D /* TrolleyCore-Swift-Bridge.h */; };
 		C8E17AC11F4D8A3100A5C468 /* Trolley.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E17AC01F4D8A3100A5C468 /* Trolley.swift */; };
 /* End PBXBuildFile section */
 
@@ -211,7 +210,6 @@
 		C84AEE601F754FF4009E6019 /* TrolleyCore.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = TrolleyCore.modulemap; sourceTree = "<group>"; };
 		C84AEEBE1F755AF6009E6019 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		C86590011F56EA26004DA57D /* TRLOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRLOptions.swift; sourceTree = "<group>"; };
-		C8DEC3681F7A491700BDAF3D /* TrolleyCore-Swift-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrolleyCore-Swift-Bridge.h"; sourceTree = "<group>"; };
 		C8E17AC01F4D8A3100A5C468 /* Trolley.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trolley.swift; sourceTree = "<group>"; };
 		CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -298,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				C84AEE411F754FF3009E6019 /* TrolleyCore-Swift-Fixed.h */,
-				C8DEC3681F7A491700BDAF3D /* TrolleyCore-Swift-Bridge.h */,
 				C84AEE601F754FF4009E6019 /* TrolleyCore.modulemap */,
 				C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */,
 				C8460FE41F4C665800CFF7E8 /* Info.plist */,
@@ -541,7 +538,6 @@
 				C84AEE751F754FF5009E6019 /* TRLJSONBase_Private.h in Headers */,
 				C84AEEAE1F754FF5009E6019 /* TRLWebSocketConnection.h in Headers */,
 				C84AEE871F754FF5009E6019 /* TNT_Header.h in Headers */,
-				C8DEC3691F7A491700BDAF3D /* TrolleyCore-Swift-Bridge.h in Headers */,
 				C84AEEA91F754FF5009E6019 /* TRLNetwork_Private.h in Headers */,
 				C84AEEAC1F754FF5009E6019 /* TRLNetworkConnection.h in Headers */,
 				C84AEEA31F754FF5009E6019 /* TrolleyCore-Swift-Fixed.h in Headers */,

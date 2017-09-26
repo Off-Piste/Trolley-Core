@@ -31,13 +31,13 @@ import Foundation
 //    __unsafe_unretained NSURLCredential *_Nullable credential;
 //} Challenge;
 
-@objc public final class TChallenge: NSObject {
+@objcMembers public final class TChallenge: NSObject {
 
-    @objc public var disposition: URLSession.AuthChallengeDisposition
+    public var disposition: URLSession.AuthChallengeDisposition
 
-    @objc public var credential: URLCredential?
+    public var credential: URLCredential?
 
-    @objc public override init() {
+    public override init() {
         self.disposition = .performDefaultHandling
         self.credential = nil
     }

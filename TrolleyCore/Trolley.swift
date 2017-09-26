@@ -27,19 +27,19 @@
 import Foundation
 import TrolleyCore.Dynamic
 
-@objc public final class Trolley: NSObject {
+@objcMembers public final class Trolley: NSObject {
 
-    @objc public static var shared: Trolley {
+    public static var shared: Trolley {
         return Trolley()
     }
 
-    @objc public var options: TRLOptions!
+    public var options: TRLOptions!
 
-    @objc public var networkManager: TRLNetworkManager!
+    public var networkManager: TRLNetworkManager!
 
-    @objc public internal(set) var isLightweight: Bool = false
+    public internal(set) var isLightweight: Bool = false
 
-    @objc public var shopName: String {
+    public var shopName: String {
         return options.shopID
     }
 
@@ -51,16 +51,16 @@ extension Trolley {
 
 extension Trolley {
 
-    @objc public func setLightweight(_ bool: Bool) {
+    public func setLightweight(_ bool: Bool) {
         self.isLightweight = bool
     }
 
-    @objc public func setlogging(_ bool: Bool) {
+    public func setlogging(_ bool: Bool) {
         TRLInfoLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
         isLogging = bool
     }
 
-    @objc public func configure() {
+    public func configure() {
         self.configure(with: .default)
     }
 

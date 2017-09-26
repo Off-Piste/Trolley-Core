@@ -26,9 +26,9 @@
 
 import Foundation
 
-@objc public final class TBackgroundCompletion: NSObject {
+@objcMembers public final class TBackgroundCompletion: NSObject {
 
-    @objc public final var handler: (() -> Void)?
+     public final var handler: (() -> Void)?
 
     public override init() {
         self.handler?()

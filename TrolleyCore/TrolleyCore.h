@@ -25,6 +25,10 @@
 //  SOFTWARE.
 //
 
+#if __has_include("TrolleyCore-umbrella.h")
+#import "TrolleyCore-umbrella.h"
+#endif
+
 #import <TrolleyCore/TRLURLRequest.h>
 #import <TrolleyCore/NSMutableURLRequest+Reqestable.h>
 #import <TrolleyCore/TRLMutableArray.h>

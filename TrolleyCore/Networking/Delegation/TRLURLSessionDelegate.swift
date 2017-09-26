@@ -25,6 +25,7 @@
 import Foundation
 
 /// Responsible for handling all delegate callbacks for the underlying session.
+@objcMembers
 open class TRLURLSessionDelegate: NSObject {
 
     // MARK: URLSessionDelegate Overrides
@@ -39,7 +40,7 @@ open class TRLURLSessionDelegate: NSObject {
     open var sessionDidReceiveChallengeWithCompletion: ((URLSession, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionDelegate method `urlSessionDidFinishEvents(forBackgroundURLSession:)`.
-    @objc open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
+    open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
 
     // MARK: URLSessionTaskDelegate Overrides
 

@@ -18,11 +18,12 @@ internal var randomDouble: Double {
     return Double(arc4random()) / arc4random_max;
 }
 
-@objc public final class TRLRetryHelperTask: NSObject {
+@objcMembers
+public final class TRLRetryHelperTask: NSObject {
 
-    @objc public var block: trl_void_void?
+    public var block: trl_void_void?
 
-    @objc public init(block: @escaping trl_void_void){
+    public init(block: @escaping trl_void_void){
         self.block = block
     }
 
@@ -30,42 +31,43 @@ internal var randomDouble: Double {
         fatalError()
     }
 
-    @objc public var isCanceled: Bool {
+    public var isCanceled: Bool {
         return self.block == nil
     }
 
-    @objc public func cancel() {
+    public func cancel() {
         self.block = nil
     }
 
-    @objc public func execute() {
+     public func execute() {
         block?()
     }
 }
 
-@objc public final class TRLRetryHelper: NSObject {
+@objcMembers
+public final class TRLRetryHelper: NSObject {
 
-    @objc internal var queue: DispatchQueue
+    internal var queue: DispatchQueue
 
-    @objc internal var minRetryDelayAfterFailure: TimeInterval
+    internal var minRetryDelayAfterFailure: TimeInterval
 
-    @objc internal var maxRetryDelay: TimeInterval
+    internal var maxRetryDelay: TimeInterval
 
-    @objc internal var retryExponent: Double
+    internal var retryExponent: Double
 
-    @objc internal var jitterFactor: Double
+    internal var jitterFactor: Double
 
-    @objc internal var lastWasSuccess: Bool = true
+    internal var lastWasSuccess: Bool = true
 
-    @objc internal var currentRetryDelay: TimeInterval = TimeInterval(NSNotFound)
+    internal var currentRetryDelay: TimeInterval = TimeInterval(NSNotFound)
 
-    @objc internal var scheduledRetry: TRLRetryHelperTask?
+    internal var scheduledRetry: TRLRetryHelperTask?
 
     private override init() {
         fatalError()
     }
 
-    @objc public init(withDispatchQueue queue: DispatchQueue, minRetryDelayAfterFailure: TimeInterval, maxRetryDelay: TimeInterval, retryExponent: Double, jitterFactor: Double) {
+    public init(withDispatchQueue queue: DispatchQueue, minRetryDelayAfterFailure: TimeInterval, maxRetryDelay: TimeInterval, retryExponent: Double, jitterFactor: Double) {
         self.queue = queue
         self.minRetryDelayAfterFailure = minRetryDelayAfterFailure
         self.maxRetryDelay = maxRetryDelay
@@ -73,7 +75,7 @@ internal var randomDouble: Double {
         self.jitterFactor = jitterFactor
     }
 
-    @objc public func retry(block: @escaping trl_void_void) {
+    public func retry(block: @escaping trl_void_void) {
         guard scheduledRetry == nil else {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             scheduledRetry?.cancel()
@@ -111,7 +113,7 @@ internal var randomDouble: Double {
         }
     }
 
-    @objc public func cancel() {
+    public func cancel() {
         if self.scheduledRetry != nil {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             self.scheduledRetry?.cancel()
@@ -122,7 +124,7 @@ internal var randomDouble: Double {
         self.currentRetryDelay = 0;
     }
 
-    @objc public func signalSuccess() {
+    public func signalSuccess() {
         self.lastWasSuccess = true
         self.currentRetryDelay = 0
     }

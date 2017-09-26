@@ -26,11 +26,11 @@
 
 import Foundation
 
-@objc public final class TValidationsIndex: NSObject {
+@objcMembers public final class TValidationsIndex: NSObject {
 
-    @objc public var validation: (() -> Void)
+    public var validation: (() -> Void)
 
-    @objc public init(validation: @escaping (() -> Void)) {
+    public init(validation: @escaping (() -> Void)) {
         self.validation = validation
     }
 

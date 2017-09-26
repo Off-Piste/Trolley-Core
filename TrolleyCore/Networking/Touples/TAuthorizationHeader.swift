@@ -26,13 +26,13 @@
 
 import Foundation
 
-@objc public final class TAuthorizationHeader: NSObject {
+@objcMembers public final class TAuthorizationHeader: NSObject {
 
-    @objc public var key: String
+    public var key: String
 
-    @objc public var value: String
+    public var value: String
 
-    @objc public init(key: String, value: String) {
+    public init(key: String, value: String) {
         self.key = key
         self.value = value
     }

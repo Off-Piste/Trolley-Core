@@ -32,7 +32,7 @@ import UIKit
 /// Example: `iOS Example/1.0 (io.off-piste.iOS-Example; build:1; iOS 10.0.0) TrolleyCore/10.5.10`
 ///
 /// See - https://tools.ietf.org/html/rfc7231#section-5.5.3
-public final class UserAgent: NSObject {
+@objcMembers public final class UserAgent: NSObject {
 
     internal var bundleInfoDictionary: [String: Any]? {
         return Bundle.main.infoDictionary
@@ -40,7 +40,7 @@ public final class UserAgent: NSObject {
 
     private override init() { }
 
-    @objc public static var shared: UserAgent {
+    public static var shared: UserAgent {
         return UserAgent()
     }
 
@@ -91,7 +91,7 @@ public final class UserAgent: NSObject {
         return "Trolley/\(build)"
     }
 
-    @objc public func header() -> String {
+    public func header() -> String {
         if self.bundleInfoDictionary != nil {
             return "\(executable)/\(appVersion) (\(bundle); build:\(appBuild); \(osName_Version)) \(trolleyVersion)"
         }

@@ -26,19 +26,19 @@
 
 import Foundation
 
-@objc public final class TRLURLQueryParameters: NSObject {
+@objcMembers public final class TRLURLQueryParameters: NSObject {
 
-    @objc public var field: Any
+    public var field: Any
 
-    @objc public var value: Any
+    public var value: Any
 
-    @objc public var URLEncodedStringValue: String {
+    public var URLEncodedStringValue: String {
         return "\(field)=\(value)"
     }
 
     private override init() { fatalError() }
 
-    @objc public init(field: Any, value: Any) {
+    public init(field: Any, value: Any) {
         self.field = field
         self.value = value
     }

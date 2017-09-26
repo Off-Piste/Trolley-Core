@@ -33,15 +33,15 @@ import Foundation
     case encoding
 }
 
-@objc final public class WrittingOptions: NSObject {
+@objcMembers final public class WrittingOptions: NSObject {
 
-    @objc public var key: WrittingOptionsKeys
+    public var key: WrittingOptionsKeys
 
-    @objc public var value: Any
+    public var value: Any
 
     private override init() { fatalError() }
 
-    @objc public init(withKey key: WrittingOptionsKeys, value: Any) {
+    public init(withKey key: WrittingOptionsKeys, value: Any) {
         self.key = key
         self.value = value
     }

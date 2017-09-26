@@ -32,15 +32,16 @@ internal var kXMLShopIDKey: String = ""
 internal var kXMLShopURLKey: String = ""
 internal var kXMLShopDefaultCurrencyKey: String = ""
 
-@objc public final class TRLOptions: NSObject {
+@objcMembers
+public final class TRLOptions: NSObject {
 
-    @objc public static var `default`: TRLOptions = TRLOptions()
+    public static var `default`: TRLOptions = TRLOptions()
 
     var xml: XML
 
     var error: Error?
 
-    @objc public convenience override init() {
+    public convenience override init() {
         self.init(plistName: "trolley_config")
     }
 
@@ -73,11 +74,11 @@ internal var kXMLShopDefaultCurrencyKey: String = ""
 
 extension TRLOptions {
 
-    @objc public var shopID: String {
+    public var shopID: String {
         return self.xml[kXMLShopIDKey]._bridgeToObjectiveC().stringValue
     }
 
-    @objc public var shopURL: String {
+    public var shopURL: String {
         return self.xml[kXMLShopURLKey]._bridgeToObjectiveC().stringValue
     }
 

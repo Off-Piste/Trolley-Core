@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
-  public_header_files   =   ['TrolleyCore/**/**/TRLURLRequest.h',
+  public_header_files   =   'TrolleyCore/**/**/TRLURLRequest.h',
                             'TrolleyCore/**/**/TRLURLDataRequest.h',
                             'TrolleyCore/**/**/TRLURLDataTaskDelegate.h',
                             'TrolleyCore/**/**/TRLURLTaskDelegate.h',
@@ -56,22 +56,14 @@ Pod::Spec.new do |s|
 
                             #Dynamic Header
                             'TrolleyCore/**/**/TRLJSONBase_Dynamic.h',
-                            'TrolleyCore/TRLNetworkManager_Options.h']
+                            'TrolleyCore/TRLNetworkManager_Options.h'
 
-  private_header_files =    ['TrolleyCore/**/**/TRLJSONBase_Private.h',
 
-                            # API Connections
-                            'TrolleyCore/**/TRLNetwork.h',
-                            'TrolleyCore/**/**/TRLNetworkConnection.h',
-                            'TrolleyCore/**/**/TRLWebSocketConnection.h',
-                            'TrolleyCore/**/**/*_Private.h',
-                            'TrolleyCore/**/**/TRLNetworkInfo.h',
-                            'TrolleyCore/**/**/TRLParsedURL.h']
+  source_files = 'TrolleyCore/**/**/*.{swift, m, h}'
 
-  source_files = ['TrolleyCore/**/*.{swift, m}']
-
-  s.source_files = source_files + public_header_files + private_header_files
-  s.public_header_files = public_header_files
+  s.source_files = source_files
+  # s.header_mappings_dir     = 'include'
+  # s.public_header_files = public_header_files
 
   s.dependency 'PromiseKit'
   s.library = 'icucore'
@@ -85,5 +77,10 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS' => '$(inherited)',
     'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
   }
+
+  s.subspec 'Headers' do |s|
+    s.source_files          = public_header_files
+    s.public_header_files   = public_header_files
+  end
 
 end
