@@ -26,27 +26,27 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
-  public_header_files   =   'TrolleyCore/**/**/TRLURLRequest.h',
-                            'TrolleyCore/**/**/TRLURLDataRequest.h',
-                            'TrolleyCore/**/**/TRLURLDataTaskDelegate.h',
-                            'TrolleyCore/**/**/TRLURLTaskDelegate.h',
-                            'TrolleyCore/**/**/TRLURLEncoding.h',
-                            'TrolleyCore/**/**/TRLURLParameterEncoding.h',
-                            'TrolleyCore/**/**/TRLJSON.h',
-                            'TrolleyCore/**/**/TRLJSONBase.h',
-                            'TrolleyCore/**/**/TRLMutableJSON.h',
-                            'TrolleyCore/**/**/TRLMutableArray.h',
-                            'TrolleyCore/**/**/TRLMutableDictionary.h',
-                            'TrolleyCore/**/**/Reachability.h',
-                            'TrolleyCore/**/**/NSMutableURLRequest+Reqestable.h',
-                            'TrolleyCore/**/**/TNTUtils.h',
-                            'TrolleyCore/**/**/TRLBlocks.h',
-                            'TrolleyCore/**/**/TRLURLSessionManager.h',
-                            'TrolleyCore/**/**/NSArray+Map.h',
+  public_header_files   =   'TrolleyCore/Networking/Request/TRLURLRequest.h',
+                            'TrolleyCore/Networking/Request/TRLURLDataRequest.h',
+                            'TrolleyCore/Networking/Delegation/TRLURLDataTaskDelegate.h',
+                            'TrolleyCore/Networking/Delegation/TRLURLTaskDelegate.h',
+                            'TrolleyCore/Networking/Encoding/TRLURLEncoding.h',
+                            'TrolleyCore/Networking/Encoding/TRLURLParameterEncoding.h',
+                            'TrolleyCore/Networking/JSON/TRLJSON.h',
+                            'TrolleyCore/Networking/JSON/TRLJSONBase.h',
+                            'TrolleyCore/Networking/JSON/TRLMutableJSON.h',
+                            'TrolleyCore/Networking/JSON/TRLMutableArray.h',
+                            'TrolleyCore/Networking/JSON/TRLMutableDictionary.h',
+                            'TrolleyCore/Networking/Reachability/Reachability.h',
+                            'TrolleyCore/Networking/Utils/NSMutableURLRequest+Reqestable.h',
+                            'TrolleyCore/Networking/Utils/TNTUtils.h',
+                            'TrolleyCore/Networking/Utils/TRLBlocks.h',
+                            'TrolleyCore/Networking/TRLURLSessionManager.h',
+                            'TrolleyCore/Networking/Utils/NSArray+Map.h',
 
                             # API Connections Headers
-                            'TrolleyCore/**/TRLRequest.h',
-                            'TrolleyCore/**/TRLNetworkManager.h',
+                            'TrolleyCore/API Connections/TRLRequest.h',
+                            'TrolleyCore/API Connections/TRLNetworkManager.h',
 
                             # Core Headers
                             'TrolleyCore/TRLError.h',
@@ -55,22 +55,19 @@ Pod::Spec.new do |s|
                             'TrolleyCore/TrolleyCore.h',
 
                             #Dynamic Header
-                            'TrolleyCore/**/**/TRLJSONBase_Dynamic.h',
+                            'TrolleyCore/Networking/JSON/TRLJSONBase_Dynamic.h',
                             'TrolleyCore/TRLNetworkManager_Options.h'
 
 
-  source_files = 'TrolleyCore/**/**/*.{swift, m, h}'
+  source_files =            'TrolleyCore/{Networking, API Connections}/**/*.{swift, m, h}',
+                            'TrolleyCore/*.{swift, m, h}'
 
   s.source_files = source_files
-  # s.header_mappings_dir     = 'include'
-  # s.public_header_files = public_header_files
+  s.public_header_files = public_header_files
 
-  s.dependency 'PromiseKit'
-  s.library = 'icucore'
-  s.library = 'c++'
-  s.framework = 'CFNetwork'
-  s.framework = 'Security'
-  s.framework = 'SystemConfiguration'
+  # s.dependency 'PromiseKit'
+  s.libraries = 'icucore', 'c++'
+  s.frameworks = 'CoreFoundation', 'CFNetwork', 'Security', 'SystemConfiguration'
 
   s.pod_target_xcconfig = {
     'CLANG_ENABLE_MODULES' => 'YES',

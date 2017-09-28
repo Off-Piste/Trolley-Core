@@ -62,6 +62,9 @@ typedef TRL_ERROR_ENUM(NSInteger, TRLError, TRLErrorDomain) {
     TRLErrorNSUDCouldNotUnarchive = 502,
 
     TRLErrorOptionsCouldNotFindFile = 404,
+    TRLErrorOptionsInvalidDefaultCurrency = 503,
+    TRLErrorOptionsMissingShopID = 800,
+    TRLErrorOptionsInvalidShopID = 801,
 };
 
 NSException *TRLException(NSString *reason, NSDictionary *_Nullable additionalUserInfo);

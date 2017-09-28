@@ -27,106 +27,169 @@
 import Foundation
 import TrolleyCore.Dynamic
 
+extension NSException {
+    internal static func raise(
+        for name: NSExceptionName = .genericException,
+        _ msg: String
+        ) -> Never
+    {
+        NSException(name: .genericException, reason: msg, userInfo: nil).raise()
+
+        // Will never hit
+        fatalError()
+    }
+}
+
+// Have to place this out of the class as all methods are created in Trolley.shared.configure()
+// so could do what firebase does and has configure as a sort of factory method and call this instead
+// or not
+var aTRLShop: Trolley!
+
 @objcMembers public final class Trolley: NSObject {
 
-    public static var shared: Trolley {
-        return Trolley()
+    public var options: TRLOptions
+
+    private var networkManager: TRLNetworkManager!
+
+    public class func open() {
+        self.open(with: .default)
     }
 
-    public var options: TRLOptions!
+    public class func open(with options: TRLOptions) {
+        if aTRLShop != nil {
+            NSException.raise("Default shop has already been configured.")
+        }
 
-    public var networkManager: TRLNetworkManager!
+        objc_sync_enter(self)
+        defer { objc_sync_exit(self) }
+        TRLDebugLogger(for: .core, "Configuring the default shop.")
 
-    public internal(set) var isLightweight: Bool = false
-
-    public var shopName: String {
-        return options.shopID
+        aTRLShop = Trolley(withOptions: options)
+        self.sendNotificationsToSDK(aTRLShop)
     }
+
+    private init(withOptions options: TRLOptions) {
+        self.options = options
+
+        super.init()
+        self.coreConfigure()
+    }
+
+    private override init() { fatalError() }
 
 }
 
 extension Trolley {
-//    internal var ws: Websocket!
-}
 
-extension Trolley {
+    public func deleteApp(handler: ((Bool) -> Void)? = nil) {
+        objc_sync_enter(self)
+        defer { objc_sync_exit(self) }
 
-    public func setLightweight(_ bool: Bool) {
-        self.isLightweight = bool
+        TRLDebugLogger(for: .core, "Deleting shop [%@]", self.shopName)
+        aTRLShop = nil
+        handler?(true)
     }
 
-    public func setlogging(_ bool: Bool) {
+    public class func setlogging(_ bool: Bool) {
         TRLInfoLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
         isLogging = bool
     }
 
-    public func configure() {
-        self.configure(with: .default)
-    }
+}
 
-    @objc(configureWithOptions:)
-    public func configure(with options: TRLOptions) {
-        TRLDebugLogger(for: .core, "The trolley shop is been setup with %@", options)
+extension Trolley {
 
-        // 1. Validate Options or crash app
-        self.options = options
-        self.options.validateOrRaiseExcpetion()
+    private func coreConfigure() {
+        // 1. Validate the entered options
+        do {
+            try self.options.validateOrThrow()
+        } catch Trolley.Error.couldNotFindFile {
+            let msg =   "The config file is missing, please " +
+                        "download a new one at http://console.trolleyio.co.uk " +
+                        "or if you have changed the name, call " +
+                        "[[Trolley shared] configureWithOptions:]] " +
+                        "(Trolley.shared.configure(with:) in swift) and specify the new name"
+
+            NSException.raise(msg)
+        } catch {
+            NSException.raise(error.localizedDescription)
+        }
 
         // 2. Create NetworkManager and Start Reachabilty
         self.networkManager = TRLNetworkManager(options: options)
         self.networkManager.reachability.start()
+    }
 
-        // 3. Get DeviceID and Create the Websocket
-        // start this after starting reachabilty so if the server
-        // is down we can know sooner rather than on second/third retry
-        // if good internet
-        // ws = Websocket(domain: self.networkManager.connectionURL.absoluteString, for: deviceID)
-        // self.ws.connect()
+    private class func sendNotificationsToSDK(_ shop: Trolley) {
+        let ui = ["TRLAppNameKey": shop.shopName]
 
-        // 4. Send the TRLTrolleyStartingUp notification to app SDKs
-        // this tells them to get ready as the shop is legit and running
-        // and that they can use the NetworkManager and the WebSocket should 
-        // be connected, is the App is a lightweight varient, then no notification
-        // will be sent as the User is not wishing to use or SDK code and wants to
-        // manually download our network calls to save space on an app
-        //
-        // For more info check: http://...
-        self.sendSDKNotifications(!self.isLightweight)
+        NotificationCenter.default.post(
+            name: .TRLTrolleyStartingUp,
+            object: shop,
+            userInfo: ui
+        )
     }
 
 }
 
-private extension Trolley {
+extension Trolley {
 
-    func getDeviceIDOrRaiseException() -> String {
-        let DeviceID: String!
-        let manager = TRLDefaultsManager(withKey: AppleDeviceUUIDKey)
-        do {
-            let obj = try manager.retrieveObject()
-            if let strObj = obj as? String {
-                DeviceID = strObj
-            } else {
-                DeviceID = ""
-                TRLException(
-                    "Invalid object for key: \(AppleDeviceUUIDKey), " +
-                    "should be string but returned \(obj)", nil
-                ).raise()
-            }
-        } catch {
-            DeviceID = UUID().uuidString
-        }
-        return DeviceID
+    public var shopName: String {
+        return options.shopName
     }
 
-    func sendSDKNotifications(_ bool: Bool) {
-        if bool {
-            NotificationCenter.default.post(
-                name: .TRLTrolleyStartingUp,
-                object: self,
-                userInfo: nil
-            )
+    public static var shop: Trolley? {
+        if aTRLShop == nil {
+            TRLInfoLogger(for: .core, "The Trolley shop has not been configured yet, please add [Trolley open] OR Trolley.open() to your application initialization")
+            return nil
         }
+
+        return aTRLShop
+    }
+
+    public static var isShopOpen: Bool {
+        return shop != nil
+    }
+
+}
+
+extension Trolley {
+
+    @available(*, unavailable)
+    public override func setNilValueForKey(_ key: String) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public override func setValue(_ value: Any?, forKey key: String) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public override func setValuesForKeys(_ keyedValues: [String : Any]) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public override func setValue(_ value: Any?, forKeyPath keyPath: String) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        fatalError()
+    }
+
+    @available(*, unavailable)
+    public func observe<Value>(_ keyPath: KeyPath<Trolley, Value>, options: NSKeyValueObservingOptions, changeHandler: @escaping (Trolley, NSKeyValueObservedChange<Value>) -> Void) -> NSKeyValueObservation {
+        fatalError()
     }
 
 
 }
+

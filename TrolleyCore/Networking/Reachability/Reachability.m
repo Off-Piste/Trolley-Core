@@ -35,8 +35,7 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char* comment)
 {
 //#if kShouldPrintReachabilityFlags
-
-    NSLog(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+    TRLDebugLogger(TRLLoggerServiceCore, @"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
           (flags & kSCNetworkReachabilityFlagsIsWWAN)				? 'W' : '-',
           (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
 
@@ -69,7 +68,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
 	NSCAssert([(__bridge NSObject*) info isKindOfClass: [Reachability class]], @"info was wrong class in ReachabilityCallback");
 
-    TRLDebugLogger(TRLLoggerServiceCore, @"ReachabilityCallback called with target: %@, flags:%@", target, flags);
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s", __FUNCTION__);
 
     Reachability* noteObject = (__bridge Reachability *)info;
     NetworkStatus status = noteObject.currentReachabilityStatus;

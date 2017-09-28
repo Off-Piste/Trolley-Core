@@ -33,4 +33,3 @@ extern NSNotificationName TRLTrolleyStartingUpNotification;
 extern NSString *AppleDeviceUUIDKey;
 
 extern NSString *trl_device_uuid_get(void);
-

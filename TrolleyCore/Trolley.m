@@ -48,4 +48,3 @@ NSString *trl_device_uuid_get() {
     }
     return conectionID;
 }
-

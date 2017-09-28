@@ -48,6 +48,12 @@ extension Trolley {
 
         public static let couldNotFindFile : Code = .optionsCouldNotFindFile
 
+        public static let invalidDefaultCurrency: Code = .optionsInvalidDefaultCurrency
+
+        public static let missingShopID: Code = .optionsMissingShopID
+
+        public static let invalidShopID: Code = .optionsInvalidShopID
+
         /// :nodoc:
         public var code: Code {
             return (_nsError as! TRLError).code

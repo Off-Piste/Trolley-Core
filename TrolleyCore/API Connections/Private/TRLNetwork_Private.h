@@ -88,6 +88,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)shouldReconnect;
 
+- (void)close;
+
 #pragma mark Delegate Methods
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
           withMessage:(NSDictionary *)message;

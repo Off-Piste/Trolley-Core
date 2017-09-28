@@ -39,6 +39,15 @@
 
 #import "TrolleyCore-Swift-Fixed.h"
 
+static NSString *trl_strip_api_key(NSString *oldKey) {
+    NSArray<NSString *> *comps = [oldKey componentsSeparatedByString:@":"];
+    if (comps.count != 4) {
+        @throw TRLException([NSString stringWithFormat:@"Invalid API key passed through: %@", oldKey], nil);
+    }
+
+    return comps[2];
+}
+
 @implementation TRLNetworkManager
 
 - (NSURL *)connectionURL {
@@ -48,8 +57,10 @@
 - (instancetype)initWithURL:(NSString *)url APIKey:(NSString *)key {
     if (self = [super init]) {
         self->_network = [[TRLNetwork alloc] initWithURLString:url];
-        self->_reachability = [Reachability reachabilityWithHostName:url];
-        [_network.parsedURL addPath:key];
+        self->_reachability = [Reachability reachabilityWithHostName:TRLBaseURL];
+
+        [_network.parsedURL addPath:trl_strip_api_key(key)];
+        [_network open];
 
     }
     return self;
@@ -87,6 +98,11 @@
 
 - (NSString *)description {
     return _network.description;
+}
+
+- (void)dealloc {
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s", __FUNCTION__);
+    [_network close];
 }
 
 @end

@@ -29,6 +29,9 @@
 
 #import "TRLError.h"
 
+#import "Log.h"
+#import "TrolleyCore-Swift-Fixed.h"
+
 @implementation TRLNetworkInfo {
     NSURL *_internalURL;
 }
@@ -60,7 +63,8 @@
 }
 
 - (void)addPath:(NSString *)path {
-    NSLog(@"Please be aware that adding a path to the URL can be fatal, make sure it is necessary");
+    NSString *msg = @"Please be aware that adding a path [%{private}@] to the URL can be fatal, make sure it is necessary";
+    TRLInfoLogger(TRLLoggerServiceCore, msg, path);
     self->_internalURL = [self->_internalURL URLByAppendingPathComponent:path];
 }
 
@@ -85,6 +89,29 @@
 - (NSString *)debugDescription {
     return [NSString stringWithFormat:@"%@{host=%@, namespace=%@, url=%@, connectionURL=%@}",
             super.description, self.host, self.urlNamespace, self.url, self.connectionURL];
+}
+
+- (NSURL *)connectionURL {
+    NSString *scheme;
+    if (self.secure) {
+        scheme = @"wss";
+    } else {
+        scheme = @"ws";
+    }
+
+    NSNumber *portInt = self.url.port ? self.url.port : [NSNumber numberWithInteger:NSNotFound];
+    NSString *port = (portInt != [NSNumber numberWithInteger:NSNotFound]) ?
+                     [NSString stringWithFormat:@":%@/", portInt] : @"/";
+
+    NSString *urlString = [NSString stringWithFormat:@"%@://%@%@.ws?ns=%@",
+                           scheme, self.host, port, self.urlNamespace];
+    NSURL *url = [NSURL URLWithString:urlString];
+
+    if (!url) {
+        @throw [NSException exceptionWithName:NSGenericException reason:@"Invalid URL" userInfo:nil];
+    }
+    
+    return url;
 }
 
 - (NSURL *)connectionURLWithLastSessionID:(NSString *)sessionID {

@@ -56,7 +56,7 @@
 - (instancetype)initWithURLString:(NSString *)url {
     self = [super init];
     if (self) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: @{private}%", url);
+        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: %", url);
         self->_parsedURL = [[TRLParsedURL alloc] initWithURLString:url];
         self->connection = [[TRLNetworkConnection alloc] initWithNetwork:self
                                                         andDispatchQueue:dispatch_get_main_queue()
@@ -85,6 +85,10 @@
     [connection open];
 }
 
+- (void)close {
+    [connection close];
+}
+
 - (BOOL)canSendWrites {
     return YES;
 }
@@ -107,6 +111,10 @@
 
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection withMessage:(NSDictionary *)message {
     //
+}
+
+- (void)dealloc {
+    TRLLog(TRLLoggerServiceCore, @"%s", __FUNCTION__);
 }
 
 @end

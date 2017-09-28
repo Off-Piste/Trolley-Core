@@ -28,9 +28,9 @@ import Foundation
 
 typealias XML = JSON
 
-internal var kXMLShopIDKey: String = ""
-internal var kXMLShopURLKey: String = ""
-internal var kXMLShopDefaultCurrencyKey: String = ""
+internal var kXMLShopIDKey: String = "API_KEY"
+internal var kXMLShopURLKey: String = "DATABASE_URL"
+internal var kXMLShopDefaultCurrencyKey: String = "SHOP_CURRENCY"
 
 @objcMembers
 public final class TRLOptions: NSObject {
@@ -42,12 +42,21 @@ public final class TRLOptions: NSObject {
     var error: Error?
 
     public convenience override init() {
-        self.init(plistName: "trolley_config")
+        self.init(plistName: "TrolleyConfigFile")
     }
 
     @nonobjc public init(plistName: String) {
         do {
             self.xml = try XMLDecoder(for: plistName).xml
+        } catch {
+            self.xml = .null
+            self.error = error
+        }
+    }
+
+    public init(bundle: Bundle) {
+        do {
+            self.xml = try XMLDecoder(withBundle: bundle, forObject: "TrolleyConfigFile").xml
         } catch {
             self.xml = .null
             self.error = error
@@ -60,14 +69,43 @@ public final class TRLOptions: NSObject {
         return TRLOptions(plistName: plist)
     }
 
-    func validateOrRaiseExcpetion() {
-        guard let error = self.error else {
-            return
+    func validateOrThrow() throws {
+        if let error = self.error {
+            throw error
         }
 
-        if Trolley.Error.couldNotFindFile ~= error {
-            fatalError(error.localizedDescription)
+        let fmtDefaultMsg: NSString = "The plist is missing %@ please " +
+                                      "make sure this is set in your console " +
+                                      "at http://console.trolleyio.co.uk " +
+                                      "and download a new .plist file" as NSString
+
+        if self.defaultCurrency.isEmpty {
+            let msg = NSString(format: fmtDefaultMsg, "the default currency")
+            throw TRLMakeError(Trolley.Error.invalidDefaultCurrency, msg as String)
         }
+
+        if self.shopURL.isEmpty {
+            let msg = NSString(format: fmtDefaultMsg, "the shop's database URL")
+            throw TRLMakeError(Trolley.Error.invalidURL, msg as String)
+        }
+
+        if self.shopID.isEmpty {
+            let msg = NSString(format: fmtDefaultMsg, "the shop's API key")
+            throw TRLMakeError(Trolley.Error.missingShopID, msg as String)
+        } else {
+            if !self.shopID.contains("ios") {
+                let msg = "The API key is invalid, please make sure you are using the iOS key"
+                throw TRLMakeError(Trolley.Error.invalidShopID, msg)
+            }
+
+            if self.shopID.first! != "2" {
+                let msg = "This API key is not valid for our APIv2, " +
+                          "please download a new APIKey from http://console.trolleyio.co.uk"
+                throw TRLMakeError(Trolley.Error.invalidShopID, msg)
+            }
+
+        }
+
     }
 
 }
@@ -82,20 +120,37 @@ extension TRLOptions {
         return self.xml[kXMLShopURLKey]._bridgeToObjectiveC().stringValue
     }
 
+    public var shopName: String {
+        var comp = self.xml[kXMLShopIDKey]._bridgeToObjectiveC().stringValue.components(separatedBy: ":")
+
+        return comp[3]
+    }
+
+    public var defaultCurrency: String {
+        return self.xml[kXMLShopDefaultCurrencyKey]._bridgeToObjectiveC().stringValue
+    }
+
+    public override var description: String {
+        return "\(super.description){id:\(self.shopID) url:\(self.shopURL) currency:\(self.defaultCurrency)}"
+    }
 }
 
 private class XMLDecoder {
 
     var xml: XML
 
-    init(for obj: String) throws {
-        guard let path = Bundle.main.path(forResource: obj, ofType: ".plist") else {
+    convenience init(for obj: String) throws {
+        try self.init(withBundle: .main, forObject: obj)
+    }
+
+    init(withBundle bundle: Bundle, forObject object: String) throws {
+        guard let path = bundle.path(forResource: object, ofType: ".plist") else {
             throw TRLMakeError(Trolley.Error.couldNotFindFile, "Could not find a valid plist")
         }
 
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
         let propertyList = try PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil)
 
-        xml = XML(propertyList)
+        self.xml = XML(propertyList)
     }
 }

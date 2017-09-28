@@ -33,6 +33,8 @@
 
 #import "TNTUtils.h"
 
+#define TRLBaseURL @"http://www.trolleyio.co.uk"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TRLNetworkManager : NSObject {
@@ -41,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 UNAVAILABLE_INIT;
 
-@property (strong, readonly) Reachability *reachability;
+@property (strong, retain, readonly) Reachability *reachability;
 
 /**
  The WebSocket URL

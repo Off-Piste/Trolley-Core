@@ -6,13 +6,13 @@ target 'TrolleyCore' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
 
   # Pods for TrolleyCore
-  pod 'PromiseKit'
-  
-  target 'TrolleyCoreTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
-  end
+#  pod 'PromiseKit'
+
+#  target 'TrolleyCoreTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#    pod 'Quick'
+#    pod 'Nimble'
+#  end
 
 end
