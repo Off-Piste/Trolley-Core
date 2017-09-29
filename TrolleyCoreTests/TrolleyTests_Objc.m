@@ -18,11 +18,31 @@
 @implementation TrolleyTests_Objc
 
 - (void)testInitalisation {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    TRLOptions *options = [[TRLOptions alloc] initWithBundle:bundle];
+    TRLOptions *options = [[TRLOptions alloc] initWithBundle:TestBundle];
     [Trolley openWith:options];
 
     XCTAssertNotNil([Trolley shop]);
+}
+
+- (void)testInvalidEmptyOptions {
+    NSError *error;
+    TRLOptions *options = [[TRLOptions alloc] init];
+
+    [options validateOrThrowAndReturnError:&error];
+    NSLog(@"%@", error);
+    XCTAssertNotNil(error);
+}
+
+- (void)testInvalidAPIKey_Options {
+    describeThrow(@"testInvalidAPIKey_Options", ^{
+        NSError *error;
+        TRLOptions *options = [TRLOptions optionsForID:[NSUUID UUID].UUIDString
+                                                   URL: @"http://www.apple.com"
+                                       DefaultCurrency: @"GBP"];
+
+        [options validateOrThrowAndReturnError:&error];
+        return error;
+    });
 }
 
 @end

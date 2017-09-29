@@ -15,7 +15,7 @@ class TrolleyNetworkManagerTests: BaseTestClass {
         let exp = self.defaultException()
 
         // Given, when
-        let options = TRLOptions(bundle: Bundle(for: BaseTestClass.self))
+        let options = TRLOptions(bundle: .testBundle)
         Trolley.open(with: options)
 
         // Then
@@ -36,10 +36,18 @@ class TrolleyTests: BaseTestClass {
 
     func testShopCreation() {
         // Given, when
-        let options = TRLOptions(bundle: Bundle(for: BaseTestClass.self))
+        let options = TRLOptions(bundle: .testBundle)
         Trolley.open(with: options)
 
         // Then
         XCTAssertNotNil(Trolley.shop)
+    }
+
+    func testInvalidAPIKey_Options() {
+        describeThrow(#function) {
+            let options = TRLOptions(shopURL: "http://", shopID: UUID().uuidString)
+
+            try options.validateOrThrow()
+        }
     }
 }

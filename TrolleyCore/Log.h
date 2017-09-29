@@ -34,10 +34,10 @@ typedef NS_ENUM(uint8_t, TRLLoggerLevel) {
 #define TRLLoggerServiceDatabase [TRLLoggerService database]
 
 #define CVarArgCopy(fmt) \
-va_list args, args_copy; \
-va_start(args, fmt); \
-va_copy(args_copy, args); \
-va_end(args); \
+    va_list args, args_copy; \
+    va_start(args, fmt); \
+    va_copy(args_copy, args); \
+    va_end(args); \
 
 /**
  <#Description#>

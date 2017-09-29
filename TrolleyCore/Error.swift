@@ -98,7 +98,7 @@ public func == (lhs: Error, rhs: Error) -> Bool {
 // MARK: Pattern Matching
 
 /**
- Pattern matching matching for `Realm.Error`, so that the instances can be used with Swift's
+ Pattern matching matching for `Trolley.Error`, so that the instances can be used with Swift's
  `do { ... } catch { ... }` syntax.
  */
 public func ~= (lhs: Trolley.Error, rhs: Error) -> Bool {

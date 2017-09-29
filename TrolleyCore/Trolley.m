@@ -34,11 +34,9 @@ NSNotificationName TRLTrolleyStartingUpNotification = @"io.trolley.startingUpNot
 
 NSString *AppleDeviceUUIDKey = @"io.trolley.device_key";
 
-NSString *kLastConnectionIDUserDefaultsKey = @"";
-
 NSString *trl_device_uuid_get() {
     NSError *error;
-    TRLDefaultsManager *dm = [TRLDefaultsManager managerForKey:kLastConnectionIDUserDefaultsKey];
+    TRLDefaultsManager *dm = [TRLDefaultsManager managerForKey:AppleDeviceUUIDKey];
     NSString *conectionID = [dm retriveObject:&error];
 
     if (error) {

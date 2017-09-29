@@ -63,13 +63,35 @@ public final class TRLOptions: NSObject {
         }
     }
 
+    public init(shopURL: String, shopID: String, defaultCurrency: String = "GBP") {
+        self.xml = [
+            kXMLShopIDKey : shopID,
+            kXMLShopURLKey:shopURL,
+            kXMLShopDefaultCurrencyKey:defaultCurrency
+        ]
+    }
+
     @available(swift, introduced: 1.0, obsoleted: 1.2)
     @objc(optionsForPlist:)
     public static func optionsForPlist(_ plist: String) -> TRLOptions {
         return TRLOptions(plistName: plist)
     }
 
-    func validateOrThrow() throws {
+    @available(swift, introduced: 1.0, obsoleted: 1.2)
+    @objc(optionsForID:URL:DefaultCurrency:)
+    public static func optionsForID(
+        _ id: String,
+        url: String,
+        defaultCurrency: String
+        ) -> TRLOptions
+    {
+        return TRLOptions(shopURL: url, shopID: id, defaultCurrency: defaultCurrency)
+    }
+
+    /// - warning: Testing Only
+    ///
+    /// :nodoc:
+    public func validateOrThrow() throws {
         if let error = self.error {
             throw error
         }

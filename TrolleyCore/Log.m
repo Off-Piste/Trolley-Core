@@ -9,39 +9,40 @@
 #import "Log.h"
 #import "TrolleyCore/TrolleyCore-Swift.h"
 
+#define Log(service, level, fmt, args) __log(service, level, format, args_copy); return;
+
+static void __log(TRLLoggerService *service,
+                  TRLLoggerLevel level,
+                  NSString *fmt,
+                  va_list args)
+{
+    NSString *logString = [[NSString alloc] initWithFormat:fmt arguments:args];
+    [[TRLLogger loggerForService:service] log:logString level:level];
+}
+
 void TRLLog(TRLLoggerService *service, NSString *format, ...) {
     CVarArgCopy(format)
-
-    NSString *logString = [[NSString alloc] initWithFormat:format arguments:args_copy];
-    [[TRLLogger loggerForService:service] log:logString level:TRLLoggerLevelDefault];
+    Log(service, TRLLoggerLevelDefault, format, args_copy)
 }
 
 void TRLInfoLogger(TRLLoggerService *service, NSString *format, ...) {
     CVarArgCopy(format)
-
-    NSString *logString = [[NSString alloc] initWithFormat:format arguments:args_copy];
-    [[TRLLogger loggerForService:service] log:logString level:TRLLoggerLevelInfo];
+    Log(service, TRLLoggerLevelInfo, format, args_copy)
 }
 
 void TRLDebugLogger(TRLLoggerService *service, NSString *format, ...) {
     CVarArgCopy(format)
-
-    NSString *logString = [[NSString alloc] initWithFormat:format arguments:args_copy];
-    [[TRLLogger loggerForService:service] log:logString level:TRLLoggerLevelDebug];
+    Log(service, TRLLoggerLevelDebug, format, args_copy)
 }
 
 void TRLErrorLogger(TRLLoggerService *service, NSString *format, ...) {
     CVarArgCopy(format)
-
-    NSString *logString = [[NSString alloc] initWithFormat:format arguments:args_copy];
-    [[TRLLogger loggerForService:service] log:logString level:TRLLoggerLevelError];
+    Log(service, TRLLoggerLevelError, format, args_copy)
 }
 
 void TRLFaultLogger(TRLLoggerService *service, NSString *format, ...) {
     CVarArgCopy(format)
-
-    NSString *logString = [[NSString alloc] initWithFormat:format arguments:args_copy];
-    [[TRLLogger loggerForService:service] log:logString level:TRLLoggerLevelFault];
+    Log(service, TRLLoggerLevelFault, format, args_copy)
 }
 
 

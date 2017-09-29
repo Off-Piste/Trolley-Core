@@ -9,6 +9,10 @@
 import XCTest
 import TrolleyCore
 
+extension Bundle {
+    static let testBundle: Bundle = Bundle(for: BaseTestClass.self)
+}
+
 open class BaseTestClass: XCTestCase {
 
     final var timeout: TimeInterval = trl_timeout
@@ -39,7 +43,34 @@ open class BaseTestClass: XCTestCase {
 
     open override func setUp() {
         super.setUp()
-        Trolley.setlogging(trl_isLogging.boolValue)
+        trl_set_log()
+    }
+
+    func describeNoThrow(
+        _ description: String,
+        file: StaticString = #file,
+        line: UInt = #line,
+        body: () throws -> Void
+        )
+    {
+        do {
+            try body()
+        } catch {
+            XCTFail(description, file: file, line: line)
+        }
+    }
+
+    func describeThrow(
+        _ description: String,
+        file: StaticString = #file,
+        line: UInt = #line,
+        body: () throws -> Void
+        )
+    {
+        do {
+            try body()
+            XCTFail(description, file: file, line: line)
+        } catch _ { }
     }
 
 }

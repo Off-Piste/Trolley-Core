@@ -38,14 +38,14 @@
 
 - (void)setUp {
     [super setUp];
-    [Trolley setlogging:trl_isLogging];
+    trl_set_log();
 }
 
 - (void)tearDown {
     [super tearDown];
 
     if ([Trolley isShopOpen]) {
-        [[Trolley shop] deleteAppWithHandler:nil];
+        [[Trolley shop] deleteApp];
     }
 }
 

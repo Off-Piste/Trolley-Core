@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Lifecycle
 
 + (instancetype)managerForSession:(NSURLSession *)session
-                                   delegate:(TRLURLSessionDelegate *)delegate;
+                         delegate:(TRLURLSessionDelegate *)delegate;
 
 + (instancetype)managerForConfiguration:(NSURLSessionConfiguration *)configuration;
 

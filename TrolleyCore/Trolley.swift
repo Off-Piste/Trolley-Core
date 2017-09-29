@@ -81,13 +81,22 @@ var aTRLShop: Trolley!
 
 extension Trolley {
 
-    public func deleteApp(handler: ((Bool) -> Void)? = nil) {
+    @objc public func deleteApp(handler: ((Bool) -> Void)?) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
+
+        if aTRLShop == nil {
+            TRLDebugLogger(for: .core, "Shop [%@] has already been deleted", self.shopName)
+            handler?(false); return
+        }
 
         TRLDebugLogger(for: .core, "Deleting shop [%@]", self.shopName)
         aTRLShop = nil
         handler?(true)
+    }
+
+    @objc public func deleteApp() {
+        self.deleteApp(handler: nil)
     }
 
     public class func setlogging(_ bool: Bool) {
@@ -138,6 +147,8 @@ extension Trolley {
         return options.shopName
     }
 
+    /// - Note: Maybe have this as initaliser too, so it creates the default shop upon calling
+    ///         if the aTRLShop is not created yet
     public static var shop: Trolley? {
         if aTRLShop == nil {
             TRLInfoLogger(for: .core, "The Trolley shop has not been configured yet, please add [Trolley open] OR Trolley.open() to your application initialization")
@@ -153,43 +164,4 @@ extension Trolley {
 
 }
 
-extension Trolley {
-
-    @available(*, unavailable)
-    public override func setNilValueForKey(_ key: String) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public override func setValue(_ value: Any?, forKey key: String) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public override func setValuesForKeys(_ keyedValues: [String : Any]) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public override func setValue(_ value: Any?, forKeyPath keyPath: String) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        fatalError()
-    }
-
-    @available(*, unavailable)
-    public func observe<Value>(_ keyPath: KeyPath<Trolley, Value>, options: NSKeyValueObservingOptions, changeHandler: @escaping (Trolley, NSKeyValueObservedChange<Value>) -> Void) -> NSKeyValueObservation {
-        fatalError()
-    }
-
-
-}
 

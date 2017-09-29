@@ -8,10 +8,14 @@
 
 #import <XCTest/XCTest.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#import "TestBlocks.h"
+
+#define TestBundle [NSBundle bundleForClass:[self class]]
 
 #define DefaultExpectation \
     [self expectationWithDescription:[NSString stringWithFormat:@"%s", __FUNCTION__]];
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^notification_handler)(NSNotification *note);
 

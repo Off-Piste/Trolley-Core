@@ -128,6 +128,7 @@
 		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C839E4A81F7E855D00D5C02F /* TestBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlocks.h; sourceTree = "<group>"; };
 		C83F4F511F7C002B003BC2AE /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C84166421F4DFB5F0097EB3E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TrolleyCore-hezepbvoslfaqgcqonxuosaxhypv/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -539,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				C851022F1F7D1AE70040D326 /* BaseTestClass.swift */,
+				C839E4A81F7E855D00D5C02F /* TestBlocks.h */,
 				C85102341F7D1B8F0040D326 /* BaseTestClass.h */,
 				C85102351F7D1B8F0040D326 /* BaseTestClass.m */,
 				C851023C1F7D1F4D0040D326 /* TrolleyHelpers.h */,
@@ -976,6 +978,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = TrolleyCore/TrolleyCore.modulemap;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = io.offpiste.TrolleyCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

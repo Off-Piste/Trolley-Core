@@ -15,4 +15,6 @@ extern NSTimeInterval trl_timeout;
 
 extern BOOL trl_isLogging;
 
+extern void trl_set_log(void);
+
 #endif /* TrolleyHelpers_h */

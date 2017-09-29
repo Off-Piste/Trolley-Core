@@ -35,14 +35,14 @@ public class TRLTimer {
         attributes: .concurrent
     )
     
-    /// +- 1 second due to being on the main thread
+    /// - note: +-1 second due to being on the main thread
     ///
     /// - Parameter seconds: <#seconds description#>
     public init(for seconds: TimeInterval) {
         self.seconds = seconds
     }
     
-    /// +- 1 second due to being on the main thread
+    /// - note: +- 1 second due to being on the main thread
     ///
     /// - Parameters:
     ///   - seconds: <#seconds description#>

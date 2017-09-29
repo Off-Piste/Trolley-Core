@@ -10,6 +10,12 @@
 
 #import "TrolleyHelpers.h"
 
+@import TrolleyCore;
+
 NSTimeInterval trl_timeout = 30;
 
 BOOL trl_isLogging = YES;
+
+void trl_set_log(void) {
+    [Trolley setlogging:trl_isLogging];
+}
