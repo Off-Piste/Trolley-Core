@@ -34,8 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithOptions:(TRLOptions *)options;
 
-@end
+- (void)__trl_connect;
 
-TRLNetwork *get_trl_network_for_manager(TRLNetworkManager *manager);
+@end
 
 NS_ASSUME_NONNULL_END

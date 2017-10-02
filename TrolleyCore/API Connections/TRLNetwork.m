@@ -27,6 +27,8 @@
 #import "TRLNetwork.h"
 #import "TRLNetwork_Private.h"
 
+#import "TRLNetworkManager.h"
+
 #import "TRLNetworkConnection.h"
 
 #import "TRLParsedURL.h"
@@ -39,6 +41,9 @@
 
 @implementation TRLNetwork {
     TRLNetworkConnection *connection;
+    NSMutableSet *interruptReasons;
+    NSTimeInterval lastConnectionEstablishedTime;
+    BOOL firstConnect;
 }
 
 - (NSURL *)url {
@@ -53,14 +58,20 @@
     return self->_parsedURL.description;
 }
 
-- (instancetype)initWithURLString:(NSString *)url {
+- (instancetype)initWithURLString:(NSString *)url manager:(TRLNetworkManager *)manager {
     self = [super init];
     if (self) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: %", url);
+        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: @%", url);
         self->_parsedURL = [[TRLParsedURL alloc] initWithURLString:url];
-        self->connection = [[TRLNetworkConnection alloc] initWithNetwork:self
-                                                        andDispatchQueue:dispatch_get_main_queue()
-                                                              deviceUUID:trl_device_uuid_get()];
+        self->_manager = manager;
+        self->_connectionState = ConnectionStateDisconnected;
+        self->interruptReasons = [NSMutableSet set];
+
+        self->_retryHelper = [[TRLRetryHelper alloc] initWithDispatchQueue:dispatch_get_main_queue()
+                                                 minRetryDelayAfterFailure:1.0
+                                                             maxRetryDelay:30.0
+                                                             retryExponent:1.3f
+                                                              jitterFactor:0.7];
     }
     return self;
 }
@@ -81,40 +92,164 @@
                                    headers:_headers];
 }
 
+#pragma mark - Connection status
+
 - (void)open {
-    [connection open];
-}
-
-- (void)close {
-    [connection close];
-}
-
-- (BOOL)canSendWrites {
-    return YES;
+    [self resumeForReason:@"waiting_for_open"];
 }
 
 - (BOOL)shouldReconnect {
-    return YES;
+    return self->interruptReasons.count == 0;
 }
 
 - (BOOL)connected {
-    return YES;
+    return self->_connectionState == ConnectionStateConnected;
 }
 
-- (void)onKill:(TRLNetworkConnection *)trlNetworkConnection withReason:(NSString *)reason{
-    //
+- (BOOL)canSendWrites {
+    return [self connected];
 }
 
-- (void)onDisconnect:(TRLNetworkConnection *)trlNetworkConnection withReason:(TRLDisconnectReason)reason {
-    
+#pragma mark - Delegate
+
+- (void)onReady:(TRLNetworkConnection *)trlNetworkConnection {
+    lastConnectionEstablishedTime = [[NSDate date] timeIntervalSince1970];
+    _connectionState = ConnectionStateConnected;
+
+    if (firstConnect) {
+        // Send queue
+    }
+
+    firstConnect = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.onConnect(self);
+    });
 }
 
-- (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection withMessage:(NSDictionary *)message {
-    //
+- (void)onKill:(TRLNetworkConnection *)trlNetworkConnection
+    withReason:(NSString *)reason
+{
+    TRLFaultLogger(TRLLoggerServiceCore, @"Trolley Network connection has been forcefully killed by the server. Will not attempt to reconnect. Reason:%@", reason);
+    [self interruptForReason:@"server_kill"];
+}
+
+- (void)onDisconnect:(TRLNetworkConnection *)trlNetworkConnection
+          withReason:(TRLDisconnectReason)reason
+{
+    _connectionState = ConnectionStateDisconnected;
+    self->connection = nil;
+
+    // Inform analytics to place requests in queue.
+
+    if ([self shouldReconnect]) {
+        if (reason == DISCONNECT_REASON_SERVER_RESET) {
+            [_retryHelper signalSuccess];
+        }
+        [self tryScheduleReconnect];
+    }
+
+    self.onDisconnect(self);
+}
+
+- (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
+          withMessage:(NSDictionary *)message {
+    TRLLog(TRLLoggerServiceCore, @"%@", message);
 }
 
 - (void)dealloc {
     TRLLog(TRLLoggerServiceCore, @"%s", __FUNCTION__);
 }
+
+#pragma mark - Connection handling methods
+
+- (void)interruptForReason:(NSString *)reason {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Connection interrupted for: %@", reason);
+    [self->interruptReasons addObject:reason];
+
+    if (self->connection) {
+        [connection close];
+        self->connection = nil;
+    } else {
+        [self->_retryHelper cancel];
+        self->_connectionState = ConnectionStateDisconnected;
+    }
+
+    [_retryHelper signalSuccess];
+}
+
+- (void)resumeForReason:(NSString *)reason {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Connection no longer interrupted for: %@", reason);
+    [interruptReasons removeObject:reason];
+
+    if ([self shouldReconnect] && _connectionState == ConnectionStateDisconnected) {
+        [self tryScheduleReconnect];
+    }
+}
+
+- (BOOL)isInterruptedForReason:(NSString *)reason {
+    return [interruptReasons containsObject:reason];
+}
+
+#pragma mark - Private
+
+- (void)tryScheduleReconnect {
+    if ([self shouldReconnect]) {
+        NSAssert(self->_connectionState == ConnectionStateDisconnected, @"");
+
+        TRLDebugLogger(TRLLoggerServiceCore, @"Scheduling connection attempt");
+        [_retryHelper retryWithBlock:^{
+            if (self.manager.reachability.currentReachabilityStatus == NotReachable) {
+                TRLLog(TRLLoggerServiceCore, @"Network status is 'NotReachable', calling %s", __FUNCTION__);
+                [self tryScheduleReconnect];
+            }
+            
+            [self openNetworkConnection];
+        }];
+    }
+}
+
+- (void)openNetworkConnection {
+    _connectionState = ConnectionStateConnecting;
+    self->connection = [[TRLNetworkConnection alloc] initWithNetwork:self
+                                                    andDispatchQueue:dispatch_get_main_queue()
+                                                          deviceUUID:trl_device_uuid_get()];
+    self->connection.delegate = self;
+    [self->connection open];
+}
+
+- (void) enteringForeground {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Reset reconnect delay
+        [_retryHelper signalSuccess];
+        if (self->_connectionState == ConnectionStateDisconnected) {
+            [self tryScheduleReconnect];
+        }
+    });
+}
+
+/**
+ This is sent via TRLNetworkManager, if the network is not connected and its
+ reachable should send connect.
+ */
+extern void trl_handle_for_reachabilty(id reach, TRLNetwork *network) {
+    if ([reach isKindOfClass:[Reachability class]]) {
+        if ([(Reachability *)reach currentReachabilityStatus] == NotReachable) { return; }
+        TRLDebugLogger(TRLLoggerServiceCore, @"Network became reachable. Trigger a connection attempt");
+
+        TRLNetwork *self = network;
+        [self->_retryHelper signalSuccess];
+
+        if (self->_connectionState == ConnectionStateDisconnected) {
+            [self tryScheduleReconnect];
+        }
+    } else {
+        [[NSException exceptionWithName:NSGenericException
+                                 reason:@"Invalid object passed to trl_handle_for_reachabilty()"
+                               userInfo:nil] reason];
+    }
+}
+
+// TODO: - observers&listeners
+#pragma mark observers&listeners
 
 @end

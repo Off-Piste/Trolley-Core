@@ -26,21 +26,25 @@
 #import "TRLNetwork.h"
 #import "TNTUtils.h"
 
+#import "TRLNetworkBlocks.h"
+
 #import "TRLNetworkConnection.h"
 
-@class TRLParsedURL, TRLRequest, TRLRetryHelper;
+@class TRLParsedURL, TRLRequest, TRLRetryHelper, TRLNetworkManager;
 
 typedef enum {
     ConnectionStateDisconnected,
-    ConnectionStateGettingToken,
+//    ConnectionStateGettingToken,
     ConnectionStateConnecting,
-    ConnectionStateAuthenticating,
+//    ConnectionStateAuthenticating,
     ConnectionStateConnected
 } ConnectionState;
 
 @protocol TRLURLParameterEncoding;
 
 NS_ASSUME_NONNULL_BEGIN
+
+extern void trl_handle_for_reachabilty(id reach, TRLNetwork *network);
 
 @interface TRLNetwork () <TRLNetworkConnectionDelegate> {
     TRLRetryHelper *_retryHelper;
@@ -51,6 +55,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, readonly) TRLParsedURL* parsedURL;
 
+@property (weak, readonly) TRLNetworkManager *manager;
+
+@property (strong, nullable) trl_on_connect onConnect;
+
+@property (strong, nullable) trl_on_disconnect onDisconnect;
+
 /**
  Method to create a TRLNetwork instance with the URL for the
  API calls.
@@ -60,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param url The Base URL for all network calls, this will never be mutated from here.
  @return A TRLNetwork instance
  */
-- (instancetype)initWithURLString:(NSString *)url;
+- (instancetype)initWithURLString:(NSString *)url manager:(TRLNetworkManager *)manager;
 
 /**
  Method to create a TRLRequest instance with the requred URL parts.
@@ -88,8 +98,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)shouldReconnect;
 
-- (void)close;
-
 #pragma mark Delegate Methods
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
           withMessage:(NSDictionary *)message;
@@ -99,6 +107,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)onKill:(TRLNetworkConnection *)trlNetworkConnection
     withReason:(NSString *)reason;
+
+- (void)onReady:(TRLNetworkConnection *)trlNetworkConnection;
 
 @end
 

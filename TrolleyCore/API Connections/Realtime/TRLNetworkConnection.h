@@ -54,6 +54,8 @@ typedef enum {
 
 @protocol TRLNetworkConnectionDelegate <NSObject>
 
+- (void)onReady:(TRLNetworkConnection *)trlNetworkConnection;
+
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
           withMessage:(NSDictionary *)message;
 

@@ -18,31 +18,18 @@
 @implementation TrolleyTests_Objc
 
 - (void)testInitalisation {
-    TRLOptions *options = [[TRLOptions alloc] initWithBundle:TestBundle];
-    [Trolley openWith:options];
+    XCTestExpectation *exp = DefaultExpectation;
+    TRLRetryHelper *helper = [[TRLRetryHelper alloc] initWithDispatchQueue:dispatch_get_main_queue()
+                                                 minRetryDelayAfterFailure:1
+                                                             maxRetryDelay:40
+                                                             retryExponent:1.3f
+                                                              jitterFactor:0.7];
 
-    XCTAssertNotNil([Trolley shop]);
-}
+    [helper retryWithBlock:^{
+        [exp fulfill];
+    }];
 
-- (void)testInvalidEmptyOptions {
-    NSError *error;
-    TRLOptions *options = [[TRLOptions alloc] init];
-
-    [options validateOrThrowAndReturnError:&error];
-    NSLog(@"%@", error);
-    XCTAssertNotNil(error);
-}
-
-- (void)testInvalidAPIKey_Options {
-    describeThrow(@"testInvalidAPIKey_Options", ^{
-        NSError *error;
-        TRLOptions *options = [TRLOptions optionsForID:[NSUUID UUID].UUIDString
-                                                   URL: @"http://www.apple.com"
-                                       DefaultCurrency: @"GBP"];
-
-        [options validateOrThrowAndReturnError:&error];
-        return error;
-    });
+    [self waitForExpectations];
 }
 
 @end

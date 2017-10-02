@@ -56,12 +56,11 @@ static NSString *trl_strip_api_key(NSString *oldKey) {
 
 - (instancetype)initWithURL:(NSString *)url APIKey:(NSString *)key {
     if (self = [super init]) {
-        self->_network = [[TRLNetwork alloc] initWithURLString:url];
+        self->_network = [[TRLNetwork alloc] initWithURLString:url manager:self];
         self->_reachability = [Reachability reachabilityWithHostName:TRLBaseURL];
 
         [_network.parsedURL addPath:trl_strip_api_key(key)];
-        [_network open];
-
+        [self initalise];
     }
     return self;
 }
@@ -100,9 +99,28 @@ static NSString *trl_strip_api_key(NSString *oldKey) {
     return _network.description;
 }
 
-- (void)dealloc {
-    TRLDebugLogger(TRLLoggerServiceCore, @"%s", __FUNCTION__);
-    [_network close];
+- (void)__trl_connect {
+    [self->_network open];
+}
+
+// Easier than setting up another delegate
+- (void)initalise {
+    self->_network.onConnect = ^(TRLNetwork *network) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"Connected to Network: %@", network.connectionURL);
+    };
+
+    self->_network.onDisconnect = ^(TRLNetwork *network) {
+        TRLDebugLogger(TRLLoggerServiceCore, @"Disconnected from Network: %@", network.connectionURL);
+    };
+
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:kReachabilityChangedNotification
+                 object:nil
+                  queue:nil
+             usingBlock:^(NSNotification *note) {
+        trl_handle_for_reachabilty(note.object, self->_network);
+    }];
+
 }
 
 @end

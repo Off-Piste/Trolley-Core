@@ -76,11 +76,10 @@ public final class TRLRetryHelper: NSObject {
     }
 
     public func retry(block: @escaping trl_void_void) {
-        guard scheduledRetry == nil else {
+        if scheduledRetry != nil {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             scheduledRetry?.cancel()
             scheduledRetry = nil
-            return
         }
 
         var delay: TimeInterval!
@@ -103,14 +102,21 @@ public final class TRLRetryHelper: NSObject {
         self.scheduledRetry = task
         self.lastWasSuccess = false
 
-        let timer = TRLTimer(for: delay * TimeInterval(NSEC_PER_SEC))
-        timer.queue = .main
-        timer.once {
+        let ns = DispatchTime.now().uptimeNanoseconds + UInt64(delay) * NSEC_PER_SEC
+        let popTime: DispatchTime = DispatchTime(uptimeNanoseconds: ns)
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
             if (!task.isCanceled) {
                 self.scheduledRetry = nil
                 task.execute()
             }
         }
+
+
+//        let timer = TRLTimer(for: delay * TimeInterval(NSEC_PER_SEC))
+//        timer.queue = .main
+//        timer.once {
+//
+//        }
     }
 
     public func cancel() {

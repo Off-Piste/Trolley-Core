@@ -9,6 +9,10 @@
 #ifndef TRLNetwork_Header_h
 #define TRLNetwork_Header_h
 
-#import "TRLNetworkManager.h"
+@class TRLNetwork;
+
+typedef void(^trl_on_connect)(TRLNetwork *network);
+
+typedef void(^trl_on_disconnect)(TRLNetwork *network);
 
 #endif /* TRLNetwork_Header_h */

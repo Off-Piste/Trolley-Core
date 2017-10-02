@@ -69,7 +69,10 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 
 @implementation TRLNetworkConnection
 
-- (instancetype)initWithNetwork:(TRLNetwork *)network andDispatchQueue:(dispatch_queue_t)queue deviceUUID:(NSString *)deviceId {
+- (instancetype)initWithNetwork:(TRLNetwork *)network
+               andDispatchQueue:(dispatch_queue_t)queue
+                     deviceUUID:(NSString *)deviceId
+{
     if (self = [super init]) {
         _state = REALTIME_STATE_CONNECTING;
 
@@ -86,10 +89,14 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
     return self;
 }
 
+#pragma mark - Open NetworkConnection
+
 - (void)open {
     TRLDebugLogger(TRLLoggerServiceCore, @"Calling open in TRLNetworkConnection");
     [self.connection open];
 }
+
+#pragma mark - Close NetworkConnection
 
 - (void)close {
     [self closeWithReason:DISCONNECT_REASON_OTHER];
@@ -110,6 +117,8 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
     }
 }
 
+#pragma mark - Sending Data
+
 - (void)sendRequest:(NSDictionary *)dataMsg sensitive:(BOOL)sensitive {
     NSDictionary *msg = @{
           [TRLWebSocketUtils kTWPRequestType]: [TRLWebSocketUtils kTWPRequestTypeData],
@@ -120,15 +129,22 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 
 - (void)send:(NSDictionary *)dataMsg sensitive:(BOOL)sensitive {
     if (_state != REALTIME_STATE_CONNECTED) {
-        @throw [NSException exceptionWithName:@"InvalidConnectionState" reason:@"Tried to send data on an unconnected TRLNetworkConnection" userInfo:nil];
+        @throw [NSException exceptionWithName:@"InvalidConnectionState"
+                                       reason:@"Tried to send data on an unconnected TRLNetworkConnection"
+                                     userInfo:nil];
     } else {
-        if (sensitive) { TRLDebugLogger(TRLLoggerServiceCore, @"Sending %{private}@", dataMsg); }
-        else { TRLDebugLogger(TRLLoggerServiceCore, @"Sending %@", dataMsg); }
+        if (sensitive) {
+            TRLDebugLogger(TRLLoggerServiceCore, @"Sending %{private}@", dataMsg);
+        } else {
+            TRLDebugLogger(TRLLoggerServiceCore, @"Sending %@", dataMsg);
+
+        }
 
         [self.connection send:dataMsg];
     }
-
 }
+
+#pragma mark - Delegate
 
 - (void)onDisconnect:(TRLWebSocketConnection *)twebSocket wasEverConnected:(BOOL)everConnected {
     self.connection = nil;
@@ -157,12 +173,20 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
     }
 }
 
+#pragma mark - Handle Messages
+
+/**
+ Method to handle Data messages, TRLNetwork will handle these
+ */
 - (void) onDataMessage:(NSDictionary *)message {
     // we don't do anything with data messages, just kick them up a level
     TRLDebugLogger(TRLLoggerServiceCore, @"Got data message: %@", message);
     [self.delegate onDataMessage:self withMessage:message];
 }
 
+/**
+ Method to manage the control JSON, i.e. Shutdown and handshake
+ */
 - (void) onControl:(NSDictionary *)message {
     TRLDebugLogger(TRLLoggerServiceCore, @"Got data message: %@", message);
     NSString *type = message[kTWPAsyncServerControlMessageType];
@@ -170,6 +194,9 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
     if([type isEqualToString:kTWPAsyncServerControlMessageShutdown]) {
         NSString* reason = [message objectForKey:kTWPAsyncServerControlMessageData];
         [self onConnectionShutdownWithReason:reason];
+    } if ([type isEqualToString:@"h"]) {
+        NSTimeInterval ti = [[message objectForKey:@"ts"] doubleValue];
+        [self on_valid_connetion_handshake:ti];
     } else {
         TRLDebugLogger(TRLLoggerServiceCore, @"Invalid Control Message: %@", message);
     }
@@ -182,11 +209,21 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 
  @param reason The reason for the shutdown
  */
-- (void) onConnectionShutdownWithReason:(NSString *)reason {
+- (void)onConnectionShutdownWithReason:(NSString *)reason {
     TRLDebugLogger(TRLLoggerServiceCore, @"Connection shutdown command received. Shutting down...");
 
     [self.delegate onKill:self withReason:reason];
     [self close];
+}
+
+/**
+ This is my valid_connection_handshake, called only once the connection has passed
+ its validation and means that the network is valid and your are connected
+ */
+- (void)on_valid_connetion_handshake:(NSTimeInterval)timeInterval {
+    TRLDebugLogger(TRLLoggerServiceCore, @"Recived valid handshake, at: %@",
+           [NSDate dateWithTimeIntervalSince1970:timeInterval]);
+    [self.delegate onReady:self];
 }
 
 

@@ -127,6 +127,7 @@ extension Trolley {
         // 2. Create NetworkManager and Start Reachabilty
         self.networkManager = TRLNetworkManager(options: options)
         self.networkManager.reachability.start()
+        self.networkManager.__trl_connect()
     }
 
     private class func sendNotificationsToSDK(_ shop: Trolley) {

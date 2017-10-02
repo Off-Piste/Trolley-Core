@@ -159,7 +159,7 @@ static NSString *kLastSessionUDKey = @"";
 #pragma mark -
 #pragma mark Message handler methods & Utils
 
-- (void) nop:(NSTimer *)timer {
+- (void)nop:(NSTimer *)timer {
     if (!isClosed) {
         TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) nop", self.connectionId);
         [self.webSocket send:@"0"];

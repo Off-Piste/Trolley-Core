@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		89FFA16D03BD40A870E8C624 /* Pods_TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */; };
+		C80A5F3E1F8240E90070C918 /* TRLNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */; };
+		C80A5F461F8259B60070C918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A5F451F8259B60070C918 /* AppDelegate.swift */; };
+		C80A5F481F8259B60070C918 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A5F471F8259B60070C918 /* ViewController.swift */; };
+		C80A5F4B1F8259B60070C918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80A5F491F8259B60070C918 /* Main.storyboard */; };
+		C80A5F4D1F8259B60070C918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C80A5F4C1F8259B60070C918 /* Assets.xcassets */; };
+		C80A5F501F8259B60070C918 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80A5F4E1F8259B60070C918 /* LaunchScreen.storyboard */; };
+		C80A5F551F8259C80070C918 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
+		C80A5F561F8259C80070C918 /* TrolleyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C80A5F5D1F8259EB0070C918 /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A5F5C1F8259E90070C918 /* TrolleyConfigFile.plist */; };
 		C83F4F521F7C0033003BC2AE /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C83F4F511F7C002B003BC2AE /* TrolleyConfigFile.plist */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE611F754FF5009E6019 /* TRLNetworkManager_Options.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEDF41F754FF2009E6019 /* TRLNetworkManager_Options.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,7 +100,7 @@
 		C84AEEB01F754FF5009E6019 /* TRLWebSocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE521F754FF3009E6019 /* TRLWebSocketUtils.swift */; };
 		C84AEEB11F754FF5009E6019 /* TRLNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE531F754FF3009E6019 /* TRLNetwork.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C84AEEB21F754FF5009E6019 /* TRLNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE541F754FF3009E6019 /* TRLNetwork.m */; };
-		C84AEEB31F754FF5009E6019 /* TRLNetwork_Header.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE551F754FF3009E6019 /* TRLNetwork_Header.h */; };
+		C84AEEB31F754FF5009E6019 /* TRLNetworkBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE551F754FF3009E6019 /* TRLNetworkBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEEB41F754FF5009E6019 /* TRLNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE561F754FF3009E6019 /* TRLNetworkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEEB51F754FF5009E6019 /* TRLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE571F754FF3009E6019 /* TRLNetworkManager.m */; };
 		C84AEEB61F754FF5009E6019 /* TRLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE581F754FF3009E6019 /* TRLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,6 +122,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C80A5F571F8259C80070C918 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8460FD71F4C665800CFF7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8460FDF1F4C665800CFF7E8;
+			remoteInfo = TrolleyCore;
+		};
 		C86680D91F7BFD03008C125E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8460FD71F4C665800CFF7E8 /* Project object */;
@@ -122,12 +138,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C80A5F591F8259C80070C918 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C80A5F561F8259C80070C918 /* TrolleyCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.release.xcconfig"; sourceTree = "<group>"; };
 		1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.debug.xcconfig"; sourceTree = "<group>"; };
 		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TRLNetworkConfig.swift; path = Realtime/TRLNetworkConfig.swift; sourceTree = "<group>"; };
+		C80A5F431F8259B60070C918 /* CoreExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80A5F451F8259B60070C918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C80A5F471F8259B60070C918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C80A5F4A1F8259B60070C918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C80A5F4C1F8259B60070C918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C80A5F4F1F8259B60070C918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C80A5F511F8259B60070C918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C80A5F5C1F8259E90070C918 /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C839E4A81F7E855D00D5C02F /* TestBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlocks.h; sourceTree = "<group>"; };
 		C83F4F511F7C002B003BC2AE /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C84166421F4DFB5F0097EB3E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TrolleyCore-hezepbvoslfaqgcqonxuosaxhypv/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
@@ -215,7 +254,7 @@
 		C84AEE521F754FF3009E6019 /* TRLWebSocketUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRLWebSocketUtils.swift; sourceTree = "<group>"; };
 		C84AEE531F754FF3009E6019 /* TRLNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetwork.h; sourceTree = "<group>"; };
 		C84AEE541F754FF3009E6019 /* TRLNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLNetwork.m; sourceTree = "<group>"; };
-		C84AEE551F754FF3009E6019 /* TRLNetwork_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetwork_Header.h; sourceTree = "<group>"; };
+		C84AEE551F754FF3009E6019 /* TRLNetworkBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetworkBlocks.h; sourceTree = "<group>"; };
 		C84AEE561F754FF3009E6019 /* TRLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLNetworkManager.h; sourceTree = "<group>"; };
 		C84AEE571F754FF3009E6019 /* TRLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLNetworkManager.m; sourceTree = "<group>"; };
 		C84AEE581F754FF3009E6019 /* TRLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLRequest.h; sourceTree = "<group>"; };
@@ -243,6 +282,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C80A5F401F8259B60070C918 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80A5F551F8259C80070C918 /* TrolleyCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8460FDC1F4C665800CFF7E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,11 +332,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C80A5F441F8259B60070C918 /* CoreExample */ = {
+			isa = PBXGroup;
+			children = (
+				C80A5F5C1F8259E90070C918 /* TrolleyConfigFile.plist */,
+				C80A5F451F8259B60070C918 /* AppDelegate.swift */,
+				C80A5F471F8259B60070C918 /* ViewController.swift */,
+				C80A5F491F8259B60070C918 /* Main.storyboard */,
+				C80A5F4C1F8259B60070C918 /* Assets.xcassets */,
+				C80A5F4E1F8259B60070C918 /* LaunchScreen.storyboard */,
+				C80A5F511F8259B60070C918 /* Info.plist */,
+			);
+			path = CoreExample;
+			sourceTree = "<group>";
+		};
 		C8460FD61F4C665800CFF7E8 = {
 			isa = PBXGroup;
 			children = (
 				C8460FE21F4C665800CFF7E8 /* TrolleyCore */,
 				C86680D41F7BFD03008C125E /* TrolleyCoreTests */,
+				C80A5F441F8259B60070C918 /* CoreExample */,
 				C8460FE11F4C665800CFF7E8 /* Products */,
 				5C67866FEF163ED6DC0361E0 /* Pods */,
 				0A3E2044F41ABB193C33AC62 /* Frameworks */,
@@ -301,6 +363,7 @@
 			children = (
 				C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */,
 				C86680D31F7BFD02008C125E /* TrolleyCoreTests.xctest */,
+				C80A5F431F8259B60070C918 /* CoreExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -493,12 +556,13 @@
 				C84AEE4D1F754FF3009E6019 /* Realtime */,
 				C84AEE531F754FF3009E6019 /* TRLNetwork.h */,
 				C84AEE541F754FF3009E6019 /* TRLNetwork.m */,
-				C84AEE551F754FF3009E6019 /* TRLNetwork_Header.h */,
+				C84AEE551F754FF3009E6019 /* TRLNetworkBlocks.h */,
 				C84AEE561F754FF3009E6019 /* TRLNetworkManager.h */,
 				C84AEE571F754FF3009E6019 /* TRLNetworkManager.m */,
 				C84AEE581F754FF3009E6019 /* TRLRequest.h */,
 				C84AEE591F754FF3009E6019 /* TRLRequest.m */,
 				C84AEE5A1F754FF3009E6019 /* TRLRetryHelper.swift */,
+				C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */,
 			);
 			path = "API Connections";
 			sourceTree = "<group>";
@@ -604,7 +668,7 @@
 				C84AEEA91F754FF5009E6019 /* TRLNetwork_Private.h in Headers */,
 				C84AEEAC1F754FF5009E6019 /* TRLNetworkConnection.h in Headers */,
 				C84AEEA31F754FF5009E6019 /* TrolleyCore-Swift-Fixed.h in Headers */,
-				C84AEEB31F754FF5009E6019 /* TRLNetwork_Header.h in Headers */,
+				C84AEEB31F754FF5009E6019 /* TRLNetworkBlocks.h in Headers */,
 				C84AEEA51F754FF5009E6019 /* TRLNetworkInfo.h in Headers */,
 				C84AEE9F1F754FF5009E6019 /* TSRWebSocket.h in Headers */,
 				C84AEEB11F754FF5009E6019 /* TRLNetwork.h in Headers */,
@@ -614,6 +678,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C80A5F421F8259B60070C918 /* CoreExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C80A5F521F8259B60070C918 /* Build configuration list for PBXNativeTarget "CoreExample" */;
+			buildPhases = (
+				C80A5F3F1F8259B60070C918 /* Sources */,
+				C80A5F401F8259B60070C918 /* Frameworks */,
+				C80A5F411F8259B60070C918 /* Resources */,
+				C80A5F591F8259C80070C918 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C80A5F581F8259C80070C918 /* PBXTargetDependency */,
+			);
+			name = CoreExample;
+			productName = CoreExample;
+			productReference = C80A5F431F8259B60070C918 /* CoreExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C8460FDF1F4C665800CFF7E8 /* TrolleyCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8460FF41F4C665800CFF7E8 /* Build configuration list for PBXNativeTarget "TrolleyCore" */;
@@ -664,6 +747,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Off-Piste";
 				TargetAttributes = {
+					C80A5F421F8259B60070C918 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = FVT8X28ANV;
+						ProvisioningStyle = Automatic;
+					};
 					C8460FDF1F4C665800CFF7E8 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FVT8X28ANV;
@@ -684,6 +772,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C8460FD61F4C665800CFF7E8;
 			productRefGroup = C8460FE11F4C665800CFF7E8 /* Products */;
@@ -692,11 +781,23 @@
 			targets = (
 				C8460FDF1F4C665800CFF7E8 /* TrolleyCore */,
 				C86680D21F7BFD02008C125E /* TrolleyCoreTests */,
+				C80A5F421F8259B60070C918 /* CoreExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C80A5F411F8259B60070C918 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80A5F501F8259B60070C918 /* LaunchScreen.storyboard in Resources */,
+				C80A5F4D1F8259B60070C918 /* Assets.xcassets in Resources */,
+				C80A5F5D1F8259EB0070C918 /* TrolleyConfigFile.plist in Resources */,
+				C80A5F4B1F8259B60070C918 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8460FDE1F4C665800CFF7E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,6 +862,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C80A5F3F1F8259B60070C918 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80A5F481F8259B60070C918 /* ViewController.swift in Sources */,
+				C80A5F461F8259B60070C918 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8460FDB1F4C665800CFF7E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -816,6 +926,7 @@
 				C84AEEA01F754FF5009E6019 /* TSRWebSocket.m in Sources */,
 				C84AEE651F754FF5009E6019 /* TRLURLDataTaskDelegate.m in Sources */,
 				C84AEE8C1F754FF5009E6019 /* TRLURLQueryParameters.swift in Sources */,
+				C80A5F3E1F8240E90070C918 /* TRLNetworkConfig.swift in Sources */,
 				C84AEE9E1F754FF5009E6019 /* TRLError.m in Sources */,
 				C84AEE6B1F754FF5009E6019 /* TRLURLEncoding.m in Sources */,
 				C84AEEA21F754FF5009E6019 /* Error.swift in Sources */,
@@ -838,6 +949,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C80A5F581F8259C80070C918 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8460FDF1F4C665800CFF7E8 /* TrolleyCore */;
+			targetProxy = C80A5F571F8259C80070C918 /* PBXContainerItemProxy */;
+		};
 		C86680DA1F7BFD03008C125E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C8460FDF1F4C665800CFF7E8 /* TrolleyCore */;
@@ -845,7 +961,70 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		C80A5F491F8259B60070C918 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80A5F4A1F8259B60070C918 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C80A5F4E1F8259B60070C918 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80A5F4F1F8259B60070C918 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		C80A5F531F8259B60070C918 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FVT8X28ANV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CoreExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.trolleyio.CoreExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C80A5F541F8259B60070C918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FVT8X28ANV;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CoreExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.trolleyio.CoreExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C8460FF21F4C665800CFF7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -967,7 +1146,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -999,7 +1178,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1069,6 +1248,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C80A5F521F8259B60070C918 /* Build configuration list for PBXNativeTarget "CoreExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80A5F531F8259B60070C918 /* Debug */,
+				C80A5F541F8259B60070C918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C8460FDA1F4C665800CFF7E8 /* Build configuration list for PBXProject "TrolleyCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

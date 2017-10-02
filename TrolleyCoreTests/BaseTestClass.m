@@ -20,6 +20,18 @@
     return self;
 }
 
+- (instancetype)initWithSelector:(SEL)selector {
+    self = [super initWithSelector:selector];
+    self->_timeout = trl_timeout;
+    return self;
+}
+
+- (instancetype)initWithInvocation:(NSInvocation *)invocation {
+    self = [super initWithInvocation:invocation];
+    self->_timeout = trl_timeout;
+    return self;
+}
+
 - (void)waitForExpectations {
     [self waitForExpectationsWithHandler:nil];
 }
