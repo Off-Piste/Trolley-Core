@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TrolleyCore"
-  s.version      = "0.0.2"
+  s.version      = "0.2.0"
   s.summary      = "TrolleyCore is a mobile and web ecommerce system"
   s.description  = <<-DESC
   A very very very very very very short description of TrolleyCore.
@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
                             'TrolleyCore/TRLNetworkManager_Options.h'
 
 
-  source_files =            'TrolleyCore/**/*.{swift, m, h}'
+  source_files =            'TrolleyCore/**/**/*.{swift, m, h}'
 
   s.source_files = source_files
   s.public_header_files = public_header_files

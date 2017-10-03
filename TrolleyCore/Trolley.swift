@@ -49,7 +49,11 @@ var aTRLShop: Trolley!
 
     public var options: TRLOptions
 
+    #if swift(>=4.0)
     private var networkManager: TRLNetworkManager!
+    #else
+    fileprivate var networkManager: TRLNetworkManager!
+    #endif
 
     public class func open() {
         self.open(with: .default)
@@ -108,7 +112,13 @@ extension Trolley {
 
 extension Trolley {
 
-    private func coreConfigure() {
+    #if swift(>=4.0)
+    private func coreConfigure() { _core_config() }
+    #else
+    fileprivate func coreConfigure() { _core_config() }
+    #endif
+
+    private func _core_config() {
         // 1. Validate the entered options
         do {
             try self.options.validateOrThrow()
@@ -130,7 +140,24 @@ extension Trolley {
         self.networkManager.__trl_connect()
     }
 
-    private class func sendNotificationsToSDK(_ shop: Trolley) {
+    /**
+     This is a workaround for the fact we can't do:
+
+     #if swift(>=4.0)
+     private class func sendNotificationsToSDK(_ shop: Trolley) {
+     #else
+     fileprivate class func sendNotificationsToSDK(_ shop: Trolley) {
+     #endif
+         ...
+     }
+     */
+    #if swift(>=4.0)
+    private class func sendNotificationsToSDK(_ shop: Trolley) { send_notifications_to_SDK(shop) }
+    #else
+    fileprivate class func sendNotificationsToSDK(_ shop: Trolley) { send_notifications_to_SDK(shop) }
+    #endif
+
+    private class func send_notifications_to_SDK(_ shop: Trolley) {
         let ui = ["TRLAppNameKey": shop.shopName]
 
         NotificationCenter.default.post(
