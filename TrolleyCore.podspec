@@ -16,13 +16,23 @@ Pod::Spec.new do |s|
   TrolleyCore is a mobile and web ecommerce system.
                    DESC
 
-  s.homepage     = "https://github.com/harrytwright/trolley_core"
+  s.homepage = "https://github.com/harrytwright/trolley_core"
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "harrytwright" => "haroldtomwright@gmail.com" }
+  s.license = {
+      :type => "MIT",
+      :file => "LICENSE"
+  }
 
-  s.platform     = :ios, 10.3
-  s.source       = { :git => "https://github.com/harrytwright/trolley_core.git", :tag => "#{s.version}" }
+  s.author = {
+      "harrytwright" => "haroldtomwright@gmail.com"
+
+  }
+
+  s.platform = :ios, 10.3
+  s.source = {
+      :git => "https://github.com/harrytwright/trolley_core.git",
+      :tag => "#{s.version}"
+  }
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
@@ -59,18 +69,18 @@ Pod::Spec.new do |s|
                             'TrolleyCore/TRLNetworkManager_Options.h'
 
 
-  source_files =            'TrolleyCore/{Networking, API Connections}/**/*.{swift, m, h}',
-                            'TrolleyCore/*.{swift, m, h}'
+  source_files =            'TrolleyCore/**/*.{swift, m, h}'
 
   s.source_files = source_files
   s.public_header_files = public_header_files
 
   # s.dependency 'PromiseKit'
-  s.libraries = 'icucore', 'c++'
+  s.libraries = 'icucore', 'c++', 'z'
   s.frameworks = 'CoreFoundation', 'CFNetwork', 'Security', 'SystemConfiguration'
 
   s.pod_target_xcconfig = {
     'CLANG_ENABLE_MODULES' => 'YES',
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
     'OTHER_LDFLAGS' => '$(inherited)',
     'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
   }

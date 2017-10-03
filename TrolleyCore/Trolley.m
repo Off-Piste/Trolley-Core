@@ -25,22 +25,21 @@
 //
 
 #import "Trolley.h"
-
 #import "Log.h"
-
 #import "TrolleyCore-Swift-Fixed.h"
 
 NSNotificationName TRLTrolleyStartingUpNotification = @"io.trolley.startingUpNotification";
 
 NSString *AppleDeviceUUIDKey = @"io.trolley.device_key";
 
-static NSString *api_key(void) {
-    NSString *letters = @"abcdefghijklmnopqrstuvwxyz0123456789";
-    NSMutableString *randomString = [NSMutableString stringWithCapacity: 16];
+static int device_key_length = 20;
 
-    for (int i=0; i<16; i++) {
-        [randomString appendFormat: @"%C",
-         [letters characterAtIndex: arc4random_uniform((int)[letters length])]];
+static NSString *device_key(void) {
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyz0123456789";
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: device_key_length];
+
+    for (int i=0; i<device_key_length; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((int)[letters length])]];
     }
 
     return randomString;
@@ -53,7 +52,7 @@ NSString *trl_device_uuid_get() {
 
     if (error) {
         TRLErrorLogger(TRLLoggerServiceCore, @"%@, This error is to be expected on the first install of an app. If this persists please contact us!", error);
-        conectionID = api_key();
+        conectionID = device_key();
         [dm setObject:conectionID];
     }
     return conectionID;

@@ -17,6 +17,8 @@
 		C80A5F551F8259C80070C918 /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C80A5F561F8259C80070C918 /* TrolleyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C80A5F5D1F8259EB0070C918 /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A5F5C1F8259E90070C918 /* TrolleyConfigFile.plist */; };
+		C82A87161F8395A50072B198 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C82A87141F8395A50072B198 /* README.md */; };
+		C82A87171F8395A50072B198 /* TrolleyCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C82A87151F8395A50072B198 /* TrolleyCore.podspec */; };
 		C83F4F521F7C0033003BC2AE /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C83F4F511F7C002B003BC2AE /* TrolleyConfigFile.plist */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEE611F754FF5009E6019 /* TRLNetworkManager_Options.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEDF41F754FF2009E6019 /* TRLNetworkManager_Options.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,6 +169,8 @@
 		C80A5F4F1F8259B60070C918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C80A5F511F8259B60070C918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C80A5F5C1F8259E90070C918 /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
+		C82A87141F8395A50072B198 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C82A87151F8395A50072B198 /* TrolleyCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = TrolleyCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C839E4A81F7E855D00D5C02F /* TestBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlocks.h; sourceTree = "<group>"; };
 		C83F4F511F7C002B003BC2AE /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C84166421F4DFB5F0097EB3E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TrolleyCore-hezepbvoslfaqgcqonxuosaxhypv/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
@@ -346,9 +350,19 @@
 			path = CoreExample;
 			sourceTree = "<group>";
 		};
+		C82A87181F8395A90072B198 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C82A87141F8395A50072B198 /* README.md */,
+				C82A87151F8395A50072B198 /* TrolleyCore.podspec */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
 		C8460FD61F4C665800CFF7E8 = {
 			isa = PBXGroup;
 			children = (
+				C82A87181F8395A90072B198 /* Support Files */,
 				C8460FE21F4C665800CFF7E8 /* TrolleyCore */,
 				C86680D41F7BFD03008C125E /* TrolleyCoreTests */,
 				C80A5F441F8259B60070C918 /* CoreExample */,
@@ -802,6 +816,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82A87161F8395A50072B198 /* README.md in Resources */,
+				C82A87171F8395A50072B198 /* TrolleyCore.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
