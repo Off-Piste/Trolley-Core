@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TrolleyCore"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "TrolleyCore is a mobile and web ecommerce system"
   s.description  = <<-DESC
   A very very very very very very short description of TrolleyCore.
@@ -36,43 +36,43 @@ Pod::Spec.new do |s|
 
   s.module_map = 'TrolleyCore/TrolleyCore.modulemap'
 
-  public_header_files   =   'TrolleyCore/Networking/Request/TRLURLRequest.h',
-                            'TrolleyCore/Networking/Request/TRLURLDataRequest.h',
-                            'TrolleyCore/Networking/Delegation/TRLURLDataTaskDelegate.h',
-                            'TrolleyCore/Networking/Delegation/TRLURLTaskDelegate.h',
-                            'TrolleyCore/Networking/Encoding/TRLURLEncoding.h',
-                            'TrolleyCore/Networking/Encoding/TRLURLParameterEncoding.h',
-                            'TrolleyCore/Networking/JSON/TRLJSON.h',
-                            'TrolleyCore/Networking/JSON/TRLJSONBase.h',
-                            'TrolleyCore/Networking/JSON/TRLMutableJSON.h',
-                            'TrolleyCore/Networking/JSON/TRLMutableArray.h',
-                            'TrolleyCore/Networking/JSON/TRLMutableDictionary.h',
-                            'TrolleyCore/Networking/Reachability/Reachability.h',
-                            'TrolleyCore/Networking/Utils/NSMutableURLRequest+Reqestable.h',
-                            'TrolleyCore/Networking/Utils/TNTUtils.h',
-                            'TrolleyCore/Networking/Utils/TRLBlocks.h',
-                            'TrolleyCore/Networking/TRLURLSessionManager.h',
-                            'TrolleyCore/Networking/Utils/NSArray+Map.h',
+  s.public_header_files   =   [
+    'TrolleyCore/Networking/Request/TRLURLRequest.h',
+    'TrolleyCore/Networking/Request/TRLURLDataRequest.h',
+    'TrolleyCore/Networking/Delegation/TRLURLDataTaskDelegate.h',
+    'TrolleyCore/Networking/Delegation/TRLURLTaskDelegate.h',
+    'TrolleyCore/Networking/Encoding/TRLURLEncoding.h',
+    'TrolleyCore/Networking/Encoding/TRLURLParameterEncoding.h',
+    'TrolleyCore/Networking/JSON/TRLJSON.h',
+    'TrolleyCore/Networking/JSON/TRLJSONBase.h',
+    'TrolleyCore/Networking/JSON/TRLMutableJSON.h',
+    'TrolleyCore/Networking/JSON/TRLMutableArray.h',
+    'TrolleyCore/Networking/JSON/TRLMutableDictionary.h',
+    'TrolleyCore/Networking/Reachability/Reachability.h',
+    'TrolleyCore/Networking/Utils/NSMutableURLRequest+Reqestable.h',
+    'TrolleyCore/Networking/Utils/TNTUtils.h',
+    'TrolleyCore/Networking/Utils/TRLBlocks.h',
+    'TrolleyCore/Networking/TRLURLSessionManager.h',
+    'TrolleyCore/Networking/Utils/NSArray+Map.h',
 
-                            # API Connections Headers
-                            'TrolleyCore/API Connections/TRLRequest.h',
-                            'TrolleyCore/API Connections/TRLNetworkManager.h',
+    # API Connections Headers
+    'TrolleyCore/API Connections/TRLRequest.h',
+    'TrolleyCore/API Connections/TRLNetworkManager.h',
 
-                            # Core Headers
-                            'TrolleyCore/TRLError.h',
-                            'TrolleyCore/Trolley.h',
-                            'TrolleyCore/Log.h',
-                            'TrolleyCore/TrolleyCore.h',
+    # Core Headers
+    'TrolleyCore/TRLError.h',
+    'TrolleyCore/Trolley.h',
+    'TrolleyCore/Log.h',
+    'TrolleyCore/TrolleyCore.h',
 
-                            #Dynamic Header
-                            'TrolleyCore/Networking/JSON/TRLJSONBase_Dynamic.h',
-                            'TrolleyCore/TRLNetworkManager_Options.h'
+    #Dynamic Header
+    'TrolleyCore/Networking/JSON/TRLJSONBase_Dynamic.h',
+    'TrolleyCore/TRLNetworkManager_Options.h'
+  ]
 
 
-  source_files =            'TrolleyCore/**/**/*.{swift, m, h}'
 
-  s.source_files = source_files
-  s.public_header_files = public_header_files
+  s.source_files = 'TrolleyCore/**/*.{swift,h,m}'
 
   # s.dependency 'PromiseKit'
   s.libraries = 'icucore', 'c++', 'z'
@@ -84,10 +84,5 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS' => '$(inherited)',
     'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
   }
-
-  s.subspec 'Headers' do |s|
-    s.source_files          = public_header_files
-    s.public_header_files   = public_header_files
-  end
 
 end
