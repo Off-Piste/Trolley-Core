@@ -28,7 +28,7 @@ import Foundation
 import TrolleyCore.Dynamic
 
 extension JSON: _ObjectiveCBridgeable {
-    
+    // swiftlint:disable:next type_name
     public typealias _ObjectiveCType = TRLJSON
 
     /// Try to bridge from an Objective-C object of the bridged class
@@ -98,8 +98,6 @@ extension JSON: _ObjectiveCBridgeable {
             // http://www.cocoawithlove.com/blog/2016/02/02/partial-functions-part-two-catching-precondition-failures.html
             let msg = "Forcing JSON conversion requires valid TRLJSON"
             NSException(name: .invalidArgumentException, reason: msg, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription]).raise()
-
-            
         }
 
         result = JSON(_core: source.toCore)

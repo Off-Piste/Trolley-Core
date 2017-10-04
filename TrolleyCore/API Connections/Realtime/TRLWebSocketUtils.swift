@@ -55,8 +55,7 @@ extension NSString {
                 let rangeStart: Int = c
                 let rangeLength: Int = size - (c + size) - ((self as String).characters.count)
                 dataSegs.append(self.substring(with: NSRange(location: rangeStart, length: rangeLength)))
-            }
-            else {
+            } else {
                 let rangeStart: Int = c
                 let rangeLength: Int = size
                 dataSegs.append(self.substring(with: NSRange(location: rangeStart, length: rangeLength)))

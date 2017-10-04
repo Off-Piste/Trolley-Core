@@ -93,7 +93,6 @@ open class TRLURLSessionDelegate: NSObject {
     /// requires caller to call the `completionHandler`.
     open var dataTaskWillCacheResponseWithCompletion: ((URLSession, URLSessionDataTask, CachedURLResponse, @escaping (CachedURLResponse?) -> Void) -> Void)?
 
-
     // MARK: Properties
 
 //    var retrier: RequestRetrier?
@@ -340,7 +339,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
             strongSelf[task] = nil
         }
 
-        guard let request = self[task], let _ = sessionManager else {
+        guard let request = self[task], sessionManager != nil else {
             completeTask(session, task, error)
             return
         }
@@ -402,7 +401,7 @@ extension TRLURLSessionDelegate: URLSessionDataDelegate {
     {
         if let dataTaskDidBecomeDownloadTask = dataTaskDidBecomeDownloadTask {
             dataTaskDidBecomeDownloadTask(session, dataTask, downloadTask)
-        } 
+        }
     }
 
     /// Tells the delegate that the data task has received some of the expected data.

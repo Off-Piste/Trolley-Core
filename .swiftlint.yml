@@ -13,11 +13,6 @@ disabled_rules: # rule identifiers to exclude from running
   - type_body_length
   - line_length
   - syntactic_sugar
-opt_in_rules:
-  - empty_count
 included:
   - TrolleyCore
-excluded:
-  - Trolley/Tests
-  - TrolleyDatabase/Tests
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)

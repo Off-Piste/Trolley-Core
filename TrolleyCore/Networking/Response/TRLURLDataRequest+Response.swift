@@ -75,7 +75,7 @@ extension TRLURLDataRequest {
     }
 }
 
-extension TRLURLDataRequest { 
+extension TRLURLDataRequest {
 
     @discardableResult
     @objc(responseJSON:)

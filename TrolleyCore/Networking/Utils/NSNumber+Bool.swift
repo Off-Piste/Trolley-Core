@@ -46,6 +46,6 @@ public extension NSNumber {
         if let decimal = Decimal(string: string) {
             self.init(value: NSDecimalNumber(decimal: decimal).doubleValue)
         }
-        return nil;
+        return nil
     }
 }

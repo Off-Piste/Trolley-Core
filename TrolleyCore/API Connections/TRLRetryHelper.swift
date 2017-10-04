@@ -8,14 +8,15 @@
 import Foundation
 import ObjectiveC.NSObjCRuntime
 
-public typealias trl_void_void = () -> ()
+// swiftlint:disable next type_name
+public typealias trl_void_void = () -> Void
 
 internal var arc4random_max: Double {
     return 0x100000000
 }
 
 internal var randomDouble: Double {
-    return Double(arc4random()) / arc4random_max;
+    return Double(arc4random()) / arc4random_max
 }
 
 @objcMembers
@@ -111,7 +112,6 @@ public final class TRLRetryHelper: NSObject {
             }
         }
 
-
 //        let timer = TRLTimer(for: delay * TimeInterval(NSEC_PER_SEC))
 //        timer.queue = .main
 //        timer.once {
@@ -123,11 +123,11 @@ public final class TRLRetryHelper: NSObject {
         if self.scheduledRetry != nil {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             self.scheduledRetry?.cancel()
-            self.scheduledRetry = nil;
+            self.scheduledRetry = nil
         } else {
             TRLDebugLogger(for: .core, "No existing retry attempt to cancel")
         }
-        self.currentRetryDelay = 0;
+        self.currentRetryDelay = 0
     }
 
     public func signalSuccess() {

@@ -8,11 +8,10 @@ target 'TrolleyCore' do
   # Pods for TrolleyCore
 #  pod 'PromiseKit'
 
-#  target 'TrolleyCoreTests' do
-#    inherit! :search_paths
-#    # Pods for testing
-#    pod 'Quick'
-#    pod 'Nimble'
-#  end
+  target 'TrolleyCoreTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git'
+  end
 
 end

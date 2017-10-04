@@ -1,3 +1,21 @@
-PODFILE CHECKSUM: cfcd237aae7acd423418cc344b58fa22a4cde0cd
+PODS:
+  - Nimble (7.0.2)
+
+DEPENDENCIES:
+  - Nimble (from `https://github.com/Quick/Nimble.git`)
+
+EXTERNAL SOURCES:
+  Nimble:
+    :git: https://github.com/Quick/Nimble.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 38c9ab0846a3fbec308eb2aa9ef68b10a7434eb4
+    :git: https://github.com/Quick/Nimble.git
+
+SPEC CHECKSUMS:
+  Nimble: 5c3b8c4b0229d95c2c7b0005e2edf244937dbb04
+
+PODFILE CHECKSUM: 20f98c3cf5c5658e98de34be56e55666b53fe3d4
 
 COCOAPODS: 1.2.0.beta.3

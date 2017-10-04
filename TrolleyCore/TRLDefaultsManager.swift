@@ -112,5 +112,5 @@ fileprivate class Encoder {
 
         return object
     }
-    
+
 }

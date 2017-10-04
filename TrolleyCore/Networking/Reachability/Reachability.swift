@@ -36,5 +36,5 @@ extension NetworkStatus: CustomStringConvertible {
         case .ReachableViaWWAN: return "Reachable Via WWAN"
         }
     }
-    
+
 }

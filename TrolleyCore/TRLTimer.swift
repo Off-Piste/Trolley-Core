@@ -13,35 +13,35 @@ public typealias Result = TRLTimer.Result
 public typealias RepeatClosureWithResult = () -> Result
 
 public class TRLTimer {
-    
+
     public enum Result {
         case stop
         case continuous
         case `repeat`(after: TimeInterval)
     }
-    
+
     fileprivate struct SubscriberInfo {
         let block: RepeatClosureWithResult
         var timeInterval: TimeInterval
     }
-    
+
     fileprivate var seconds: TimeInterval
-    
+
     fileprivate var subscriberInfo: SubscriberInfo?
-    
+
     internal var queue: DispatchQueue = DispatchQueue(
         label: "io.trolley.timer",
         qos: .utility,
         attributes: .concurrent
     )
-    
+
     /// - note: +-1 second due to being on the main thread
     ///
     /// - Parameter seconds: <#seconds description#>
     public init(for seconds: TimeInterval) {
         self.seconds = seconds
     }
-    
+
     /// - note: +- 1 second due to being on the main thread
     ///
     /// - Parameters:
@@ -50,18 +50,19 @@ public class TRLTimer {
     ///   - closure: <#closure description#>
     public init(for seconds: TimeInterval, repeats: Bool, closure: @escaping (TRLTimer) -> Void) {
         self.seconds = seconds
-        if repeats { self.continuous { closure(self) } }
-        else { self.once { closure(self) } }
+        if repeats {
+            self.continuous { closure(self) }
+        } else { self.once { closure(self) } }
     }
 }
 
 public extension TRLTimer {
-    
+
     static func after(_ seconds: TimeInterval, closure: @escaping RepeatClosureWithResult) {
         let aRepeater = TRLTimer(for: seconds)
         aRepeater.dispatch(closure)
     }
-    
+
     /// This is method is a mix between the both once and continuous.
     ///
     /// This specific `after(_:if:closure:)` is helpful when maybe 
@@ -88,20 +89,20 @@ public extension TRLTimer {
         if !bool() { return }
         self.after(seconds, closure: closure)
     }
-    
+
     func once(closure: @escaping RepeatClosure) {
         if self.subscriberInfo != nil {
             return
         }
-        
+
         let block: RepeatClosureWithResult = {
             closure()
             return .stop
         }
-        
+
         self.dispatch(block)
     }
-    
+
     @discardableResult
     func continuous(closure: @escaping RepeatClosure) -> TRLTimer {
         if self.subscriberInfo != nil {
@@ -111,69 +112,68 @@ public extension TRLTimer {
             closure()
             return .continuous
         }
-        
+
         self.dispatch(block)
         return self
     }
-    
+
     func invalidate() {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        
+
         if self.subscriberInfo == nil { return }
         self.subscriberInfo = nil
     }
-    
+
 }
 
 public extension TRLTimer {
-    
+
     var timeInterval: TimeInterval {
         return self.seconds
     }
-    
+
     var isValid: Bool {
         return self.subscriberInfo != nil
     }
-    
+
 }
 
 extension TRLTimer : CustomStringConvertible {
-    
+
     public var description: String {
         return "<Repeater> { isValid: \(isValid) TimeInterval: \(timeInterval) }"
     }
-    
+
 }
 
 private extension TRLTimer {
-    
+
     func dispatch(_ closure: @escaping RepeatClosureWithResult) {
         assert(self.seconds > 0, "Expecting intervalSecs to be > 0, not \(self.seconds)")
-        
+
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        
+
         self.subscriberInfo = SubscriberInfo(block: closure, timeInterval: self.seconds)
         self.dispatch(self.seconds)
-        
     }
-    
+
     func dispatch(_ timeInterval: TimeInterval) {
         assert(timeInterval > 0, "Expecting intervalSecs to be > 0, not \(timeInterval)")
-        
+
         queue.asyncAfter(deadline: .now() + .seconds(Int(timeInterval))) {
             self.timerCallback()
         }
     }
-    
+
     func timerCallback() {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        
+
         guard self.subscriberInfo != nil else { return }
         let result = self.subscriberInfo!.block()
-        
+
         switch result {
         case .stop:
             self.subscriberInfo = nil

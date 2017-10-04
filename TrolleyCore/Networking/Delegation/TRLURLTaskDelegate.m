@@ -70,7 +70,7 @@
 didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler
 {
-    TRLDebugLogger(TRLLoggerServiceCore, @"%s called,didReceiveChallenge:%@", __FUNCTION__, challenge);
+    TRLDebugLogger(TRLLoggerServiceCore, @"%s called, didReceiveChallenge:%@", __FUNCTION__, challenge);
     TChallenge *_challengeTouple = [[TChallenge alloc] init];
 
     if (_taskDidReceiveChallenge) {
@@ -81,10 +81,8 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
         if (challenge.previousFailureCount > 0) {
             _challengeTouple.disposition = NSURLSessionAuthChallengeRejectProtectionSpace;
         } else {
-            _challengeTouple.credential = self->_credential ?
-                                          self->_credential :
-                                          [session.configuration.URLCredentialStorage
-                                           defaultCredentialForProtectionSpace:challenge.protectionSpace];
+            NSURLCredential *defaultStorage = [session.configuration.URLCredentialStorage defaultCredentialForProtectionSpace:challenge.protectionSpace];
+            _challengeTouple.credential = self->_credential ? self->_credential : defaultStorage;
 
             if (_challengeTouple.credential) {
                 _challengeTouple.disposition = NSURLSessionAuthChallengeUseCredential;

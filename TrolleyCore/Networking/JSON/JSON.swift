@@ -115,7 +115,7 @@ extension JSON: ExpressibleByStringLiteral {
     public init(extendedGraphemeClusterLiteral value: String) {
         self.init(value)
     }
-    
+
 }
 
 extension JSON: ExpressibleByNilLiteral {
@@ -271,7 +271,7 @@ extension JSON: CustomStringConvertible, CustomDebugStringConvertible {
     public var debugDescription: String {
         return _core.base.debugDescription
     }
-    
+
 }
 
 extension JSON: Hashable {

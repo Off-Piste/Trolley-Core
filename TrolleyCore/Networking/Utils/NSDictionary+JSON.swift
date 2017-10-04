@@ -39,7 +39,7 @@ extension JSONType: CustomStringConvertible {
         case .unknown: return "Invalid JSON"
         }
     }
-    
+
 }
 
 @objcMembers final public class NSArrayIndex: NSObject {
@@ -82,4 +82,3 @@ extension NSArray {
     }
 
 }
-

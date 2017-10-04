@@ -46,7 +46,7 @@ extension OSLog {
  - warning: Internal Methods
  :nodoc:
  */
-@objc(TRLLoggerService)
+@objc(TRLLoggerService) // swiftlint:disable:next type_name
 public final class __LoggerService: NSObject, RawRepresentable {
 
     public typealias RawValue = String
@@ -81,7 +81,7 @@ internal typealias LoggerService = __LoggerService
 internal var isLogging: Bool = false
 
 // MARK: - Logger
-@objc(TRLLogger)
+@objc(TRLLogger) // swiftlint:disable:next type_name
 public final class __Logger: NSObject {
 
     /// The service for the Logger
@@ -103,7 +103,7 @@ public final class __Logger: NSObject {
     private var log: OSLog {
         return OSLog.applicationLogWithService(service)
     }
-    
+
     /// Method used to log the message, due to os_log using StaticString
     /// the logger has to be used more like an Obj-C logger than a swift
     /// print maybe at a later date, will add a few custom methods to allow

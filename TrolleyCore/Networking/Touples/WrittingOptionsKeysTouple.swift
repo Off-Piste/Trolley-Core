@@ -50,8 +50,9 @@ import Foundation
 
 public extension NSArray {
 
+    // swiftlint:disable for_where
     @objc public func optionForKey(_ key: WrittingOptionsKeys) -> Any? {
-        for option in self where option is WrittingOptions {
+        for option in self where option is WrittingOptions  {
             if (option as! WrittingOptions).key == key {
                 if (option as! WrittingOptions).value is JSONSerialization.WritingOptions {
                     return JSONSerialization.WritingOptions.prettyPrinted
@@ -62,5 +63,6 @@ public extension NSArray {
         }
         return nil
     }
+    // swiftlint:enable for_where
 
 }
