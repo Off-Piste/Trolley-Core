@@ -70,8 +70,7 @@ Pod::Spec.new do |s|
     'TrolleyCore/TRLNetworkManager_Options.h'
   ]
 
-
-
+  s.exclude_files = 'TrolleyCore/TrolleyConfigFile.plist'
   s.source_files = 'TrolleyCore/**/*.{swift,h,m}'
 
   # s.dependency 'PromiseKit'

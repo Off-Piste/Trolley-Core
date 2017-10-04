@@ -104,6 +104,7 @@
 		C84AEEBD1F754FF5009E6019 /* TRLTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE5F1F754FF4009E6019 /* TRLTimer.swift */; };
 		C84AEEBF1F755AF7009E6019 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C84AEEBE1F755AF6009E6019 /* libicucore.tbd */; };
 		C86590021F56EA26004DA57D /* TRLOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86590011F56EA26004DA57D /* TRLOptions.swift */; };
+		C8757ABA1F84E80400C4B4EB /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757AB91F84E7F700C4B4EB /* TrolleyConfigFile.plist */; };
 		C8E17AC11F4D8A3100A5C468 /* Trolley.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E17AC01F4D8A3100A5C468 /* Trolley.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,11 +113,9 @@
 		1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.debug.xcconfig"; sourceTree = "<group>"; };
 		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TRLNetworkConfig.swift; path = Realtime/TRLNetworkConfig.swift; sourceTree = "<group>"; };
 		C82A87141F8395A50072B198 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C82A87151F8395A50072B198 /* TrolleyCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = TrolleyCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C84166421F4DFB5F0097EB3E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/TrolleyCore-hezepbvoslfaqgcqonxuosaxhypv/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TrolleyCore.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C8460FE41F4C665800CFF7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,8 +215,8 @@
 		C86590011F56EA26004DA57D /* TRLOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRLOptions.swift; sourceTree = "<group>"; };
 		C8757A621F84E02C00C4B4EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C8757A631F84E02C00C4B4EB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C8757AB91F84E7F700C4B4EB /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C8E17AC01F4D8A3100A5C468 /* Trolley.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trolley.swift; sourceTree = "<group>"; };
-		CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrolleyCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,9 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				C84AEEBE1F755AF6009E6019 /* libicucore.tbd */,
-				C84166421F4DFB5F0097EB3E /* PromiseKit.framework */,
-				B6757E40FDB2D0C9BEDBD86D /* Pods_TrolleyCore.framework */,
-				CB2D377743E1A9070CE3F48D /* Pods_TrolleyCoreTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,6 +307,7 @@
 		C84610051F4C797100CFF7E8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8757AB91F84E7F700C4B4EB /* TrolleyConfigFile.plist */,
 				C84AEE411F754FF3009E6019 /* TrolleyCore-Swift-Fixed.h */,
 				C84AEE601F754FF4009E6019 /* TrolleyCore.modulemap */,
 				C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */,
@@ -572,12 +569,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8460FF41F4C665800CFF7E8 /* Build configuration list for PBXNativeTarget "TrolleyCore" */;
 			buildPhases = (
-				2620983AA52954AB3E82DA07 /* [CP] Check Pods Manifest.lock */,
 				C8460FDB1F4C665800CFF7E8 /* Sources */,
 				C8460FDC1F4C665800CFF7E8 /* Frameworks */,
 				C8460FDD1F4C665800CFF7E8 /* Headers */,
 				C8460FDE1F4C665800CFF7E8 /* Resources */,
-				BE5094A6E3DD7A7C88202B57 /* [CP] Copy Pods Resources */,
 				C8E17AC41F4D947100A5C468 /* ShellScript */,
 			);
 			buildRules = (
@@ -631,6 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8757ABA1F84E80400C4B4EB /* TrolleyConfigFile.plist in Resources */,
 				C82A87161F8395A50072B198 /* README.md in Resources */,
 				C82A87171F8395A50072B198 /* TrolleyCore.podspec in Resources */,
 			);
@@ -639,36 +635,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2620983AA52954AB3E82DA07 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BE5094A6E3DD7A7C88202B57 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C8E17AC41F4D947100A5C468 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
