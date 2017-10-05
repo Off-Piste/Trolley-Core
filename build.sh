@@ -6,7 +6,7 @@ set -e
 source_root="$(dirname "$0")"
 source="$0"
 
-: ${XCMODE:=xcodebuild}
+CODESIGN_PARAMS="CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO"
 
 usage() {
 cat <<EOF
@@ -180,7 +180,7 @@ objc_jazzy() {
 
 run_tests() {
   local destination="$1"
-  local build_args="-project ./Core.xcodeproj -scheme App $destination ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter`"
+  local build_args="-project ./Core.xcodeproj -alltargets $destination ONLY_ACTIVE_ARCH=NO $CODESIGN_PARAMS | xcpretty -f `xcpretty-travis-formatter`"
 
   xcode "$build_args"
 }
