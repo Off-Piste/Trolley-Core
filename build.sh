@@ -51,16 +51,16 @@ pre_install() {
 
 pre_build_simulator_ios_10() {
   # Workaround for Error 65
-    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (10.3.1" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
-    - echo $IOS_SIMULATOR_UDID
-    - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+    export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (10.3.1" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    echo $IOS_SIMULATOR_UDID
+    open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
 }
 
 pre_build_simulator_ios_11() {
   # Workaround for Error 65
-    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (11.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
-    - echo $IOS_SIMULATOR_UDID
-    - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+    export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (11.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    echo $IOS_SIMULATOR_UDID
+    open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
 }
 
 #######################################
