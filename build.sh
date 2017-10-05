@@ -37,7 +37,7 @@ build() {
 
 pre_install() {
   echo "Uninstalling Cocoapods"
-  gem uninstall cocoapods -a --force
+  gem uninstall cocoapods -a --force -x
 
   echo "Installing Cocoapods"
   gem install cocoapods
