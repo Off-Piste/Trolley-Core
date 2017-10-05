@@ -35,6 +35,34 @@ build() {
   echo "Hello"
 }
 
+pre_install() {
+  echo "Uninstalling Cocoapods"
+  gem uninstall cocoapods -a
+
+  echo "Installing Cocoapods"
+  gem install cocoapods
+
+  echo "Installing xcpretty"
+  gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+  echo "Installing xcpretty-travis-formatter"
+  gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
+}
+
+pre_build_simulator_ios_10() {
+  # Workaround for Error 65
+    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (10.3.1" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    - echo $IOS_SIMULATOR_UDID
+    - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+}
+
+pre_build_simulator_ios_11() {
+  # Workaround for Error 65
+    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (11.0.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    - echo $IOS_SIMULATOR_UDID
+    - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+}
+
 #######################################
 #              Swiftlint              #
 #######################################
@@ -148,8 +176,14 @@ objc_jazzy() {
 #              Testing                #
 #######################################
 
+ # set -o pipefail && travis_retry xcodebuild test -workspace Example/Trolley.xcworkspace -scheme Trolley-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1' ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter`
 
+run_tests() {
+  local destination="$1"
+  local build_args="-project ./Core.xcodeproj -scheme App $destination ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter`"
 
+  xcode "$build_args"
+}
 
 #######################################
 #              Interface              #
@@ -159,10 +193,6 @@ objc_jazzy() {
 COMMAND="$1"
 
 case "$COMMAND" in
-  L)
-    sh build.sh swiftlint ;;
-  D)
-    sh build.sh jazzy ;;
   lint)
     build_swiftlint
     run_swiftlint
@@ -172,6 +202,29 @@ case "$COMMAND" in
     build_jazzy
     build_doc swift
     build_doc objc
+    exit 0
+    ;;
+  test-ios-swift3)
+    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1'"
+    exit 0
+    ;;
+  test-ios-swift4)
+    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0.0'"
+    exit 0
+    ;;
+  #######################
+  #       Helpers       #
+  #######################
+  build-test-ios-swift3)
+    pre_build_simulator_ios_10
+    exit 0
+    ;;
+  build-test-ios-swift4)
+    pre_build_simulator_ios_11
+    exit 0
+    ;;
+  update-xcode)
+    pre_install
     exit 0
     ;;
   *)

@@ -14,3 +14,13 @@ matrix:
       env: JOB=docs
       os: osx
       osx_image: xcode9
+    - script: ./build.sh test-ios-swift4
+      env: JOB=iOSTests_swift4
+      os: osx
+      osx_image: xcode9
+    - script: ./build.sh test-ios-swift3
+      env: JOB=iOSTests_swift3
+      os: osx
+      osx_image: xcode8.3
+      before_install: ./build.sh update-xcode
+      before_script: ./build.sh build-test-ios-swift3
