@@ -179,8 +179,9 @@ objc_jazzy() {
  # set -o pipefail && travis_retry xcodebuild test -workspace Example/Trolley.xcworkspace -scheme Trolley-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1' ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter`
 
 run_tests() {
-  local destination="$1"
-  local build_args="test -project ./Core.xcodeproj -alltargets $destination ONLY_ACTIVE_ARCH=NO ${CODESIGN_PARAMS} | xcpretty -f `xcpretty-travis-formatter`"
+  local scheme="$1"
+  local destination="$2"
+  local build_args="test -project ./Core.xcodeproj -scheme $scheme $destination ONLY_ACTIVE_ARCH=NO ${CODESIGN_PARAMS} | xcpretty -f `xcpretty-travis-formatter` "
 
   xcode "$build_args"
 }
@@ -209,11 +210,11 @@ case "$COMMAND" in
     exit 0
     ;;
   test-ios-swift3)
-    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1'"
+    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1'"
     exit 0
     ;;
   test-ios-swift4)
-    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'"
+    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'"
     exit 0
     ;;
   #######################
