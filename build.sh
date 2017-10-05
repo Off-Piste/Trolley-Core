@@ -58,7 +58,7 @@ pre_build_simulator_ios_10() {
 
 pre_build_simulator_ios_11() {
   # Workaround for Error 65
-    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (11.0.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (11.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
     - echo $IOS_SIMULATOR_UDID
     - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
 }
@@ -209,7 +209,7 @@ case "$COMMAND" in
     exit 0
     ;;
   test-ios-swift4)
-    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0.0'"
+    run_tests "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'"
     exit 0
     ;;
   #######################
