@@ -25,73 +25,72 @@
 import Foundation
 
 /// Responsible for handling all delegate callbacks for the underlying session.
-@objcMembers
-open class TRLURLSessionDelegate: NSObject {
+@objc open class TRLURLSessionDelegate: NSObject {
 
     // MARK: URLSessionDelegate Overrides
 
     /// Overrides default behavior for URLSessionDelegate method `urlSession(_:didBecomeInvalidWithError:)`.
-    open var sessionDidBecomeInvalidWithError: ((URLSession, Error?) -> Void)?
+    @objc open var sessionDidBecomeInvalidWithError: ((URLSession, Error?) -> Void)?
 
     /// Overrides default behavior for URLSessionDelegate method `urlSession(_:didReceive:completionHandler:)`.
     open var sessionDidReceiveChallenge: ((URLSession, URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?))?
 
     /// Overrides all behavior for URLSessionDelegate method `urlSession(_:didReceive:completionHandler:)` and requires the caller to call the `completionHandler`.
-    open var sessionDidReceiveChallengeWithCompletion: ((URLSession, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
+    @objc open var sessionDidReceiveChallengeWithCompletion: ((URLSession, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionDelegate method `urlSessionDidFinishEvents(forBackgroundURLSession:)`.
-    open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
+    @objc open var sessionDidFinishEventsForBackgroundURLSession: ((URLSession) -> Void)?
 
     // MARK: URLSessionTaskDelegate Overrides
 
     /// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)`.
-    open var taskWillPerformHTTPRedirection: ((URLSession, URLSessionTask, HTTPURLResponse, URLRequest) -> URLRequest?)?
+    @objc open var taskWillPerformHTTPRedirection: ((URLSession, URLSessionTask, HTTPURLResponse, URLRequest) -> URLRequest?)?
 
     /// Overrides all behavior for URLSessionTaskDelegate method `urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)` and
     /// requires the caller to call the `completionHandler`.
-    open var taskWillPerformHTTPRedirectionWithCompletion: ((URLSession, URLSessionTask, HTTPURLResponse, URLRequest, @escaping (URLRequest?) -> Void) -> Void)?
+    @objc open var taskWillPerformHTTPRedirectionWithCompletion: ((URLSession, URLSessionTask, HTTPURLResponse, URLRequest, @escaping (URLRequest?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:didReceive:completionHandler:)`.
     open var taskDidReceiveChallenge: ((URLSession, URLSessionTask, URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?))?
 
     /// Overrides all behavior for URLSessionTaskDelegate method `urlSession(_:task:didReceive:completionHandler:)` and
     /// requires the caller to call the `completionHandler`.
-    open var taskDidReceiveChallengeWithCompletion: ((URLSession, URLSessionTask, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
+    @objc open var taskDidReceiveChallengeWithCompletion: ((URLSession, URLSessionTask, URLAuthenticationChallenge, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:needNewBodyStream:)`.
-    open var taskNeedNewBodyStream: ((URLSession, URLSessionTask) -> InputStream?)?
+    @objc open var taskNeedNewBodyStream: ((URLSession, URLSessionTask) -> InputStream?)?
 
     /// Overrides all behavior for URLSessionTaskDelegate method `urlSession(_:task:needNewBodyStream:)` and
     /// requires the caller to call the `completionHandler`.
-    open var taskNeedNewBodyStreamWithCompletion: ((URLSession, URLSessionTask, @escaping (InputStream?) -> Void) -> Void)?
+    @objc open var taskNeedNewBodyStreamWithCompletion: ((URLSession, URLSessionTask, @escaping (InputStream?) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:)`.
-    open var taskDidSendBodyData: ((URLSession, URLSessionTask, Int64, Int64, Int64) -> Void)?
+    @objc open var taskDidSendBodyData: ((URLSession, URLSessionTask, Int64, Int64, Int64) -> Void)?
 
     /// Overrides default behavior for URLSessionTaskDelegate method `urlSession(_:task:didCompleteWithError:)`.
-    open var taskDidComplete: ((URLSession, URLSessionTask, Error?) -> Void)?
+    @objc open var taskDidComplete: ((URLSession, URLSessionTask, Error?) -> Void)?
 
     // MARK: URLSessionDataDelegate Overrides
 
     /// Overrides default behavior for URLSessionDataDelegate method `urlSession(_:dataTask:didReceive:completionHandler:)`.
-    open var dataTaskDidReceiveResponse: ((URLSession, URLSessionDataTask, URLResponse) -> URLSession.ResponseDisposition)?
+    @objc open var dataTaskDidReceiveResponse: ((URLSession, URLSessionDataTask, URLResponse) -> URLSession.ResponseDisposition)?
 
     /// Overrides all behavior for URLSessionDataDelegate method `urlSession(_:dataTask:didReceive:completionHandler:)` and
     /// requires caller to call the `completionHandler`.
-    open var dataTaskDidReceiveResponseWithCompletion: ((URLSession, URLSessionDataTask, URLResponse, @escaping (URLSession.ResponseDisposition) -> Void) -> Void)?
+    @objc open var dataTaskDidReceiveResponseWithCompletion: ((URLSession, URLSessionDataTask, URLResponse, @escaping (URLSession.ResponseDisposition) -> Void) -> Void)?
 
     /// Overrides default behavior for URLSessionDataDelegate method `urlSession(_:dataTask:didBecome:)`.
-    open var dataTaskDidBecomeDownloadTask: ((URLSession, URLSessionDataTask, URLSessionDownloadTask) -> Void)?
+    @objc open var dataTaskDidBecomeDownloadTask: ((URLSession, URLSessionDataTask, URLSessionDownloadTask) -> Void)?
 
     /// Overrides default behavior for URLSessionDataDelegate method `urlSession(_:dataTask:didReceive:)`.
-    open var dataTaskDidReceiveData: ((URLSession, URLSessionDataTask, Data) -> Void)?
+    @objc open var dataTaskDidReceiveData: ((URLSession, URLSessionDataTask, Data) -> Void)?
 
     /// Overrides default behavior for URLSessionDataDelegate method `urlSession(_:dataTask:willCacheResponse:completionHandler:)`.
-    open var dataTaskWillCacheResponse: ((URLSession, URLSessionDataTask, CachedURLResponse) -> CachedURLResponse?)?
+    @objc open var dataTaskWillCacheResponse: ((URLSession, URLSessionDataTask, CachedURLResponse) -> CachedURLResponse?)?
 
     /// Overrides all behavior for URLSessionDataDelegate method `urlSession(_:dataTask:willCacheResponse:completionHandler:)` and
     /// requires caller to call the `completionHandler`.
-    open var dataTaskWillCacheResponseWithCompletion: ((URLSession, URLSessionDataTask, CachedURLResponse, @escaping (CachedURLResponse?) -> Void) -> Void)?
+    @objc open var dataTaskWillCacheResponseWithCompletion: ((URLSession, URLSessionDataTask, CachedURLResponse, @escaping (CachedURLResponse?) -> Void) -> Void)?
 
     // MARK: Properties
 
@@ -118,7 +117,7 @@ open class TRLURLSessionDelegate: NSObject {
     /// Initializes the `TRLURLSessionDelegate` instance.
     ///
     /// - returns: The new `TRLURLSessionDelegate` instance.
-    public override init() {
+    @objc public override init() {
         super.init()
     }
 
@@ -130,7 +129,7 @@ open class TRLURLSessionDelegate: NSObject {
     /// - parameter selector: A selector that identifies a message.
     ///
     /// - returns: `true` if the receiver implements or inherits a method that can respond to selector, otherwise `false`.
-    open override func responds(to selector: Selector) -> Bool {
+    @objc open override func responds(to selector: Selector) -> Bool {
         #if !os(macOS)
             if selector == #selector(URLSessionDelegate.urlSessionDidFinishEvents(forBackgroundURLSession:)) {
                 return sessionDidFinishEventsForBackgroundURLSession != nil
@@ -159,7 +158,7 @@ extension TRLURLSessionDelegate: URLSessionDelegate {
     ///
     /// - parameter session: The session object that was invalidated.
     /// - parameter error:   The error that caused invalidation, or nil if the invalidation was explicit.
-    open func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
+    @objc open func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         sessionDidBecomeInvalidWithError?(session, error)
     }
 
@@ -170,7 +169,7 @@ extension TRLURLSessionDelegate: URLSessionDelegate {
     /// - parameter challenge:         An object that contains the request for authentication.
     /// - parameter completionHandler: A handler that your delegate method must call providing the disposition
     ///                                and credential.
-    open func urlSession(
+    @objc open func urlSession(
         _ session: URLSession,
         didReceive challenge: URLAuthenticationChallenge,
         completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
@@ -195,7 +194,7 @@ extension TRLURLSessionDelegate: URLSessionDelegate {
     /// Tells the delegate that all messages enqueued for a session have been delivered.
     ///
     /// - parameter session: The session that no longer has any outstanding requests.
-    open func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+    @objc open func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         sessionDidFinishEventsForBackgroundURLSession?(session)
     }
 
@@ -214,7 +213,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
     /// - parameter completionHandler: A closure that your handler should call with either the value of the request
     ///                                parameter, a modified URL request object, or NULL to refuse the redirect and
     ///                                return the body of the redirect response.
-    open func urlSession(
+    @objc open func urlSession(
         _ session: URLSession,
         task: URLSessionTask,
         willPerformHTTPRedirection response: HTTPURLResponse,
@@ -242,7 +241,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
     /// - parameter challenge:         An object that contains the request for authentication.
     /// - parameter completionHandler: A handler that your delegate method must call providing the disposition
     ///                                and credential.
-    open func urlSession(
+    @objc open func urlSession(
         _ session: URLSession,
         task: URLSessionTask,
         didReceive challenge: URLAuthenticationChallenge,
@@ -273,7 +272,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
     /// - parameter session:           The session containing the task that needs a new body stream.
     /// - parameter task:              The task that needs a new body stream.
     /// - parameter completionHandler: A completion handler that your delegate method should call with the new body stream.
-    open func urlSession(
+    @objc open func urlSession(
         _ session: URLSession,
         task: URLSessionTask,
         needNewBodyStream completionHandler: @escaping (InputStream?) -> Void)
@@ -297,7 +296,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
     /// - parameter bytesSent:                The number of bytes sent since the last time this delegate method was called.
     /// - parameter totalBytesSent:           The total number of bytes sent so far.
     /// - parameter totalBytesExpectedToSend: The expected length of the body data.
-    open func urlSession(
+    @objc open func urlSession(
         _ session: URLSession,
         task: URLSessionTask,
         didSendBodyData bytesSent: Int64,
@@ -329,7 +328,7 @@ extension TRLURLSessionDelegate: URLSessionTaskDelegate {
     /// - parameter session: The session containing the task whose request finished transferring data.
     /// - parameter task:    The task whose request finished transferring data.
     /// - parameter error:   If an error occurred, an error object indicating how the transfer failed, otherwise nil.
-    open func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+    @objc open func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         /// Executed after it is determined that the request is not going to be retried
         let completeTask: (URLSession, URLSessionTask, Error?) -> Void = { [weak self] session, task, error in
             guard let strongSelf = self else { return }

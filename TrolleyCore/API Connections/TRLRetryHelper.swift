@@ -19,10 +19,10 @@ internal var randomDouble: Double {
     return Double(arc4random()) / arc4random_max
 }
 
-@objcMembers
+@objc
 public final class TRLRetryHelperTask: NSObject {
 
-    public var block: trl_void_void?
+    @objc public var block: trl_void_void?
 
     public init(block: @escaping trl_void_void){
         self.block = block
@@ -32,7 +32,7 @@ public final class TRLRetryHelperTask: NSObject {
         fatalError()
     }
 
-    public var isCanceled: Bool {
+    @objc public var isCanceled: Bool {
         return self.block == nil
     }
 
@@ -45,7 +45,7 @@ public final class TRLRetryHelperTask: NSObject {
     }
 }
 
-@objcMembers
+@objc
 public final class TRLRetryHelper: NSObject {
 
     internal var queue: DispatchQueue
@@ -68,7 +68,7 @@ public final class TRLRetryHelper: NSObject {
         fatalError()
     }
 
-    public init(withDispatchQueue queue: DispatchQueue, minRetryDelayAfterFailure: TimeInterval, maxRetryDelay: TimeInterval, retryExponent: Double, jitterFactor: Double) {
+    @objc public init(withDispatchQueue queue: DispatchQueue, minRetryDelayAfterFailure: TimeInterval, maxRetryDelay: TimeInterval, retryExponent: Double, jitterFactor: Double) {
         self.queue = queue
         self.minRetryDelayAfterFailure = minRetryDelayAfterFailure
         self.maxRetryDelay = maxRetryDelay
@@ -76,7 +76,7 @@ public final class TRLRetryHelper: NSObject {
         self.jitterFactor = jitterFactor
     }
 
-    public func retry(block: @escaping trl_void_void) {
+    @objc public func retry(block: @escaping trl_void_void) {
         if scheduledRetry != nil {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             scheduledRetry?.cancel()
@@ -119,7 +119,7 @@ public final class TRLRetryHelper: NSObject {
 //        }
     }
 
-    public func cancel() {
+    @objc public func cancel() {
         if self.scheduledRetry != nil {
             TRLDebugLogger(for: .core, "Canceling existing retry attempt")
             self.scheduledRetry?.cancel()
@@ -130,7 +130,7 @@ public final class TRLRetryHelper: NSObject {
         self.currentRetryDelay = 0
     }
 
-    public func signalSuccess() {
+    @objc public func signalSuccess() {
         self.lastWasSuccess = true
         self.currentRetryDelay = 0
     }

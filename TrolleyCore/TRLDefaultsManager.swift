@@ -26,7 +26,7 @@
 
 import Foundation
 
-public final class TRLDefaultsManager: NSObject {
+@objc public final class TRLDefaultsManager: NSObject {
 
     private var defaults: UserDefaults {
         return UserDefaults.standard

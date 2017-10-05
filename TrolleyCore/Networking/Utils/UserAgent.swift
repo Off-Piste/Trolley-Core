@@ -32,7 +32,7 @@ import UIKit
 /// Example: `iOS Example/1.0 (io.off-piste.iOS-Example; build:1; iOS 10.0.0) TrolleyCore/10.5.10`
 ///
 /// See - https://tools.ietf.org/html/rfc7231#section-5.5.3
-@objcMembers public final class UserAgent: NSObject {
+@objc public final class UserAgent: NSObject {
 
     internal var bundleInfoDictionary: [String: Any]? {
         return Bundle.main.infoDictionary
@@ -40,27 +40,27 @@ import UIKit
 
     private override init() { }
 
-    public static var shared: UserAgent {
+    @objc public static var shared: UserAgent {
         return UserAgent()
     }
 
-    public var executable: String {
+    @objc public var executable: String {
         return bundleInfoDictionary?[kCFBundleExecutableKey as String] as? String ?? "Unknown"
     }
 
-    public var bundle: String {
+    @objc public var bundle: String {
         return bundleInfoDictionary?[kCFBundleIdentifierKey as String] as? String ?? "Unknown"
     }
 
-    public var appVersion: String {
+    @objc public var appVersion: String {
         return bundleInfoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     }
 
-    public var appBuild: String {
+    @objc public var appBuild: String {
         return bundleInfoDictionary?[kCFBundleVersionKey as String] as? String ?? "Unknown"
     }
 
-    public var osName_Version: String {
+    @objc public var osName_Version: String {
         let version = ProcessInfo.processInfo.operatingSystemVersion
         let versionString = "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
 
@@ -83,7 +83,7 @@ import UIKit
         return "\(osName) \(versionString)"
     }
 
-    public var trolleyVersion: String {
+    @objc public var trolleyVersion: String {
         guard let tcInfo = Bundle(for: Trolley.self).infoDictionary,
             let build = tcInfo["CFBundleShortVersionString"] else {
             return "Unknown"
@@ -91,7 +91,7 @@ import UIKit
         return "Trolley/\(build)"
     }
 
-    public func header() -> String {
+    @objc public func header() -> String {
         if self.bundleInfoDictionary != nil {
             return "\(executable)/\(appVersion) (\(bundle); build:\(appBuild); \(osName_Version)) \(trolleyVersion)"
         }

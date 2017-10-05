@@ -45,9 +45,9 @@ extension NSException {
 // or not
 var aTRLShop: Trolley!
 
-@objcMembers public final class Trolley: NSObject {
+@objc public final class Trolley: NSObject {
 
-    public var options: TRLOptions
+    @objc public var options: TRLOptions
 
     #if swift(>=4.0)
     private var networkManager: TRLNetworkManager!
@@ -55,11 +55,11 @@ var aTRLShop: Trolley!
     fileprivate var networkManager: TRLNetworkManager!
     #endif
 
-    public class func open() {
+    @objc public class func open() {
         self.open(with: .default)
     }
 
-    public class func open(with options: TRLOptions) {
+    @objc public class func open(with options: TRLOptions) {
         if aTRLShop != nil {
             NSException.raise("Default shop has already been configured.")
         }
@@ -103,7 +103,7 @@ extension Trolley {
         self.deleteApp(handler: nil)
     }
 
-    public class func setlogging(_ bool: Bool) {
+    @objc public class func setlogging(_ bool: Bool) {
         TRLInfoLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
         isLogging = bool
     }
@@ -171,13 +171,13 @@ extension Trolley {
 
 extension Trolley {
 
-    public var shopName: String {
+    @objc public var shopName: String {
         return options.shopName
     }
 
     /// - Note: Maybe have this as initaliser too, so it creates the default shop upon calling
     ///         if the aTRLShop is not created yet
-    public static var shop: Trolley? {
+    @objc public static var shop: Trolley? {
         if aTRLShop == nil {
             TRLInfoLogger(for: .core, "The Trolley shop has not been configured yet, please add [Trolley open] OR Trolley.open() to your application initialization")
             return nil
@@ -186,7 +186,7 @@ extension Trolley {
         return aTRLShop
     }
 
-    public static var isShopOpen: Bool {
+    @objc public static var isShopOpen: Bool {
         return shop != nil
     }
 

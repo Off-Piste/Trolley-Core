@@ -26,13 +26,13 @@
 
 import Foundation
 
-@objcMembers public final class TProgressHandler: NSObject {
+@objc public final class TProgressHandler: NSObject {
 
-    public var queue: DispatchQueue
+    @objc public var queue: DispatchQueue
 
-    public var closure: ProgressHandler
+    @objc public var closure: ProgressHandler
 
-    public init(queue: DispatchQueue, closure: @escaping ProgressHandler) {
+    @objc public init(queue: DispatchQueue, closure: @escaping ProgressHandler) {
         self.queue = queue
         self.closure = closure
     }

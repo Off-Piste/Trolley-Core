@@ -26,19 +26,19 @@
 
 import Foundation
 
-@objcMembers public final class TRLWebSocketUtils: NSObject {
+@objc public final class TRLWebSocketUtils: NSObject {
 
-    public static var kWebsocketConnectTimeout: TimeInterval = 30
+    @objc public static var kWebsocketConnectTimeout: TimeInterval = 30
 
-    public static var kWebsocketKeepAliveInterval: TimeInterval = 45
+    @objc public static var kWebsocketKeepAliveInterval: TimeInterval = 45
 
-    public static var kWebsocketMaxFrameSize: Int = 16384
+    @objc public static var kWebsocketMaxFrameSize: Int = 16384
 
-    public static var kTWPRequestType: String = "t"
+    @objc public static var kTWPRequestType: String = "t"
 
-    public static var kTWPRequestTypeData: String = "d"
+    @objc public static var kTWPRequestTypeData: String = "d"
 
-    public static var kTWPRequestDataPayload: String = "d"
+    @objc public static var kTWPRequestDataPayload: String = "d"
 
 }
 

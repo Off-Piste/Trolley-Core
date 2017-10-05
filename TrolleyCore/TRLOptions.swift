@@ -32,8 +32,7 @@ internal var kXMLShopIDKey: String = "API_KEY"
 internal var kXMLShopURLKey: String = "DATABASE_URL"
 internal var kXMLShopDefaultCurrencyKey: String = "SHOP_CURRENCY"
 
-@objcMembers
-public final class TRLOptions: NSObject {
+@objc public final class TRLOptions: NSObject {
 
     public static var `default`: TRLOptions = TRLOptions()
 
@@ -134,25 +133,25 @@ public final class TRLOptions: NSObject {
 
 extension TRLOptions {
 
-    public var shopID: String {
+    @objc public var shopID: String {
         return self.xml[kXMLShopIDKey]._bridgeToObjectiveC().stringValue
     }
 
-    public var shopURL: String {
+    @objc public var shopURL: String {
         return self.xml[kXMLShopURLKey]._bridgeToObjectiveC().stringValue
     }
 
-    public var shopName: String {
+    @objc public var shopName: String {
         var comp = self.xml[kXMLShopIDKey]._bridgeToObjectiveC().stringValue.components(separatedBy: ":")
 
         return comp[3]
     }
 
-    public var defaultCurrency: String {
+    @objc public var defaultCurrency: String {
         return self.xml[kXMLShopDefaultCurrencyKey]._bridgeToObjectiveC().stringValue
     }
 
-    public override var description: String {
+    @objc public override var description: String {
         return "\(super.description){id:\(self.shopID) url:\(self.shopURL) currency:\(self.defaultCurrency)}"
     }
 }

@@ -42,13 +42,13 @@ extension JSONType: CustomStringConvertible {
 
 }
 
-@objcMembers final public class NSArrayIndex: NSObject {
+@objc final public class NSArrayIndex: NSObject {
 
-    public var underlyingError: Error?
+    @objc public var underlyingError: Error?
 
-    public var newObject: Any?
+    @objc public var newObject: Any?
 
-    public init(newObject: Any?, error: Error?) {
+    @objc public init(newObject: Any?, error: Error?) {
         self.underlyingError = error
         self.newObject = newObject
     }

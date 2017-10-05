@@ -141,7 +141,7 @@ public extension TRLTimer {
 
 extension TRLTimer : CustomStringConvertible {
 
-    public var description: String {
+    @objc public var description: String {
         return "<Repeater> { isValid: \(isValid) TimeInterval: \(timeInterval) }"
     }
 
