@@ -4,12 +4,13 @@ branches:
   only: master
 matrix:
   include:
-    - script: ./build.sh lint
-    env: JOB=lint
-    os: osx
-    before_install: brew update
-    osx_image: xcode9
+    - script:
+      - ./build.sh lint
+      env: JOB=lint
+      os: osx
+      before_install: brew update
+      osx_image: xcode9
     - script: ./build.sh docs
-    env: JOB=docs
-    os: osx
-    osx_image: xcode9
+      env: JOB=docs
+      os: osx
+      osx_image: xcode9
