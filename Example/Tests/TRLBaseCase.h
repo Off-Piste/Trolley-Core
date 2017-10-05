@@ -12,6 +12,11 @@
 #define TRLBaseCaseSubclass(classname) \
 @interface classname : TRLBaseCase @end \
 
+#define TRLExpectation \
+[self expectationWithDescription: NSStringFromSelector(NSSelectorFromString([NSString stringWithFormat:@"%s", __FUNCTION__]))];
+
+extern NSString *kDefaultShopName;
+
 typedef void(^trl_note_void)(NSNotification *note);
 
 @interface TRLBaseCase : XCTestCase

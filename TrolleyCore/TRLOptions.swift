@@ -34,6 +34,7 @@ internal var kXMLShopDefaultCurrencyKey: String = "SHOP_CURRENCY"
 
 @objc public final class TRLOptions: NSObject {
 
+    @objc(defaultOptions)
     public static var `default`: TRLOptions = TRLOptions()
 
     var xml: XML

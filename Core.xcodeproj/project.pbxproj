@@ -113,7 +113,7 @@
 		C8757AE51F84EDB800C4B4EB /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8757AE61F84EDB800C4B4EB /* TrolleyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8757AEA1F84EDD300C4B4EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757ADF1F84ED7A00C4B4EB /* Info.plist */; };
-		C8757AF21F84EF6200C4B4EB /* Core_iOS_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8757AF11F84EF6200C4B4EB /* Core_iOS_Tests.m */; };
+		C8757AF21F84EF6200C4B4EB /* TrolleyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8757AF11F84EF6200C4B4EB /* TrolleyTests.m */; };
 		C8757AF91F84EFA900C4B4EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757AF31F84EF6200C4B4EB /* Info.plist */; };
 		C8757AFE1F84F16C00C4B4EB /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8757B011F84F2FF00C4B4EB /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757AFD1F84F0F500C4B4EB /* TrolleyConfigFile.plist */; };
@@ -277,7 +277,7 @@
 		C8757ADF1F84ED7A00C4B4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8757AE01F84ED7A00C4B4EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8757AEF1F84EF6200C4B4EB /* Core_iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Core_iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8757AF11F84EF6200C4B4EB /* Core_iOS_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Core_iOS_Tests.m; sourceTree = "<group>"; };
+		C8757AF11F84EF6200C4B4EB /* TrolleyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrolleyTests.m; sourceTree = "<group>"; };
 		C8757AF31F84EF6200C4B4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8757AFD1F84F0F500C4B4EB /* TrolleyConfigFile.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TrolleyConfigFile.plist; sourceTree = "<group>"; };
 		C8757B021F84F35C00C4B4EB /* TRLBaseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRLBaseCase.h; sourceTree = "<group>"; };
@@ -618,7 +618,7 @@
 		C8757AF01F84EF6200C4B4EB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C8757AF11F84EF6200C4B4EB /* Core_iOS_Tests.m */,
+				C8757AF11F84EF6200C4B4EB /* TrolleyTests.m */,
 				C8757B021F84F35C00C4B4EB /* TRLBaseCase.h */,
 				C8757B031F84F35C00C4B4EB /* TRLBaseCase.m */,
 				C8757AF31F84EF6200C4B4EB /* Info.plist */,
@@ -921,7 +921,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8757AF21F84EF6200C4B4EB /* Core_iOS_Tests.m in Sources */,
+				C8757AF21F84EF6200C4B4EB /* TrolleyTests.m in Sources */,
 				C8757B041F84F35C00C4B4EB /* TRLBaseCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

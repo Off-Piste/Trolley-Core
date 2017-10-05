@@ -10,7 +10,11 @@
 
 static NSTimeInterval kExpectationTimeout = 30;
 
-@implementation TRLBaseCase
+NSString *kDefaultShopName = @"default";
+
+@implementation TRLBaseCase {
+    id _observer;
+}
 
 - (instancetype)initWithInvocation:(NSInvocation *)invocation {
     if (self = [super initWithInvocation:invocation]) {
@@ -25,10 +29,19 @@ static NSTimeInterval kExpectationTimeout = 30;
 
 - (void)observeNotification:(NSNotificationName)name
                     handler:(trl_note_void)handler {
-    [[NSNotificationCenter defaultCenter] addObserverForName:name
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock:handler];
+    _observer = [[NSNotificationCenter defaultCenter]
+                 addObserverForName:name
+                             object:nil
+                              queue:nil
+                         usingBlock:^(NSNotification * _Nonnull note) {
+                             handler(note);
+                             // Remeber to remove observer or we hit an error.
+                             [self removeObserverForNotification:name];
+                         }];
+}
+
+- (void)removeObserverForNotification:(NSNotificationName)name {
+    [[NSNotificationCenter defaultCenter] removeObserver:_observer name:name object:nil];
 }
 
 - (void)tearDown {

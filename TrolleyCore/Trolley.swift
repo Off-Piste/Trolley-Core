@@ -45,7 +45,7 @@ extension NSException {
 // or not
 var aTRLShop: Trolley!
 
-@objc public final class Trolley: NSObject {
+@objcMembers public final class Trolley: NSObject {
 
     @objc public var options: TRLOptions
 
@@ -59,7 +59,8 @@ var aTRLShop: Trolley!
         self.open(with: .default)
     }
 
-    @objc public class func open(with options: TRLOptions) {
+    @objc(openWithOptions:)
+    public class func open(with options: TRLOptions) {
         if aTRLShop != nil {
             NSException.raise("Default shop has already been configured.")
         }
