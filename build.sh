@@ -181,7 +181,8 @@ objc_jazzy() {
 run_tests() {
   local scheme="$1"
   local destination="$2"
-  local build_args="test -project ./Core.xcodeproj -scheme $scheme $destination ONLY_ACTIVE_ARCH=NO ${CODESIGN_PARAMS} | xcpretty -f `xcpretty-travis-formatter` "
+  local swift_version="$3"
+  local build_args="test -project ./Core.xcodeproj -scheme $scheme $destination ONLY_ACTIVE_ARCH=NO ${CODESIGN_PARAMS} $swift_version | xcpretty -f `xcpretty-travis-formatter` "
 
   xcode "$build_args"
 }
@@ -195,7 +196,7 @@ COMMAND="$1"
 
 case "$COMMAND" in
   cocoapod-lint)
-    pod spec lint TrolleyCore.podspec
+    pod spec lint TrolleyCore.podspec --allow-warnings --verbose
     exit 0
     ;;
   lint)
@@ -210,11 +211,11 @@ case "$COMMAND" in
     exit 0
     ;;
   test-ios-swift3)
-    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1'"
+    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1'" "SWIFT_VERSION=3.2"
     exit 0
     ;;
   test-ios-swift4)
-    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'"
+    run_tests "App" "-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'" ""
     exit 0
     ;;
   #######################
