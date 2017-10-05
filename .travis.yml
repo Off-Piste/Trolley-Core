@@ -26,3 +26,7 @@ matrix:
       osx_image: xcode8.3
       before_install: ./build.sh update-xcode
       before_script: ./build.sh build-test-ios-swift3
+    - script: ./build.sh cocoapod-lint
+      env: JOB=lint_cocoapod
+      osx_image: xcode9
+      os: osx

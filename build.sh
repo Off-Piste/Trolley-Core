@@ -180,7 +180,7 @@ objc_jazzy() {
 
 run_tests() {
   local destination="$1"
-  local build_args="-project ./Core.xcodeproj -alltargets $destination ONLY_ACTIVE_ARCH=NO $CODESIGN_PARAMS | xcpretty -f `xcpretty-travis-formatter`"
+  local build_args="test -project ./Core.xcodeproj -alltargets $destination ONLY_ACTIVE_ARCH=NO ${CODESIGN_PARAMS} | xcpretty -f `xcpretty-travis-formatter`"
 
   xcode "$build_args"
 }
@@ -193,6 +193,10 @@ run_tests() {
 COMMAND="$1"
 
 case "$COMMAND" in
+  cocoapod-lint)
+    pod spec lint TrolleyCore.podspec
+    exit 0
+    ;;
   lint)
     build_swiftlint
     run_swiftlint

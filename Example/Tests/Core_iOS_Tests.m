@@ -9,9 +9,7 @@
 #import "TRLBaseCase.h"
 //@import TrolleyCore;
 
-#define XCTestCaseSubclass(classname) @interface classname : TRLBaseCase @end
-
-XCTestCaseSubclass(Core_iOS_Tests)
+TRLBaseCaseSubclass(Core_iOS_Tests)
 
 @implementation Core_iOS_Tests
 
