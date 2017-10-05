@@ -118,12 +118,20 @@ internal var kXMLShopDefaultCurrencyKey: String = "SHOP_CURRENCY"
                 let msg = "The API key is invalid, please make sure you are using the iOS key"
                 throw TRLMakeError(Trolley.Error.invalidShopID, msg)
             }
-
+            // TODO: Remove this when added to swift 3.2 branch
+#if swift(>=4.0)
             if self.shopID.first! != "2" {
                 let msg = "This API key is not valid for our APIv2, " +
-                          "please download a new APIKey from http://console.trolleyio.co.uk"
+                "please download a new APIKey from http://console.trolleyio.co.uk"
                 throw TRLMakeError(Trolley.Error.invalidShopID, msg)
             }
+#else
+            if self.shopID.characters.first! != "2" {
+                let msg = "This API key is not valid for our APIv2, " +
+                "please download a new APIKey from http://console.trolleyio.co.uk"
+                throw TRLMakeError(Trolley.Error.invalidShopID, msg)
+            }
+#endif
 
         }
 
