@@ -75,7 +75,7 @@
                     requestTask:(TRLURLRequestTaskType *)requestTask
                           error:(NSError *)error {
     if (self = [super init]) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"TRLURLRequest is been created with session:%@", session);
+         TRLDebugLogger(TRLLoggerServiceCore, "TRLURLRequest is been created with session:%{private}@", session);
 
         self->_session = session;
         self->taskDelegateLock = [[NSLock alloc] init];
@@ -141,7 +141,7 @@
         startTime = CFAbsoluteTimeGetCurrent();
     }
 
-    TRLLog(TRLLoggerServiceCore, @"Resuming task:%@", self.task);
+    TRLDebugLogger(TRLLoggerServiceCore, "Resuming task:%{private}@", self.task);
     [self.task resume];
 }
 
@@ -150,7 +150,7 @@
         return;
     }
 
-    TRLLog(TRLLoggerServiceCore, @"Suspending task:%@", self.task);
+    TRLDebugLogger(TRLLoggerServiceCore, "Suspending task:%{private}@", self.task);
     [self.task suspend];
 }
 
@@ -159,7 +159,7 @@
         return;
     }
 
-    TRLLog(TRLLoggerServiceCore, @"Canceling task:%@", self.task);
+    TRLDebugLogger(TRLLoggerServiceCore, "Canceling task:%{private}@", self.task);
     [self.task cancel];
 }
 

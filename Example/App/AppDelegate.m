@@ -31,8 +31,11 @@
     if ([AppDelegate isWithinUnitTest]) {
         return YES;
     }
-    
+
+    [Trolley setLogging:YES];
     [Trolley open];
+
+//    TRLLog(TRLLoggerServiceCore, "App started up %{private}s", __FUNCTION__)
     return YES;
 }
 

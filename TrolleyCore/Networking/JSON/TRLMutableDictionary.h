@@ -20,7 +20,7 @@
 /// https://stackoverflow.com/questions/39495680/objective-c-category-for-nsmutabledictionary-not-being-respected-in-ios10
 
 /// A mutable dictionary that provides atomic accessor and mutators.
-@interface TRLMutableDictionary<KeyType, ObjectType: id> : NSObject
+@interface TRLMutableDictionary : NSObject
 
 ///
 + (instancetype)initWithDictionary:(NSDictionary *)dictionary;
@@ -32,10 +32,10 @@
 + (instancetype)initWithTRLMutableDictionary:(TRLMutableDictionary *)dictionary;
 
 /// Returns an object given a key in the dictionary or nil if not found.
-- (ObjectType)objectForKey:(KeyType)key;
+- (id)objectForKey:(NSString *)key;
 
 /// Updates the object given its key or adds it to the dictionary if it is not in the dictionary.
-- (void)setObject:(ObjectType)object forKey:(KeyType)key;
+- (void)setObject:(id)object forKey:(NSString *)key;
 
 /// Removes the object given its session ID from the dictionary.
 - (void)removeObjectForKey:(id)key;
@@ -47,16 +47,16 @@
 @property (NS_NONATOMIC_IOSONLY, readonly) NSUInteger count;
 
 /// Returns an object given a key in the dictionary or nil if not found.
-- (ObjectType)objectForKeyedSubscript:(KeyType)key;
+- (id)objectForKeyedSubscript:(NSString *)key;
 
 /// Updates the object given its key or adds it to the dictionary if it is not in the dictionary.
-- (void)setObject:(ObjectType)obj forKeyedSubscript:(KeyType)key;
+- (void)setObject:(id)obj forKeyedSubscript:(NSString *)key;
 
 /// Returns the immutable dictionary.
 - (NSDictionary *)dictionary;
 
 ///
-- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(KeyType key, ObjectType obj, BOOL *stop))block;
+- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(NSString * key, id obj, BOOL *stop))block;
 
 ///
 - (BOOL)isEqualToDictionary:(NSDictionary *)arg1;

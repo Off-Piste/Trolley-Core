@@ -170,8 +170,8 @@ extension JSON: ExpressibleByArrayLiteral {
 
     public var arrayObject: [Any]? {
         get {
-            if let arr = TRLJSONBaseRawValueForType(self._core.base, .array) as? [Any] {
-                return arr
+            if let arr = TRLJSONBaseRawValueForType(self._core.base, .array) as? TRLMutableArray {
+                return arr.array()
             }
 
             return nil
@@ -247,8 +247,8 @@ extension JSON: ExpressibleByDictionaryLiteral {
 
     var dictionaryObject: [String: Any]? {
         get {
-            if let dict = TRLJSONBaseRawValueForType(self._core.base, .dictionary) as? [String: Any] {
-                return dict
+            if let dict = TRLJSONBaseRawValueForType(self._core.base, .dictionary) as? TRLMutableDictionary, let dictionary = dict.dictionary() as? [String: Any]  {
+                return dictionary
             }
             return nil
         }

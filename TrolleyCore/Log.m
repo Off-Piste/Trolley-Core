@@ -7,42 +7,54 @@
 //
 
 #import "Log.h"
-#import "TrolleyCore/TrolleyCore-Swift.h"
 
-#define Log(service, level, fmt, args) __log(service, level, format, args_copy); return;
+#define OS_LOG_FMT_MAX_CMDS    48
+#define OS_LOG_FMT_BUF_SIZE    (2 + (2 + 16) * OS_LOG_FMT_MAX_CMDS)
 
-static void __log(TRLLoggerService *service,
-                  TRLLoggerLevel level,
-                  NSString *fmt,
-                  va_list args)
-{
-    NSString *logString = [[NSString alloc] initWithFormat:fmt arguments:args];
-    [[TRLLogger loggerForService:service] log:logString level:level];
+BOOL isLogging = NO;
+
+TRLLoggerService TRLLoggerServiceCore = @"Trolley/Core";
+
+static inline const char*_Nullable get_app_bundle_identifier(void) {
+    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier] ?
+    [[NSBundle mainBundle] bundleIdentifier] : @"Unknown";
+    return [bundleIdentifier UTF8String];
 }
 
-void TRLLog(TRLLoggerService *service, NSString *format, ...) {
-    CVarArgCopy(format)
-    Log(service, TRLLoggerLevelDefault, format, args_copy)
+@interface __TRLLogger ()
+
+@property (retain, readonly) os_log_t _os_log;
+
+@end
+
+@implementation __TRLLogger
+
++ (instancetype)loggerForService:(TRLLoggerService)service {
+    return [[__TRLLogger alloc] initWithService:service];
 }
 
-void TRLInfoLogger(TRLLoggerService *service, NSString *format, ...) {
-    CVarArgCopy(format)
-    Log(service, TRLLoggerLevelInfo, format, args_copy)
+- (instancetype)initWithService:(TRLLoggerService)service {
+    if (self = [super init]) {
+        const char* serviceChar = [service UTF8String];
+        if (serviceChar && get_app_bundle_identifier()) {
+            self->__os_log = os_log_create(get_app_bundle_identifier(), serviceChar);
+        } else {
+            @throw [NSException exceptionWithName:NSGenericException
+                                           reason:@"Could not set up logging tools"
+                                         userInfo:nil];
+        }
+    }
+    return self;
 }
 
-void TRLDebugLogger(TRLLoggerService *service, NSString *format, ...) {
-    CVarArgCopy(format)
-    Log(service, TRLLoggerLevelDebug, format, args_copy)
+- (void)logWithLevel:(TRLLoggerLevel)level fmt:(const char *)fmt args:(va_list)args {
+    // Easier from swift if we have it set to char, would be nicer if we could
+    // access the elements inside:
+    // https://github.com/apple/swift/blob/master/stdlib/public/SDK/os/os_log.m
+
+    NSString *format = [NSString stringWithUTF8String:fmt];
+    NSString *msg = [[NSString alloc] initWithFormat:format arguments:args];
+    os_log_with_type(self._os_log, level, "%{public}s", [msg UTF8String]);
 }
 
-void TRLErrorLogger(TRLLoggerService *service, NSString *format, ...) {
-    CVarArgCopy(format)
-    Log(service, TRLLoggerLevelError, format, args_copy)
-}
-
-void TRLFaultLogger(TRLLoggerService *service, NSString *format, ...) {
-    CVarArgCopy(format)
-    Log(service, TRLLoggerLevelFault, format, args_copy)
-}
-
-
+@end

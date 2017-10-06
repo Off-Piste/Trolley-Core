@@ -35,8 +35,8 @@ NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotifi
 static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char* comment)
 {
 //#if kShouldPrintReachabilityFlags
-    TRLDebugLogger(TRLLoggerServiceCore, @"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
-          (flags & kSCNetworkReachabilityFlagsIsWWAN)				? 'W' : '-',
+    TRLDebugLogger(TRLLoggerServiceCore, "Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+          (flags & kSCNetworkReachabilityFlagsIsWWAN)                ? 'W' : '-',
           (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
 
           (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
@@ -47,7 +47,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char*
           (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
           (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-',
           comment
-          );
+          )
 //#endif
 }
 
@@ -68,7 +68,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
 	NSCAssert([(__bridge NSObject*) info isKindOfClass: [Reachability class]], @"info was wrong class in ReachabilityCallback");
 
-    TRLDebugLogger(TRLLoggerServiceCore, @"%s", __FUNCTION__);
+    TRLDebugLogger(TRLLoggerServiceCore,  "%s", __FUNCTION__);
 
     Reachability* noteObject = (__bridge Reachability *)info;
     NetworkStatus status = noteObject.currentReachabilityStatus;
@@ -86,7 +86,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 + (instancetype)reachabilityWithHostName:(NSString *)hostName {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Creating Reachabilty for: %@", hostName);
+    TRLDebugLogger(TRLLoggerServiceCore, "Creating Reachabilty for: %@", hostName);
 
 	Reachability* returnValue = NULL;
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, hostName.UTF8String);
@@ -103,7 +103,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 
 + (instancetype)reachabilityWithAddress:(const struct sockaddr *)hostAddress {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Creating Reachabilty for: %@", hostAddress);
+    TRLDebugLogger(TRLLoggerServiceCore, "Creating Reachabilty for: %{private}@", hostAddress);
 
     Reachability* returnValue = NULL;
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, hostAddress);
@@ -122,13 +122,13 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 #pragma mark - Start and stop notifier
 
 - (BOOL)startNotifier {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to start notifier");
+    TRLDebugLogger(TRLLoggerServiceCore, "Attempting to start notifier");
 	BOOL returnValue = NO;
 	SCNetworkReachabilityContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
 
 	if (SCNetworkReachabilitySetCallback(_reachabilityRef, ReachabilityCallback, &context)) {
 		if (SCNetworkReachabilityScheduleWithRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode)) {
-            TRLDebugLogger(TRLLoggerServiceCore, @"Starting notifier");
+            TRLDebugLogger(TRLLoggerServiceCore, "Starting notifier");
 			returnValue = YES;
 		}
 	}
@@ -138,9 +138,9 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 
 - (void)stopNotifier {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to stop notifier");
+    TRLDebugLogger(TRLLoggerServiceCore, "Attempting to stop notifier");
 	if (_reachabilityRef != NULL) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Stopping notifier");
+    TRLDebugLogger(TRLLoggerServiceCore, "Stopping notifier");
 		SCNetworkReachabilityUnscheduleFromRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 	}
 }
@@ -226,7 +226,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"%@ { status:%@, isConnectionRequired:%@ }",
+    return [NSString stringWithFormat:@"%@{status:%@, isConnectionRequired:%@}",
             super.description, self.description, self.connectionRequired ? @"true" : @"false"];
 }
 

@@ -91,11 +91,11 @@ extension Trolley {
         defer { objc_sync_exit(self) }
 
         if aTRLShop == nil {
-            TRLDebugLogger(for: .core, "Shop [%@] has already been deleted", self.shopName)
+            TRLInfoLogger(for: .core, "Shop [%@] has already been deleted", self.shopName)
             handler?(false); return
         }
 
-        TRLDebugLogger(for: .core, "Deleting shop [%@]", self.shopName)
+        TRLInfoLogger(for: .core, "Deleting shop [%@]", self.shopName)
         aTRLShop = nil
         handler?(true)
     }
@@ -104,9 +104,10 @@ extension Trolley {
         self.deleteApp(handler: nil)
     }
 
-    @objc public class func setlogging(_ bool: Bool) {
-        TRLInfoLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
-        isLogging = bool
+    @objc(setLogging:)
+    public class func setlogging(_ bool: Bool) {
+        TRLDebugLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
+        isLogging = ObjCBool(bool)
     }
 
 }

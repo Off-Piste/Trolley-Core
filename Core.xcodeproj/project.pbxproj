@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80A5F3E1F8240E90070C918 /* TRLNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */; };
+		C81360B91F87937500E61A29 /* LogMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = C81360B81F87937500E61A29 /* LogMarco.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C82A87161F8395A50072B198 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C82A87141F8395A50072B198 /* README.md */; };
 		C82A87171F8395A50072B198 /* TrolleyCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C82A87151F8395A50072B198 /* TrolleyCore.podspec */; };
 		C8460FF11F4C665800CFF7E8 /* TrolleyCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C8460FE31F4C665800CFF7E8 /* TrolleyCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -165,6 +166,7 @@
 		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TRLNetworkConfig.swift; path = Realtime/TRLNetworkConfig.swift; sourceTree = "<group>"; };
+		C81360B81F87937500E61A29 /* LogMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMarco.h; sourceTree = "<group>"; };
 		C82A87141F8395A50072B198 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C82A87151F8395A50072B198 /* TrolleyCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = TrolleyCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrolleyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +385,7 @@
 				C84AEE401F754FF3009E6019 /* Error.swift */,
 				C84AEE5D1F754FF4009E6019 /* Log.h */,
 				C84AEDF61F754FF2009E6019 /* Log.m */,
+				C81360B81F87937500E61A29 /* LogMarco.h */,
 				C84AEE421F754FF3009E6019 /* Log.swift */,
 				C84610051F4C797100CFF7E8 /* Support Files */,
 			);
@@ -679,6 +682,7 @@
 				C84AEEAC1F754FF5009E6019 /* TRLNetworkConnection.h in Headers */,
 				C84AEEA31F754FF5009E6019 /* TrolleyCore-Swift-Fixed.h in Headers */,
 				C84AEEB31F754FF5009E6019 /* TRLNetworkBlocks.h in Headers */,
+				C81360B91F87937500E61A29 /* LogMarco.h in Headers */,
 				C84AEEA51F754FF5009E6019 /* TRLNetworkInfo.h in Headers */,
 				C84AEE9F1F754FF5009E6019 /* TSRWebSocket.h in Headers */,
 				C84AEEB11F754FF5009E6019 /* TRLNetwork.h in Headers */,

@@ -141,7 +141,7 @@ TRLURLSessionManager *aManager;
                     parameters:(Parameters *)parameters
                       encoding:(id<TRLURLParameterEncoding>)encoding
                        headers:(HTTPHeaders *)headers {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Attempting to build data request for: %@", url);
+    TRLDebugLogger(TRLLoggerServiceCore, "Attempting to build data request for: %@", url);
 
     NSError *error;
     NSMutableURLRequest *orignalRequest = [[NSMutableURLRequest alloc]
@@ -167,7 +167,7 @@ TRLURLSessionManager *aManager;
 }
 
 - (TRLURLDataRequest *)requestForURLRequest:(NSURLRequest *)request {
-    TRLDebugLogger(TRLLoggerServiceCore, @"NSURLRequest: %@ has been built", request);
+    TRLDebugLogger(TRLLoggerServiceCore,  "NSURLRequest: %@ has been built", request);
 
     TRLURLDataRequestHelper *originalTask = [[TRLURLDataRequestHelper alloc]
                                              initWithUrlRequest:request];
@@ -200,8 +200,7 @@ TRLURLSessionManager *aManager;
 
 - (TRLURLDataRequest *)requestForURLRequest:(NSURLRequest *_Nullable)urlRequest
                             failedWithError:(NSError *)error {
-    TRLDebugLogger(TRLLoggerServiceCore, @"requestForURLRequest:%@ failedWithError:%@",
-                   urlRequest, error);
+    TRLDebugLogger(TRLLoggerServiceCore, "requestForURLRequest:%@ failedWithError:%@", urlRequest, error);
 
     TRLURLRequestTaskTypeData *task = [[TRLURLRequestTaskTypeData alloc]
                                        initWithOriginalTask:NULL

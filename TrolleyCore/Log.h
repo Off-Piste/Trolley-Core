@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LogMarco.h"
 @import os.log;
-
-@class TRLLogger;
-@class TRLLoggerService;
 
 /**
  The level for the Log message.
@@ -29,62 +27,40 @@ typedef NS_ENUM(uint8_t, TRLLoggerLevel) {
     TRLLoggerLevelFault = OS_LOG_TYPE_FAULT,
 } NS_SWIFT_NAME(LoggerLevel);
 
-#define TRLLoggerServiceCore [TRLLoggerService core]
+extern BOOL isLogging;
 
-#define TRLLoggerServiceDatabase [TRLLoggerService database]
+typedef NSString *const TRLLoggerService NS_EXTENSIBLE_STRING_ENUM;
 
-#define CVarArgCopy(fmt) \
-    va_list args, args_copy; \
-    va_start(args, fmt); \
-    va_copy(args_copy, args); \
-    va_end(args); \
+FOUNDATION_EXPORT TRLLoggerService TRLLoggerServiceCore;
 
 /**
- <#Description#>
-
- @param service <#service description#>
- @param format <#format description#>
- @param ... <#... description#>
+ This is only to be used to get the os_log_t && by our Swift API
+ :nodoc:
  */
-void TRLLog(TRLLoggerService *service, NSString *format, ...)
-NS_SWIFT_UNAVAILABLE("Please use Swift Methods");
+NS_SWIFT_NAME(trl_logger_t)
+@interface __TRLLogger : NSObject
 
 /**
- <#Description#>
+ The main interface for the logger, uses TRLLoggerService to create the os_log_t
 
- @param service <#service description#>
- @param format <#format description#>
- @param ... <#... description#>
+ :nodoc:
+
+ @param service  The Current service the user is in, must be created inside that framework
+ so we cannot use them in the wrong areas;
+ @return         The TRLLogger instance for the service.
  */
-void TRLInfoLogger(TRLLoggerService *service, NSString *format, ...)
-NS_SWIFT_UNAVAILABLE("Please use Swift Methods");
++ (instancetype)loggerForService:(TRLLoggerService)service;
 
 /**
- <#Description#>
+ The Swift compatabil method, please only use from the swift ext
 
- @param service <#service description#>
- @param format <#format description#>
- @param ... <#... description#>
+ :nodoc:
+
+ @param level   TRLLoggerLevel for the log
+ @param fmt     The string format
+ @param args    The va_list
  */
-void TRLDebugLogger(TRLLoggerService *service, NSString *format, ...)
-NS_SWIFT_UNAVAILABLE("Please use Swift Methods");
+- (void)logWithLevel:(TRLLoggerLevel)level fmt:(const char *)fmt args:(va_list)args
+NS_SWIFT_NAME(log(level:fmt:_:));
 
-/**
- <#Description#>
-
- @param service <#service description#>
- @param format <#format description#>
- @param ... <#... description#>
- */
-void TRLErrorLogger(TRLLoggerService *service, NSString *format, ...)
-NS_SWIFT_UNAVAILABLE("Please use Swift Methods");
-
-/**
- <#Description#>
-
- @param service <#service description#>
- @param format <#format description#>
- @param ... <#... description#>
- */
-void TRLFaultLogger(TRLLoggerService *service, NSString *format, ...)
-NS_SWIFT_UNAVAILABLE("Please use Swift Methods");
+@end

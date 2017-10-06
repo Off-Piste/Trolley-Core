@@ -62,7 +62,7 @@
   return description;
 }
 
-- (id)objectForKey:(id)key {
+- (id)objectForKey:(NSString *)key {
   __block id object;
   dispatch_sync(_queue, ^{
     object = _objects[key];
@@ -70,13 +70,13 @@
   return object;
 }
 
-- (void)setObject:(id)object forKey:(id<NSCopying>)key {
+- (void)setObject:(id)object forKey:(NSString *)key {
   dispatch_async(_queue, ^{
     _objects[key] = object;
   });
 }
 
-- (void)removeObjectForKey:(id)key {
+- (void)removeObjectForKey:(NSString *)key {
   dispatch_async(_queue, ^{
     [_objects removeObjectForKey:key];
   });
@@ -96,12 +96,12 @@
   return count;
 }
 
-- (id)objectForKeyedSubscript:(id<NSCopying>)key {
+- (id)objectForKeyedSubscript:(NSString *)key {
     // The method this calls is already synchronized.
     return [self objectForKey:key];
 }
 
-- (void)setObject:(id)obj forKeyedSubscript:(id<NSCopying>)key {
+- (void)setObject:(id)obj forKeyedSubscript:(NSString *)key {
   // The method this calls is already synchronized.
     [self setObject:obj forKey: key];
 }
@@ -114,7 +114,7 @@
   return dictionary;
 }
 
-- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(id, id, BOOL *))block {
+- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(NSString *, id, BOOL *))block {
     dispatch_async(_queue, ^{
         [_objects enumerateKeysAndObjectsUsingBlock:block];
     });

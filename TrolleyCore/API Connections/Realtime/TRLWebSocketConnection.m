@@ -71,7 +71,7 @@ static NSString *kLastSessionUDKey = @"";
                              [url connectionURLWithLastSessionID:connectionID]];
         NSString *ua = [UserAgent shared].header;
 
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) Connecting to: %@ as %@",
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) Connecting to: %@ as %@",
                        connectionID, req.URL, ua);
 
         self.webSocket = [[TSRWebSocket alloc] initWithURLRequest:req userAgent:ua];
@@ -82,7 +82,7 @@ static NSString *kLastSessionUDKey = @"";
 }
 
 - (void)open {
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) FWebSocketConnection open.", self.connectionId);
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) FWebSocketConnection open.", self.connectionId);
     assert(delegate);
     everConnected = NO;
 
@@ -96,7 +96,7 @@ static NSString *kLastSessionUDKey = @"";
 }
 
 - (void) close {
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) FWebSocketConnection is being closed.", self.connectionId);
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) FWebSocketConnection is being closed.", self.connectionId);
     isClosed = YES;
     [self.webSocket close];
 }
@@ -125,7 +125,7 @@ static NSString *kLastSessionUDKey = @"";
 #pragma mark TRWebSocketDelegate implementation
 
 - (void)webSocketDidOpen:(TSRWebSocket *)webSocket {
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) webSocketDidOpen", self.connectionId);
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) webSocketDidOpen", self.connectionId);
 
     everConnected = YES;
 
@@ -136,7 +136,7 @@ static NSString *kLastSessionUDKey = @"";
                                                          selector:@selector(nop:)
                                                          userInfo:nil
                                                           repeats:YES];
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) nop timer kicked off", self.connectionId);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) nop timer kicked off", self.connectionId);
     });
 }
 
@@ -145,14 +145,14 @@ static NSString *kLastSessionUDKey = @"";
 }
 
 - (void)webSocket:(TSRWebSocket *)webSocket didFailWithError:(NSError *)error {
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) %s %@", self.connectionId, __FUNCTION__, error);
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) %s %@", self.connectionId, __FUNCTION__, error);
     [self onClosed];
 }
 
 - (void)webSocket:(TSRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) %s %ld %@",
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) %s %ld %@",
                    self.connectionId, __FUNCTION__, code, reason);
-    
+
     [self onClosed];
 }
 
@@ -161,11 +161,11 @@ static NSString *kLastSessionUDKey = @"";
 
 - (void)nop:(NSTimer *)timer {
     if (!isClosed) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) nop", self.connectionId);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) nop", self.connectionId);
         [self.webSocket send:@"0"];
     }
     else {
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) No more websocket; invalidating nop timer.", self.connectionId);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) No more websocket; invalidating nop timer.", self.connectionId);
         [timer invalidate];
     }
 }
@@ -173,7 +173,7 @@ static NSString *kLastSessionUDKey = @"";
 - (void)handleNewFrameCount:(int) numFrames {
     self.totalFrames = numFrames;
     frame = [[NSMutableString alloc] initWithString:@""];
-    TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) %s %d",
+    TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) %s %d",
                    self.connectionId, __FUNCTION__, self.totalFrames);
 }
 
@@ -201,13 +201,13 @@ static NSString *kLastSessionUDKey = @"";
 
 
         TRLJSON *trljson = [[TRLJSON alloc] initWithData:[frame dataUsingEncoding:NSUTF8StringEncoding]];
-        NSDictionary* json = TRLJSONBaseRawValueForType(trljson, JSONTypeDictionary);
+        TRLMutableDictionary* json = TRLJSONBaseRawValueForType(trljson, JSONTypeDictionary);
 
         frame = nil;
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) handleIncomingFrame sending complete frame: %d", self.connectionId, self.totalFrames);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) handleIncomingFrame sending complete frame: %d", self.connectionId, self.totalFrames);
 
         @autoreleasepool {
-            [self.delegate onMessage:self withMessage:json];
+            [self.delegate onMessage:self withMessage:json.dictionary];
         }
     }
 }
@@ -229,7 +229,7 @@ static NSString *kLastSessionUDKey = @"";
 
 - (void) closeIfNeverConnected {
     if (!everConnected) {
-        TRLDebugLogger(TRLLoggerServiceCore, @" Websocket timed out on connect", self.connectionId);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) Websocket timed out on connect", self.connectionId);
         [self.webSocket close];
     }
 }
@@ -244,7 +244,7 @@ static NSString *kLastSessionUDKey = @"";
 
 - (void) onClosed {
     if (!isClosed) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Websocket is closing itself");
+        TRLDebugLogger(TRLLoggerServiceCore, "Websocket is closing itself");
         [self shutdown];
     }
     self.webSocket = nil;
@@ -261,7 +261,7 @@ static NSString *kLastSessionUDKey = @"";
     // so wait at least 5 seconds before updating it.
 
     if ([newTime timeIntervalSinceDate:keepAlive.fireDate] > 5) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"(wsc:%@) resetting keepalive, to %@ ; old: %@", self.connectionId, newTime, [keepAlive fireDate]);
+        TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) resetting keepalive, to %@ ; old: %@", self.connectionId, newTime, [keepAlive fireDate]);
         [keepAlive setFireDate:newTime];
     }
 }

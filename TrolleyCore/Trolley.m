@@ -51,7 +51,7 @@ NSString *trl_device_uuid_get() {
     NSString *conectionID = [dm retriveObject:&error];
 
     if (error) {
-        TRLErrorLogger(TRLLoggerServiceCore, @"%@, This error is to be expected on the first install of an app. If this persists please contact us!", error);
+        TRLErrorLogger(TRLLoggerServiceCore, "%@, This error is to be expected on the first install of an app. If this persists please contact us!", error);
         conectionID = device_key();
         [dm setObject:conectionID];
     }

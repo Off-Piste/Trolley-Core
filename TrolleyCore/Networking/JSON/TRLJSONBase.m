@@ -224,12 +224,12 @@ BOOL TRLJSONBaseIsEqual(TRLJSONBase *lhs, TRLJSONBase *rhs) {
 
 id TRLJSONBaseRawValueForType(TRLJSONBase *base, JSONType type) {
     switch (type) {
-        case JSONTypeArray: return base->rawArray.array;
+        case JSONTypeArray: return base->rawArray;
         case JSONTypeBool: return @(base->rawBool);
         case JSONTypeNull: return base->rawNull;
         case JSONTypeNumber: return base->rawNumber;
         case JSONTypeString: return base->rawString;
-        case JSONTypeDictionary: return base->rawDictionary.dictionary;
+        case JSONTypeDictionary: return base->rawDictionary;
         case JSONTypeUnknown: return nil;
     }
 }

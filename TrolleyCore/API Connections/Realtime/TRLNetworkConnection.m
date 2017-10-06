@@ -92,7 +92,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 #pragma mark - Open NetworkConnection
 
 - (void)open {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Calling open in TRLNetworkConnection");
+    TRLDebugLogger(TRLLoggerServiceCore, "Calling open in TRLNetworkConnection");
     [self.connection open];
 }
 
@@ -104,11 +104,11 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 
 - (void)closeWithReason:(TRLDisconnectReason)reason {
     if (_state != REALTIME_STATE_DISCONNECTED) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Closing realtime connection.");
+        TRLDebugLogger(TRLLoggerServiceCore, "Closing realtime connection.");
         _state = REALTIME_STATE_DISCONNECTED;
 
         if (self.connection) {
-            TRLDebugLogger(TRLLoggerServiceCore, @"Deallocating TRLWebSocketConnection");
+            TRLDebugLogger(TRLLoggerServiceCore, "Deallocating TRLWebSocketConnection");
             [self.connection close];
             self.connection = nil;
         }
@@ -134,9 +134,9 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
                                      userInfo:nil];
     } else {
         if (sensitive) {
-            TRLDebugLogger(TRLLoggerServiceCore, @"Sending %{private}@", dataMsg);
+            TRLDebugLogger(TRLLoggerServiceCore, "Sending %{private}@", dataMsg);
         } else {
-            TRLDebugLogger(TRLLoggerServiceCore, @"Sending %@", dataMsg);
+            TRLDebugLogger(TRLLoggerServiceCore, "Sending %@", dataMsg);
 
         }
 
@@ -150,9 +150,9 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
     self.connection = nil;
 
     if (!everConnected && _state == REALTIME_STATE_CONNECTING) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Realtime connection failed.");
+        TRLDebugLogger(TRLLoggerServiceCore, "Realtime connection failed.");
     } else if (_state == REALTIME_STATE_CONNECTED) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Realtime connection lost.");
+        TRLDebugLogger(TRLLoggerServiceCore, "Realtime connection lost.");
     }
 
     [self close];
@@ -166,10 +166,10 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
         } else if ([rawMessageType isEqualToString:kTWPAsyncServerControlMessage]) {
             [self onControl:message[kTWPAsyncServerEnvelopeData]];
         } else {
-            TRLDebugLogger(TRLLoggerServiceCore, @"Unrecognized server packet type: %@", rawMessageType);
+            TRLDebugLogger(TRLLoggerServiceCore, "Unrecognized server packet type: %@", rawMessageType);
         }
     } else {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Unrecognized raw server packet received: %@", message);
+        TRLFaultLogger(TRLLoggerServiceCore, "Unrecognized raw server packet received: %@", message);
     }
 }
 
@@ -180,7 +180,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
  */
 - (void) onDataMessage:(NSDictionary *)message {
     // we don't do anything with data messages, just kick them up a level
-    TRLDebugLogger(TRLLoggerServiceCore, @"Got data message: %@", message);
+    TRLDebugLogger(TRLLoggerServiceCore, "Got data message: %@", message);
     [self.delegate onDataMessage:self withMessage:message];
 }
 
@@ -188,7 +188,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
  Method to manage the control JSON, i.e. Shutdown and handshake
  */
 - (void) onControl:(NSDictionary *)message {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Got data message: %@", message);
+    TRLDebugLogger(TRLLoggerServiceCore, "Got data message: %@", message);
     NSString *type = message[kTWPAsyncServerControlMessageType];
 
     if([type isEqualToString:kTWPAsyncServerControlMessageShutdown]) {
@@ -198,7 +198,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
         NSTimeInterval ti = [[message objectForKey:@"ts"] doubleValue];
         [self on_valid_connetion_handshake:ti];
     } else {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Invalid Control Message: %@", message);
+        TRLDebugLogger(TRLLoggerServiceCore, "Invalid Control Message: %@", message);
     }
 }
 
@@ -210,7 +210,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
  @param reason The reason for the shutdown
  */
 - (void)onConnectionShutdownWithReason:(NSString *)reason {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Connection shutdown command received. Shutting down...");
+    TRLDebugLogger(TRLLoggerServiceCore, "Connection shutdown command received. Shutting down...");
 
     [self.delegate onKill:self withReason:reason];
     [self close];
@@ -221,7 +221,7 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
  its validation and means that the network is valid and your are connected
  */
 - (void)on_valid_connetion_handshake:(NSTimeInterval)timeInterval {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Recived valid handshake, at: %@",
+    TRLDebugLogger(TRLLoggerServiceCore, "Recived valid handshake, at: %@",
            [NSDate dateWithTimeIntervalSince1970:timeInterval]);
     [self.delegate onReady:self];
 }

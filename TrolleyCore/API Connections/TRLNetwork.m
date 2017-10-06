@@ -61,7 +61,7 @@
 - (instancetype)initWithURLString:(NSString *)url manager:(TRLNetworkManager *)manager {
     self = [super init];
     if (self) {
-        TRLDebugLogger(TRLLoggerServiceCore, @"Creating Network for url: @%", url);
+        TRLDebugLogger(TRLLoggerServiceCore, "Creating Network for url: %{private}@", url);
         self->_parsedURL = [[TRLParsedURL alloc] initWithURLString:url];
         self->_manager = manager;
         self->_connectionState = ConnectionStateDisconnected;
@@ -129,7 +129,7 @@
 - (void)onKill:(TRLNetworkConnection *)trlNetworkConnection
     withReason:(NSString *)reason
 {
-    TRLFaultLogger(TRLLoggerServiceCore, @"Trolley Network connection has been forcefully killed by the server. Will not attempt to reconnect. Reason:%@", reason);
+    TRLFaultLogger(TRLLoggerServiceCore, "Trolley Network connection has been forcefully killed by the server. Will not attempt to reconnect. Reason:%@", reason);
     [self interruptForReason:@"server_kill"];
 }
 
@@ -153,17 +153,17 @@
 
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
           withMessage:(NSDictionary *)message {
-    TRLLog(TRLLoggerServiceCore, @"%@", message);
+    TRLLog(TRLLoggerServiceCore, "%@", message);
 }
 
 - (void)dealloc {
-    TRLLog(TRLLoggerServiceCore, @"%s", __FUNCTION__);
+    TRLLog(TRLLoggerServiceCore, "%s", __FUNCTION__);
 }
 
 #pragma mark - Connection handling methods
 
 - (void)interruptForReason:(NSString *)reason {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Connection interrupted for: %@", reason);
+    TRLDebugLogger(TRLLoggerServiceCore, "Connection interrupted for: %@", reason);
     [self->interruptReasons addObject:reason];
 
     if (self->connection) {
@@ -178,7 +178,7 @@
 }
 
 - (void)resumeForReason:(NSString *)reason {
-    TRLDebugLogger(TRLLoggerServiceCore, @"Connection no longer interrupted for: %@", reason);
+    TRLDebugLogger(TRLLoggerServiceCore, "Connection no longer interrupted for: %@", reason);
     [interruptReasons removeObject:reason];
 
     if ([self shouldReconnect] && _connectionState == ConnectionStateDisconnected) {
@@ -196,10 +196,10 @@
     if ([self shouldReconnect]) {
         NSAssert(self->_connectionState == ConnectionStateDisconnected, @"");
 
-        TRLDebugLogger(TRLLoggerServiceCore, @"Scheduling connection attempt");
+        TRLDebugLogger(TRLLoggerServiceCore, "Scheduling connection attempt");
         [_retryHelper retryWithBlock:^{
             if (self.manager.reachability.currentReachabilityStatus == NotReachable) {
-                TRLLog(TRLLoggerServiceCore, @"Network status is 'NotReachable', calling %s", __FUNCTION__);
+                TRLDebugLogger(TRLLoggerServiceCore, "Network status is 'NotReachable', calling %s", __FUNCTION__);
                 [self tryScheduleReconnect];
             }
             
@@ -234,7 +234,7 @@
 extern void trl_handle_for_reachabilty(id reach, TRLNetwork *network) {
     if ([reach isKindOfClass:[Reachability class]]) {
         if ([(Reachability *)reach currentReachabilityStatus] == NotReachable) { return; }
-        TRLDebugLogger(TRLLoggerServiceCore, @"Network became reachable. Trigger a connection attempt");
+        TRLDebugLogger(TRLLoggerServiceCore, "Network became reachable. Trigger a connection attempt");
 
         TRLNetwork *self = network;
         [self->_retryHelper signalSuccess];

@@ -63,8 +63,7 @@
 }
 
 - (void)addPath:(NSString *)path {
-    NSString *msg = @"Please be aware that adding a path [%{private}@] to the URL can be fatal, make sure it is necessary";
-    TRLInfoLogger(TRLLoggerServiceCore, msg, path);
+    TRLDebugLogger(TRLLoggerServiceCore, "Please be aware that adding a path [%{private}@] to the URL can be fatal, make sure it is necessary", path);
     self->_internalURL = [self->_internalURL URLByAppendingPathComponent:path];
 }
 
