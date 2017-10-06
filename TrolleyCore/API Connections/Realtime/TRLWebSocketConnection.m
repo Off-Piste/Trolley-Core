@@ -151,7 +151,7 @@ static NSString *kLastSessionUDKey = @"";
 
 - (void)webSocket:(TSRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
     TRLDebugLogger(TRLLoggerServiceCore, "(wsc:%@) %s %ld %@",
-                   self.connectionId, __FUNCTION__, code, reason);
+                   self.connectionId, __FUNCTION__, (long) code, reason);
 
     [self onClosed];
 }
