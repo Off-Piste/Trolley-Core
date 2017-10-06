@@ -26,10 +26,12 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public protocol RequestAdapter: class {
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest
 }
 
+/// :nodoc:
 extension NSURLRequest {
 
     func adapt(using adapter: RequestAdapter?) throws -> URLRequest {
@@ -39,6 +41,7 @@ extension NSURLRequest {
 
 }
 
+/// :nodoc:
 extension URLRequest {
 
     func adapt(using adapter: RequestAdapter?) throws -> URLRequest {
@@ -48,12 +51,14 @@ extension URLRequest {
 
 }
 
+/// :nodoc:
 @objc public protocol TRLTaskConvertible: class {
 
     @objc func task(session: URLSession, request: RequestAdapter?, queue: DispatchQueue) throws -> URLSessionTask
 
 }
 
+/// :nodoc:
 @objc public final class TRLURLDataRequestHelper: NSObject, TRLTaskConvertible {
 
     @objc public let urlRequest: URLRequest
@@ -89,6 +94,7 @@ extension URLRequest {
 ///
 /// Rather than the switch statement
 ///
+/// :nodoc:
 @objc public class TRLURLRequestTaskType: NSObject {
 
     @objc public var originalTask: TRLTaskConvertible?
@@ -102,4 +108,5 @@ extension URLRequest {
 
 }
 
+/// :nodoc:
 @objc public class TRLURLRequestTaskTypeData: TRLURLRequestTaskType { }

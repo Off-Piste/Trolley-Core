@@ -1,0 +1,110 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Error.swift",
+      "line": 31,
+      "symbol": "Trolley.Error",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Networking/Delegation/TRLURLSessionDelegate.swift",
+      "line": 98,
+      "symbol": "TRLURLSessionDelegate.sessionManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Networking/JSON/JSON.swift",
+      "line": 229,
+      "symbol": "JSON.init(dictionaryLiteral:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Networking/Request/TRLURLDataRequest.h",
+      "line": null,
+      "symbol": "TRLURLDataRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Networking/Request/TRLURLDataRequest.h",
+      "line": null,
+      "symbol": "TRLURLDataRequest",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 24,
+      "symbol": "TRLTimer.Result.stop",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 25,
+      "symbol": "TRLTimer.Result.continuous",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 26,
+      "symbol": "TRLTimer.Result.repeat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 67,
+      "symbol": "TRLTimer.after(_:closure:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 99,
+      "symbol": "TRLTimer.once(closure:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 113,
+      "symbol": "TRLTimer.continuous(closure:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 126,
+      "symbol": "TRLTimer.invalidate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 138,
+      "symbol": "TRLTimer.timeInterval",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLTimer.swift",
+      "line": 142,
+      "symbol": "TRLTimer.isValid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Trolley.swift",
+      "line": 58,
+      "symbol": "Trolley.options",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/harrywright/Frameworks/Test/B/TrolleyCore"
+}

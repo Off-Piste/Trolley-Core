@@ -26,8 +26,10 @@
 
 import Foundation
 
+/// :nodoc:
 extension JSONType: CustomStringConvertible {
 
+    /// :nodoc:
     public var description: String {
         switch self {
         case .array: return "Array"
@@ -42,12 +44,16 @@ extension JSONType: CustomStringConvertible {
 
 }
 
+/// :nodoc:
 @objc final public class NSArrayIndex: NSObject {
 
+    /// :nodoc:
     @objc public var underlyingError: Error?
 
+    /// :nodoc:
     @objc public var newObject: Any?
 
+    /// :nodoc:
     @objc public init(newObject: Any?, error: Error?) {
         self.underlyingError = error
         self.newObject = newObject
@@ -55,20 +61,26 @@ extension JSONType: CustomStringConvertible {
 
 }
 
+/// :nodoc:
 extension NSDictionary {
+
+    /// :nodoc:
     @objc public var isJSON: Bool {
         if self.count == 0 { return false }
         return self is Dictionary<String, TRLJSON>
     }
 }
 
+/// :nodoc:
 extension NSArray {
 
+    /// :nodoc:
     @objc public var isJSON: Bool {
         if self.count == 0 { return false }
         return self is Array<TRLJSON>
     }
 
+    /// :nodoc:
     @objc public func mapThrows(_ block: (Any) -> NSArrayIndex) throws -> [Any] {
         let array = try self.map { (objc) -> Any in
             let blk = block(objc)

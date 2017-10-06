@@ -26,12 +26,16 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TAuthorizationHeader: NSObject {
 
+    /// :nodoc:
     @objc public var key: String
 
+    /// :nodoc:
     @objc public var value: String
 
+    /// :nodoc:
     @objc public init(key: String, value: String) {
         self.key = key
         self.value = value

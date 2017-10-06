@@ -38,28 +38,35 @@ import UIKit
         return Bundle.main.infoDictionary
     }
 
+    /// :nodoc:
     private override init() { }
 
+    /// The default UserAgent instance
     @objc public static var shared: UserAgent {
         return UserAgent()
     }
 
+    /// :nodoc:
     @objc public var executable: String {
         return bundleInfoDictionary?[kCFBundleExecutableKey as String] as? String ?? "Unknown"
     }
 
+    /// :nodoc:
     @objc public var bundle: String {
         return bundleInfoDictionary?[kCFBundleIdentifierKey as String] as? String ?? "Unknown"
     }
 
+    /// :nodoc:
     @objc public var appVersion: String {
         return bundleInfoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     }
 
+    /// :nodoc:
     @objc public var appBuild: String {
         return bundleInfoDictionary?[kCFBundleVersionKey as String] as? String ?? "Unknown"
     }
 
+    /// :nodoc:
     @objc public var osName_Version: String {
         let version = ProcessInfo.processInfo.operatingSystemVersion
         let versionString = "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
@@ -83,6 +90,7 @@ import UIKit
         return "\(osName) \(versionString)"
     }
 
+    /// :nodoc:
     @objc public var trolleyVersion: String {
         guard let tcInfo = Bundle(for: Trolley.self).infoDictionary,
             let build = tcInfo["CFBundleShortVersionString"] else {
@@ -91,6 +99,7 @@ import UIKit
         return "Trolley/\(build)"
     }
 
+    /// The header for the User agent.
     @objc public func header() -> String {
         if self.bundleInfoDictionary != nil {
             return "\(executable)/\(appVersion) (\(bundle); build:\(appBuild); \(osName_Version)) \(trolleyVersion)"

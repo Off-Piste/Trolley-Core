@@ -26,10 +26,21 @@
 
 import Foundation
 
+/// <#Description#>
 public typealias Parameters = [String: Any]
 
+/// <#Description#>
 public typealias Headers = [String: Any]
 
+/// <#Description#>
+///
+/// - Parameters:
+///   - url: <#url description#>
+///   - method: <#method description#>
+///   - parameters: <#parameters description#>
+///   - encoding: <#encoding description#>
+///   - headers: <#headers description#>
+/// - Returns: <#return value description#>
 public func Request(
     _ url: String,
     method: HTTPMethod = .GET,

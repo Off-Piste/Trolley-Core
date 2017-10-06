@@ -12,8 +12,14 @@ public typealias RepeatClosure = () -> Void
 public typealias Result = TRLTimer.Result
 public typealias RepeatClosureWithResult = () -> Result
 
+/// A wrapper for dispatchQueue.async.after()
 public class TRLTimer {
 
+    /// Enum for the timer result
+    ///
+    /// - stop:         Used to stop the timer
+    /// - continuous:   Used to keep the timer running continuous
+    /// - `repeat`:     Used to repeat the timer after so long
     public enum Result {
         case stop
         case continuous

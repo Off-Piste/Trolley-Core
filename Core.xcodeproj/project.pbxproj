@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C80A5F3E1F8240E90070C918 /* TRLNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */; };
 		C81360B91F87937500E61A29 /* LogMarco.h in Headers */ = {isa = PBXBuildFile; fileRef = C81360B81F87937500E61A29 /* LogMarco.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C82A87161F8395A50072B198 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C82A87141F8395A50072B198 /* README.md */; };
 		C82A87171F8395A50072B198 /* TrolleyCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C82A87151F8395A50072B198 /* TrolleyCore.podspec */; };
@@ -165,7 +164,6 @@
 		1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.debug.xcconfig"; sourceTree = "<group>"; };
 		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TRLNetworkConfig.swift; path = Realtime/TRLNetworkConfig.swift; sourceTree = "<group>"; };
 		C81360B81F87937500E61A29 /* LogMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMarco.h; sourceTree = "<group>"; };
 		C82A87141F8395A50072B198 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C82A87151F8395A50072B198 /* TrolleyCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = TrolleyCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -562,7 +560,6 @@
 				C84AEE581F754FF3009E6019 /* TRLRequest.h */,
 				C84AEE591F754FF3009E6019 /* TRLRequest.m */,
 				C84AEE5A1F754FF3009E6019 /* TRLRetryHelper.swift */,
-				C80A5F3D1F8240E90070C918 /* TRLNetworkConfig.swift */,
 			);
 			path = "API Connections";
 			sourceTree = "<group>";
@@ -903,7 +900,6 @@
 				C84AEEA01F754FF5009E6019 /* TSRWebSocket.m in Sources */,
 				C84AEE651F754FF5009E6019 /* TRLURLDataTaskDelegate.m in Sources */,
 				C84AEE8C1F754FF5009E6019 /* TRLURLQueryParameters.swift in Sources */,
-				C80A5F3E1F8240E90070C918 /* TRLNetworkConfig.swift in Sources */,
 				C84AEE9E1F754FF5009E6019 /* TRLError.m in Sources */,
 				C84AEE6B1F754FF5009E6019 /* TRLURLEncoding.m in Sources */,
 				C84AEEA21F754FF5009E6019 /* Error.swift in Sources */,
@@ -1098,6 +1094,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TRLDebugMode=NO",
+				);
 				INFOPLIST_FILE = TrolleyCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1130,6 +1131,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TRLDebugMode=NO",
+				);
 				INFOPLIST_FILE = TrolleyCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

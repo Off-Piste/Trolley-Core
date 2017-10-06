@@ -92,7 +92,7 @@ extension JSONCore: Hashable {
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    public static func == (lhs: JSONCore, rhs: JSONCore) -> Bool {
+    static func == (lhs: JSONCore, rhs: JSONCore) -> Bool {
         return lhs.base.isEqual(rhs.base)
     }
 

@@ -31,8 +31,10 @@ private let falseNumber = NSNumber(value: false)
 private let trueObjCType = String(cString: trueNumber.objCType)
 private let falseObjCType = String(cString: falseNumber.objCType)
 
+/// :nodoc:
 public extension NSNumber {
 
+    /// :nodoc:
     @objc public var isBool: Bool {
         let objCType = String(cString: self.objCType)
         if (self.compare(trueNumber) == .orderedSame && objCType == trueObjCType) || (self.compare(falseNumber) == .orderedSame && objCType == falseObjCType){
@@ -42,6 +44,7 @@ public extension NSNumber {
         }
     }
 
+    /// :nodoc:
     @objc convenience init?(withString string: String) {
         if let decimal = Decimal(string: string) {
             self.init(value: NSDecimalNumber(decimal: decimal).doubleValue)

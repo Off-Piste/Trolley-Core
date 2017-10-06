@@ -45,6 +45,14 @@ extension NSException {
 // or not
 var aTRLShop: Trolley!
 
+/**
+ The entry point for our Trolley SDKs.
+
+ Initialize and configure FIRApp using +[Trolley configure]
+ (Trolley.configure() in swift) or other customized ways as shown below.
+
+ The logging system 
+ */
 @objcMembers public final class Trolley: NSObject {
 
     @objc public var options: TRLOptions
@@ -55,12 +63,26 @@ var aTRLShop: Trolley!
     fileprivate var networkManager: TRLNetworkManager!
     #endif
 
+    /// Opens and configures the default Trolley shop.
+    ///
+    /// This method should be called after the app is launched and before
+    /// using any Trolley services.
+    ///
+    /// - Note:     This method is thread safe.
+    /// - Warning:  Raises an exception if any configuration step fails.
     @objc public class func open() {
         self.open(with: .default)
     }
 
-    @objc(openWithOptions:)
-    public class func open(with options: TRLOptions) {
+    /// Open and configures the default trolley shop with custom options.
+    ///
+    /// This method should be called after the app is launched and before
+    /// using any Trolley services.
+    ///
+    /// - Note:                 This method is thread safe.
+    /// - Warning:              Raises an exception if any configuration step fails.
+    /// - Parameter options:    The Trolley shop options used to configure the service.
+    @objc(openWithOptions:) public class func open(with options: TRLOptions) {
         if aTRLShop != nil {
             NSException.raise("Default shop has already been configured.")
         }
@@ -73,6 +95,7 @@ var aTRLShop: Trolley!
         self.sendNotificationsToSDK(aTRLShop)
     }
 
+    /// Internal init, calls coreConfigure to setup the Trolley Insstance
     private init(withOptions options: TRLOptions) {
         self.options = options
 
@@ -80,13 +103,22 @@ var aTRLShop: Trolley!
         self.coreConfigure()
     }
 
+    /// Please use [Trolley configure:] or [Trolley configureWithOptions:] instead
+    ///
+    /// - Warning: NEVER CALL DIRECTLY
+    @available(*, unavailable, renamed: "configure()")
     private override init() { fatalError() }
 
 }
 
 extension Trolley {
 
-    @objc public func deleteApp(handler: ((Bool) -> Void)?) {
+    /// Cleans up the current Trolley Shop and releases any objects.
+    ///
+    /// - Note:              This method is thread safe.
+    /// - Parameter handler: A handler that returns a true if the shop has
+    ///                      been deleted or false if the shop could not be deleted.
+    public func deleteShop(handler: ((Bool) -> Void)?) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
 
@@ -100,14 +132,18 @@ extension Trolley {
         handler?(true)
     }
 
-    @objc public func deleteApp() {
-        self.deleteApp(handler: nil)
+    /// Cleans up the current Trolley Shop and releases any objects.
+    ///
+    /// - Note: This method is thread safe.
+    public func deleteShop() {
+        self.deleteShop(handler: nil)
     }
 
-    @objc(setLogging:)
-    public class func setlogging(_ bool: Bool) {
-        TRLDebugLogger(for: .core, "Logging is been set to: %@", bool ? "true" : "false")
-        isLogging = ObjCBool(bool)
+
+    /// Method to set the Global logger level
+    public class func setLoggingLevel(_ level: LoggerLevel) {
+        TRLLog(for: .core, "Setting the global logger level to %lu, please note if we are in TRLDebugMode this will be ignored!", level.rawValue)
+        kGlobalLoggerLevel = level
     }
 
 }
@@ -173,6 +209,7 @@ extension Trolley {
 
 extension Trolley {
 
+    /// <#Description#>
     @objc public var shopName: String {
         return options.shopName
     }
@@ -188,6 +225,7 @@ extension Trolley {
         return aTRLShop
     }
 
+    /// <#Description#>
     @objc public static var isShopOpen: Bool {
         return shop != nil
     }

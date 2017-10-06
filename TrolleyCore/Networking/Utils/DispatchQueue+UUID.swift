@@ -26,16 +26,21 @@
 
 import Foundation
 
+/// :nodoc:
 public extension DispatchQueue {
 
+    /// :nodoc:
     public static var randomQueue: DispatchQueue {
         return DispatchQueue(label: "org.trolley.core.networking." + UUID().uuidString)
     }
 
 }
 
+/// :nodoc:
 @objc(DispatchQueue) public final class DispatchQueueHelper: NSObject {
 
+    /// A property that returns a random Dispatch queue.
+    /// :nodoc:
     @objc public static var random: DispatchQueue {
         return .randomQueue
     }

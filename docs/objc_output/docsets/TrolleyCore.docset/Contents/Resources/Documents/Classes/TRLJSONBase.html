@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TRLJSONBase Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/TRLJSONBase" class="dashAnchor"></a>
+    <a title="TRLJSONBase Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TrolleyCore Docs</a> (20% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TrolleyCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TRLJSONBase Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/NSArray(Map).html">NSArray(Map)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSMutableURLRequest(Reqestable).html">NSMutableURLRequest(Reqestable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSON.html">TRLJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSONBase.html">TRLJSONBase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableArray.html">TRLMutableArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableDictionary.html">TRLMutableDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableJSON.html">TRLMutableJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLNetworkManager.html">TRLNetworkManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLRequest.html">TRLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataRequest.html">TRLURLDataRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataTaskDelegate.html">TRLURLDataTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLEncoding.html">TRLURLEncoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLRequest.html">TRLURLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLSessionManager.html">TRLURLSessionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLTaskDelegate.html">TRLURLTaskDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@AppleDeviceUUIDKey">AppleDeviceUUIDKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodDELETE">HTTPMethodDELETE</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodGET">HTTPMethodGET</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPOST">HTTPMethodPOST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPUT">HTTPMethodPUT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLErrorDomain">TRLErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLTrolleyStartingUpNotification">TRLTrolleyStartingUpNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kReachabilityChangedNotification">kReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/JSONType.html">JSONType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NetworkStatus.html">NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLError.html">TRLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLURLEncodingDestination.html">TRLURLEncodingDestination</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DataStream">DataStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidCompleteWithError">DidCompleteWithError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidReceiveChallenge">DidReceiveChallenge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPHeaders">HTTPHeaders</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPMethod">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@HTTPRedirection">HTTPRedirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@NeedNewBodyStream">NeedNewBodyStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@Parameters">Parameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@ProgressHandler">ProgressHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@StreamBlock">StreamBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidBecomeDownloadTask">TaskDidBecomeDownloadTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveData">TaskDidReceiveData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveResponse">TaskDidReceiveResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskWillCacheResponse">TaskWillCacheResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLException">TRLException</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLMakeError">TRLMakeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLSetErrorOrThrow">TRLSetErrorOrThrow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_bool">nsnumber_is_like_bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_integer">nsnumber_is_like_integer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@request">request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TNTUtils.h@F@trl_defer_cleanup_block">trl_defer_cleanup_block</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@trl_device_uuid_get">trl_device_uuid_get</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TRLJSONBase</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawArray"></a>
+                    <a name="//apple_ref/objc/Ivar/rawArray" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawArray">rawArray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawDictionary"></a>
+                    <a name="//apple_ref/objc/Ivar/rawDictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawDictionary">rawDictionary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawString"></a>
+                    <a name="//apple_ref/objc/Ivar/rawString" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawString">rawString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawNumber"></a>
+                    <a name="//apple_ref/objc/Ivar/rawNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawNumber">rawNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawNull"></a>
+                    <a name="//apple_ref/objc/Ivar/rawNull" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawNull">rawNull</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@rawBool"></a>
+                    <a name="//apple_ref/objc/Ivar/rawBool" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@rawBool">rawBool</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@_rawType"></a>
+                    <a name="//apple_ref/objc/Ivar/_rawType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@_rawType">_rawType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase@_error"></a>
+                    <a name="//apple_ref/objc/Ivar/_error" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase@_error">_error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(py)rawValue"></a>
+                    <a name="//apple_ref/objc/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(py)rawValue">rawValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current value, if the JSON is invalid will be set to NSNull</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n">id</span> <span class="n">_Nonnull</span> <span class="n">rawValue</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(py)error"></a>
+                    <a name="//apple_ref/objc/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(py)error">error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An error or nil if the JSON is invalid or not</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(py)rawString"></a>
+                    <a name="//apple_ref/objc/Property/rawString" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(py)rawString">rawString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The NSJSONWritingPrettyPrinted JSON string</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n"><a href="../Classes/TRLJSONBase.html#/c:objc(cs)TRLJSONBase@rawString">rawString</a></span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(py)rawType"></a>
+                    <a name="//apple_ref/objc/Property/rawType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(py)rawType">rawType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The JSONType for the current value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n"><a href="../Enums/JSONType.html">JSONType</a></span> <span class="n">rawType</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)init"></a>
+                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)init">-init</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)initWithRawValue:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithRawValue:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)initWithRawValue:">-initWithRawValue:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the imputted raw value</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>NSData can be passed to this but will be
+sent via @c-[initWithData:]</p>
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Subclasses should not override this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithRawValue</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">value</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The raw value of the JSON</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)initWithData:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithData:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)initWithData:">-initWithData:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the imputted NSData</p>
+
+<p>If the data is invalid no error will be thrown,
+but the JSON will be set to [NSNull null].</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>This method calls @c-[initWithData: options:]
+with a default option of NSJSONReadingAllowFragments</p>
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Subclasses should not override this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithData</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSData of the JSON</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)initWithData:options:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithData:options:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)initWithData:options:">-initWithData:options:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the imputted NSData</p>
+
+<p>If the data is invalid no error will be thrown,
+but the JSON will be set to [NSNull null].</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithData</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
+                             <span class="nf">options</span><span class="p">:(</span><span class="n">NSJSONReadingOptions</span><span class="p">)</span><span class="nv">opt</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSData of the JSON</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSJSONReadingOptions</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)initWithData:options:error:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithData:options:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)initWithData:options:error:">-initWithData:options:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the imputted NSData</p>
+
+<p>If the data is invalid an error will be returned,
+but the JSON will also be set to [NSNull null].</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithData</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
+                             <span class="nf">options</span><span class="p">:(</span><span class="n">NSJSONReadingOptions</span><span class="p">)</span><span class="nv">opt</span>
+                               <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSData of the JSON</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSJSONReadingOptions</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If an error occurs, upon return contains an <code>NSError</code> object
+           that describes the problem. If you are not interested in
+           possible errors, pass in <code>NULL</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)objectAtIndexedSubscript:"></a>
+                    <a name="//apple_ref/objc/Method/-objectAtIndexedSubscript:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)objectAtIndexedSubscript:">-objectAtIndexedSubscript:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the value found inside the raw array</p>
+
+<p>If the data is invalid no error will be thrown,
+but the JSON will be set to [NSNull null].</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">objectAtIndexedSubscript</span><span class="p">:(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">idx</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>idx</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index at which you would like to access your array data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance with the rawValue of the NSArray[idx]</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)objectForKeyedSubscript:"></a>
+                    <a name="//apple_ref/objc/Method/-objectForKeyedSubscript:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)objectForKeyedSubscript:">-objectForKeyedSubscript:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains a JSON instance with the value found inside the raw dictionary</p>
+
+<p>If the data is invalid no error will be thrown,
+but the JSON will be set to [NSNull null].</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">objectForKeyedSubscript</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">key</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key at which you would like to access your dictionary data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>TRLJSONBase</code> instance with the rawValue of the NSDictionary[idx]</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)rawDataWithError:"></a>
+                    <a name="//apple_ref/objc/Method/-rawDataWithError:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)rawDataWithError:">-rawDataWithError:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain the NSData of the current JSON.</p>
+
+<p>By default this method calls @c-[rawDataWithOptions: error:]
+passing NSJSONWritingPrettyPrinted as the option.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>For swift the return value is nonnull or will throw and error
+   so you will have to use the trycatch block to manage the error</p>
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Subclasses should not override this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSData</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">rawDataWithError</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If an error occurs, upon return contains an <code>NSError</code> object
+           that describes the problem.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The NSData or nil if an error occured</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)rawDataWithOptions:error:"></a>
+                    <a name="//apple_ref/objc/Method/-rawDataWithOptions:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)rawDataWithOptions:error:">-rawDataWithOptions:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain the NSData of the current JSON.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>For swift the return value is nonnull or will throw and error
+   so you will have to use the trycatch block to manage the error</p>
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Subclasses should not override this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSData</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">rawDataWithOptions</span><span class="p">:(</span><span class="n">NSJSONWritingOptions</span><span class="p">)</span><span class="nv">opt</span>
+                                  <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSJSONWritingOptions</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If an error occurs, upon return contains an <code>NSError</code> object
+           that describes the problem.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The NSData or nil if an error occured</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)rawString:"></a>
+                    <a name="//apple_ref/objc/Method/-rawString:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)rawString:">-rawString:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain a NSString/String of the current JSON</p>
+
+<p>By default this method calls @c-[rawString: options:]
+passing NSJSONWritingPrettyPrinted as the option.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">rawString</span><span class="p">:(</span><span class="n">NSStringEncoding</span><span class="p">)</span><span class="nv">encoding</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoding</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSStringEncoding value</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An NSString if the JSON is valid or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(im)rawString:options:"></a>
+                    <a name="//apple_ref/objc/Method/-rawString:options:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(im)rawString:options:">-rawString:options:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtain a NSString/String of the current JSON</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Subclasses should not override this method.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">rawString</span><span class="p">:(</span><span class="n">NSStringEncoding</span><span class="p">)</span><span class="nv">encoding</span>
+                         <span class="nf">options</span><span class="p">:(</span><span class="n">NSJSONWritingOptions</span><span class="p">)</span><span class="nv">opt</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoding</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSStringEncoding value</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>opt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSJSONWritingOptions</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An NSString if the JSON is valid or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLJSONBase(cm)className"></a>
+                    <a name="//apple_ref/objc/Method/+className" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLJSONBase(cm)className">+className</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>Subclasses should not override this method.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">className</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The NSString of the class name</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/harrytwright/trolley_core" target="_blank" rel="external">Trolley</a>. All rights reserved. (Last updated: 2017-10-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

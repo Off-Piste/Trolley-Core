@@ -26,17 +26,16 @@
 
 import Foundation
 
-//typedef struct Challenge {
-//    NSURLSessionAuthChallengeDisposition disposition;
-//    __unsafe_unretained NSURLCredential *_Nullable credential;
-//} Challenge;
-
+/// :nodoc:
 @objc public final class TChallenge: NSObject {
 
+    /// :nodoc:
     @objc public var disposition: URLSession.AuthChallengeDisposition
 
+    /// :nodoc:
     @objc public var credential: URLCredential?
 
+    /// :nodoc:
     @objc public override init() {
         self.disposition = .performDefaultHandling
         self.credential = nil

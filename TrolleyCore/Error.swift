@@ -30,28 +30,40 @@ extension Trolley {
 
     public struct Error {
 
+        /// :nodoc:
         public typealias Code = TRLError.Code
 
+        /// Error thrown by the TRLNetworkTools when dealing with an invalid URL
         public static let invalidURL: Code = .invalidURL
 
+        /// Error thrown by TRLJSON when the object entered is invalid
         public static let jsonUnsupportedType: Code = .jsonUnsupportedType
 
+        /// Error inisde TRLJSON when the JSON is invalid
         public static let jsonInvalidJSON: Code = .jsonInvalidJSON
 
+        /// Error thrown by TRLJSON when the object entered is invalid
         public static let jsonWrongType: Code = .jsonWrongType
 
+        /// Error thrown by TRLJSON when an subscript is out of bounds
         public static let jsonIndexOutOfBounds: Code = .jsonIndexOutOfBounds
 
+        /// Error thrown by TRLJSON when an subscript cannot find the JSON
         public static let jsonErrorNotExist: Code = .jsonErrorNotExist
 
+        /// Error thrown by `TRLUserDefaults` when an UserDefaults returns nil
         public static let NSUDNilReturnValue: Code = .nsudNilReturnValue
 
+        /// Error thrown by TRLOptions when the config file cannot be found
         public static let couldNotFindFile : Code = .optionsCouldNotFindFile
 
+        /// Error thrown by TRLOptions when the DefaultCurrency cannot be found
         public static let invalidDefaultCurrency: Code = .optionsInvalidDefaultCurrency
 
+        /// Error thrown by TRLOptions when the ShopID cannot be found
         public static let missingShopID: Code = .optionsMissingShopID
 
+        /// Error thrown by TRLOptions when the ShopID is invalid
         public static let invalidShopID: Code = .optionsInvalidShopID
 
         /// :nodoc:

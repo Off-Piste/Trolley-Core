@@ -26,12 +26,16 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TProgressHandler: NSObject {
 
+    /// :nodoc:
     @objc public var queue: DispatchQueue
 
+    /// :nodoc:
     @objc public var closure: ProgressHandler
 
+    /// :nodoc:
     @objc public init(queue: DispatchQueue, closure: @escaping ProgressHandler) {
         self.queue = queue
         self.closure = closure

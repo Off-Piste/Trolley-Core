@@ -26,14 +26,28 @@
 
 import Foundation
 
+/// TRLURLDataRequest + Response
+///
+/// - Note: Placing the response in Swift we can take advantage
+///         of _ObjectiveCBridgeable and have code that works for both
 extension TRLURLDataRequest {
 
+    /// <#Description#>
+    ///
+    /// - Parameter block: <#block description#>
+    /// - Returns: <#return value description#>
     @discardableResult
     @objc(response:)
     public func response(block: @escaping (Data?, Error?) -> Void) -> Self {
         return self.response(withQueue: nil, block: block)
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - queue: <#queue description#>
+    ///   - block: <#block description#>
+    /// - Returns: <#return value description#>
     @discardableResult
     @objc(responseWithQueue:block:)
     public func response(
@@ -46,6 +60,14 @@ extension TRLURLDataRequest {
         }
     }
 
+    /// <#Description#>
+    ///
+    /// :nodoc:
+    ///
+    /// - Parameters:
+    ///   - queue: <#queue description#>
+    ///   - block: <#block description#>
+    /// - Returns: <#return value description#>
     @discardableResult
     @objc(__responseWithQueue:block:)
     public func __responseWithQueue(
@@ -77,12 +99,22 @@ extension TRLURLDataRequest {
 
 extension TRLURLDataRequest {
 
+    /// <#Description#>
+    ///
+    /// - Parameter block: <#block description#>
+    /// - Returns: <#return value description#>
     @discardableResult
     @objc(responseJSON:)
     public func responseJSON(block: @escaping (JSON?, Error?) -> Void) -> Self {
         return self.responseJSON(withQueue: nil, block: block)
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - queue: <#queue description#>
+    ///   - block: <#block description#>
+    /// - Returns: <#return value description#>
     @discardableResult
     @objc(responseJSONWithQueue:block:)
     public func responseJSON(withQueue queue: DispatchQueue?, block: @escaping (JSON?, Error?) -> Void) -> Self {

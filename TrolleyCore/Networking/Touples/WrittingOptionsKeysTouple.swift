@@ -26,6 +26,7 @@
 
 import Foundation
 
+/// :nodoc:
 @objc(Key) public enum WrittingOptionsKeys: Int {
     case jsonSerialization = 0
     case castNilToNSNull
@@ -33,14 +34,18 @@ import Foundation
     case encoding
 }
 
+/// :nodoc:
 @objc final public class WrittingOptions: NSObject {
 
+    /// :nodoc:
     @objc public var key: WrittingOptionsKeys
 
+    /// :nodoc:
     @objc public var value: Any
 
     private override init() { fatalError() }
 
+    /// :nodoc:
     @objc public init(withKey key: WrittingOptionsKeys, value: Any) {
         self.key = key
         self.value = value
@@ -48,9 +53,11 @@ import Foundation
 
 }
 
+/// :nodoc:
 public extension NSArray {
 
     // swiftlint:disable for_where
+    /// :nodoc:
     @objc public func optionForKey(_ key: WrittingOptionsKeys) -> Any? {
         for option in self where option is WrittingOptions  {
             if (option as! WrittingOptions).key == key {

@@ -1,0 +1,1426 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 49,
+      "symbol": "TRLErrorDomain",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 51,
+      "symbol": "TRLError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 51,
+      "symbol": "TRLError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 52,
+      "symbol": "TRLError.TRLErrorInvalidURL",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 53,
+      "symbol": "TRLError.TRLErrorURLParameterEncodingFailed",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 55,
+      "symbol": "TRLError.TRLErrorJSONUnsupportedType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 56,
+      "symbol": "TRLError.TRLErrorJSONInvalidJSON",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 57,
+      "symbol": "TRLError.TRLErrorJSONWrongType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 58,
+      "symbol": "TRLError.TRLErrorJSONIndexOutOfBounds",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 59,
+      "symbol": "TRLError.TRLErrorJSONErrorNotExist",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 61,
+      "symbol": "TRLError.TRLErrorNSUDNilReturnValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 62,
+      "symbol": "TRLError.TRLErrorNSUDCouldNotUnarchive",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 64,
+      "symbol": "TRLError.TRLErrorOptionsCouldNotFindFile",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 65,
+      "symbol": "TRLError.TRLErrorOptionsInvalidDefaultCurrency",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 66,
+      "symbol": "TRLError.TRLErrorOptionsMissingShopID",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 67,
+      "symbol": "TRLError.TRLErrorOptionsInvalidShopID",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 70,
+      "symbol": "TRLException",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 72,
+      "symbol": "TRLMakeError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/TRLError.h",
+      "line": 74,
+      "symbol": "TRLSetErrorOrThrow",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/harrywright/Frameworks/Test/B/TrolleyCore/TrolleyCore/Trolley.h",
+      "line": 35,
+      "symbol": "trl_device_uuid_get",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSArray+Map.h",
+      "line": 30,
+      "symbol": "NSArray(Map)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSArray+Map.h",
+      "line": 32,
+      "symbol": "NSArray(Map).-mapObjectsUsingBlock:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSArray+Map.h",
+      "line": 34,
+      "symbol": "NSArray(Map).-map:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSMutableURLRequest+Reqestable.h",
+      "line": 33,
+      "symbol": "NSMutableURLRequest(Reqestable)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSMutableURLRequest+Reqestable.h",
+      "line": 35,
+      "symbol": "NSMutableURLRequest(Reqestable).-initWithURL:method:headers:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/NSMutableURLRequest+Reqestable.h",
+      "line": 39,
+      "symbol": "NSMutableURLRequest(Reqestable).-initWithURL:method:headers:error:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 17,
+      "symbol": "NetworkStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 17,
+      "symbol": "NetworkStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 18,
+      "symbol": "NetworkStatus.NotReachable",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 19,
+      "symbol": "NetworkStatus.ReachableViaWiFi",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 20,
+      "symbol": "NetworkStatus.ReachableViaWWAN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 27,
+      "symbol": "kReachabilityChangedNotification",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 30,
+      "symbol": "Reachability",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 32,
+      "symbol": "Reachability.currentReachabilityStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 37,
+      "symbol": "Reachability.connectionRequired",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 42,
+      "symbol": "Reachability.+reachabilityWithHostName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 47,
+      "symbol": "Reachability.+reachabilityWithAddress:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 52,
+      "symbol": "Reachability.-startNotifier",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/Reachability.h",
+      "line": 57,
+      "symbol": "Reachability.-stopNotifier",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 29,
+      "symbol": "JSONType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 29,
+      "symbol": "JSONType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 30,
+      "symbol": "JSONType.JSONTypeNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 31,
+      "symbol": "JSONType.JSONTypeString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 32,
+      "symbol": "JSONType.JSONTypeBool",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 33,
+      "symbol": "JSONType.JSONTypeArray",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 34,
+      "symbol": "JSONType.JSONTypeDictionary",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 35,
+      "symbol": "JSONType.JSONTypeNull",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 36,
+      "symbol": "JSONType.JSONTypeUnknown",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 39,
+      "symbol": "Parameters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 41,
+      "symbol": "HTTPHeaders",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TNTUtils.h",
+      "line": 78,
+      "symbol": "trl_defer_cleanup_block",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 32,
+      "symbol": "HTTPRedirection",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 39,
+      "symbol": "DidReceiveChallenge",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 45,
+      "symbol": "NeedNewBodyStream",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 50,
+      "symbol": "DidCompleteWithError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 56,
+      "symbol": "DataStream",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 60,
+      "symbol": "ProgressHandler",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 64,
+      "symbol": "TaskDidReceiveResponse",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 70,
+      "symbol": "TaskDidBecomeDownloadTask",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 76,
+      "symbol": "TaskDidReceiveData",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 82,
+      "symbol": "TaskWillCacheResponse",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLBlocks.h",
+      "line": 88,
+      "symbol": "StreamBlock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 33,
+      "symbol": "TRLJSON",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 37,
+      "symbol": "TRLJSON.object",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 39,
+      "symbol": "TRLJSON.count",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 41,
+      "symbol": "TRLJSON.array",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 43,
+      "symbol": "TRLJSON.arrayValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 45,
+      "symbol": "TRLJSON.dictionary",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 47,
+      "symbol": "TRLJSON.dictionaryValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 49,
+      "symbol": "TRLJSON.string",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 51,
+      "symbol": "TRLJSON.stringValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 53,
+      "symbol": "TRLJSON.number",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 55,
+      "symbol": "TRLJSON.numberValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 57,
+      "symbol": "TRLJSON.-objectAtIndexedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 59,
+      "symbol": "TRLJSON.-objectForKeyedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 63,
+      "symbol": "TRLJSON.+object:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 65,
+      "symbol": "TRLJSON.+parseJSON:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSON.h",
+      "line": 67,
+      "symbol": "TRLJSON.+null",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 36,
+      "symbol": "TRLJSONBase",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 37,
+      "symbol": "TRLJSONBase.rawArray",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 38,
+      "symbol": "TRLJSONBase.rawDictionary",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 39,
+      "symbol": "TRLJSONBase.rawString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 40,
+      "symbol": "TRLJSONBase.rawNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 41,
+      "symbol": "TRLJSONBase.rawNull",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 42,
+      "symbol": "TRLJSONBase.rawBool",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 44,
+      "symbol": "TRLJSONBase._rawType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 45,
+      "symbol": "TRLJSONBase._error",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLJSONBase.h",
+      "line": 72,
+      "symbol": "TRLJSONBase.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 31,
+      "symbol": "TRLMutableArray",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 33,
+      "symbol": "TRLMutableArray.+initWithArray:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 35,
+      "symbol": "TRLMutableArray.+initWithMutableArray:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 37,
+      "symbol": "TRLMutableArray.+initWithTRLMutableArray:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 39,
+      "symbol": "TRLMutableArray.-objectAtIndex:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 41,
+      "symbol": "TRLMutableArray.-setObject:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 43,
+      "symbol": "TRLMutableArray.-removeAll",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 45,
+      "symbol": "TRLMutableArray.count",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 47,
+      "symbol": "TRLMutableArray.-array",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 49,
+      "symbol": "TRLMutableArray.-setObject:atIndexedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 51,
+      "symbol": "TRLMutableArray.-objectAtIndexedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 53,
+      "symbol": "TRLMutableArray.-map:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableArray.h",
+      "line": 55,
+      "symbol": "TRLMutableArray.-enumerateObjectsUsingBlock:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableJSON.h",
+      "line": 31,
+      "symbol": "TRLMutableJSON",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableJSON.h",
+      "line": 33,
+      "symbol": "TRLMutableJSON.object",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableJSON.h",
+      "line": 35,
+      "symbol": "TRLMutableJSON.-setObject:forKeyedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLMutableJSON.h",
+      "line": 37,
+      "symbol": "TRLMutableJSON.-setObject:atIndexedSubscript:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLNetworkManager.h",
+      "line": 40,
+      "symbol": "TRLNetworkManager",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLNetworkManager.h",
+      "line": 41,
+      "symbol": "TRLNetworkManager._network",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLNetworkManager.h",
+      "line": 44,
+      "symbol": "TRLNetworkManager.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLNetworkManager.h",
+      "line": 46,
+      "symbol": "TRLNetworkManager.reachability",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLRequest.h",
+      "line": 57,
+      "symbol": "TRLRequest.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 37,
+      "symbol": "TRLURLDataRequest",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 39,
+      "symbol": "TRLURLDataRequest.progress",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 41,
+      "symbol": "TRLURLDataRequest.dataDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 43,
+      "symbol": "TRLURLDataRequest.-stream",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 45,
+      "symbol": "TRLURLDataRequest.-streamWithBlock:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 47,
+      "symbol": "TRLURLDataRequest.-downloadProgressWithBlock:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 49,
+      "symbol": "TRLURLDataRequest.-downloadProgressWithQueue:block:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataRequest.h",
+      "line": 53,
+      "symbol": "request",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 33,
+      "symbol": "TRLURLDataTaskDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 34,
+      "symbol": "TRLURLDataTaskDelegate.totalBytesReceived",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 35,
+      "symbol": "TRLURLDataTaskDelegate.mutableData",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 36,
+      "symbol": "TRLURLDataTaskDelegate.expectedContentLength",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 39,
+      "symbol": "TRLURLDataTaskDelegate.progress",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 41,
+      "symbol": "TRLURLDataTaskDelegate.progressHandler",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 43,
+      "symbol": "TRLURLDataTaskDelegate.dataStream",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 45,
+      "symbol": "TRLURLDataTaskDelegate.dataTask",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 47,
+      "symbol": "TRLURLDataTaskDelegate.dataTaskDidReceiveResponse",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 49,
+      "symbol": "TRLURLDataTaskDelegate.dataTaskDidBecomeDownloadTask",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 51,
+      "symbol": "TRLURLDataTaskDelegate.dataTaskDidReceiveData",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLDataTaskDelegate.h",
+      "line": 53,
+      "symbol": "TRLURLDataTaskDelegate.dataTaskWillCacheResponse",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 36,
+      "symbol": "TRLURLEncodingDestination",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 36,
+      "symbol": "TRLURLEncodingDestination",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 37,
+      "symbol": "TRLURLEncodingDestination.TRLURLEncodingDestinationMethodDependent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 38,
+      "symbol": "TRLURLEncodingDestination.TRLURLEncodingDestinationQueryString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 42,
+      "symbol": "TRLURLEncoding",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 44,
+      "symbol": "TRLURLEncoding.destination",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 46,
+      "symbol": "TRLURLEncoding.queryString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 48,
+      "symbol": "TRLURLEncoding.methodDependent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 50,
+      "symbol": "TRLURLEncoding.defaultEncoding",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 52,
+      "symbol": "TRLURLEncoding.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 54,
+      "symbol": "TRLURLEncoding.-initWithDestination:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 57,
+      "symbol": "TRLURLEncoding.-escape:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 59,
+      "symbol": "TRLURLEncoding.-query:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 65,
+      "symbol": "nsnumber_is_like_integer",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLEncoding.h",
+      "line": 80,
+      "symbol": "nsnumber_is_like_bool",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLParameterEncoding.h",
+      "line": 32,
+      "symbol": "TRLURLParameterEncoding",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLParameterEncoding.h",
+      "line": 34,
+      "symbol": "TRLURLParameterEncoding.-encode:with:error:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 40,
+      "symbol": "TRLURLRequest",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 41,
+      "symbol": "TRLURLRequest.taskDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 42,
+      "symbol": "TRLURLRequest.taskDelegateLock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 43,
+      "symbol": "TRLURLRequest.startTime",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 44,
+      "symbol": "TRLURLRequest.endTime",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 45,
+      "symbol": "TRLURLRequest.originalTask",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 48,
+      "symbol": "TRLURLRequest.delegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 50,
+      "symbol": "TRLURLRequest.validations",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 52,
+      "symbol": "TRLURLRequest.task",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 54,
+      "symbol": "TRLURLRequest.session",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 56,
+      "symbol": "TRLURLRequest.request",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 58,
+      "symbol": "TRLURLRequest.response",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 60,
+      "symbol": "TRLURLRequest.retryCount",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 62,
+      "symbol": "TRLURLRequest.+requestForSession:requestTask:error:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 66,
+      "symbol": "TRLURLRequest.-authenticateForUser:password:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 70,
+      "symbol": "TRLURLRequest.-authenticateForUser:password:persistence:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 75,
+      "symbol": "TRLURLRequest.-authenticateUsingCredential:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 77,
+      "symbol": "TRLURLRequest.+authorizationHeaderForUser:password:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 81,
+      "symbol": "TRLURLRequest.-resume",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 83,
+      "symbol": "TRLURLRequest.-suspend",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLRequest.h",
+      "line": 85,
+      "symbol": "TRLURLRequest.-cancel",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 40,
+      "symbol": "TRLURLSessionManager",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 41,
+      "symbol": "TRLURLSessionManager.backgoundCompletion",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 46,
+      "symbol": "TRLURLSessionManager.+managerForSession:delegate:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 49,
+      "symbol": "TRLURLSessionManager.+managerForConfiguration:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 51,
+      "symbol": "TRLURLSessionManager.+managerForConfiguration:delegate:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 56,
+      "symbol": "TRLURLSessionManager.queue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 58,
+      "symbol": "TRLURLSessionManager.session",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 60,
+      "symbol": "TRLURLSessionManager.delegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 62,
+      "symbol": "TRLURLSessionManager.startRequestsImmediately",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 64,
+      "symbol": "TRLURLSessionManager.adapter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 66,
+      "symbol": "TRLURLSessionManager.defaultManager",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 68,
+      "symbol": "TRLURLSessionManager.+defaultHTTPHeaders",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 72,
+      "symbol": "TRLURLSessionManager.-request:method:parameters:encoding:headers:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLSessionManager.h",
+      "line": 78,
+      "symbol": "TRLURLSessionManager.-requestForURLRequest:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 34,
+      "symbol": "TRLURLTaskDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 35,
+      "symbol": "TRLURLTaskDelegate._taskLock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 38,
+      "symbol": "TRLURLTaskDelegate.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 40,
+      "symbol": "TRLURLTaskDelegate.-initWithTask:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 42,
+      "symbol": "TRLURLTaskDelegate.queue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 44,
+      "symbol": "TRLURLTaskDelegate.task",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 46,
+      "symbol": "TRLURLTaskDelegate._task",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 48,
+      "symbol": "TRLURLTaskDelegate.initialResponseTime",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 50,
+      "symbol": "TRLURLTaskDelegate.credential",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 52,
+      "symbol": "TRLURLTaskDelegate.metrics",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 54,
+      "symbol": "TRLURLTaskDelegate.data",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 56,
+      "symbol": "TRLURLTaskDelegate.error",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 58,
+      "symbol": "TRLURLTaskDelegate.taskWillPerformHTTPRedirection",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 60,
+      "symbol": "TRLURLTaskDelegate.taskDidReceiveChallenge",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 62,
+      "symbol": "TRLURLTaskDelegate.taskNeedNewBodyStream",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 64,
+      "symbol": "TRLURLTaskDelegate.taskDidCompleteWithError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 66,
+      "symbol": "TRLURLTaskDelegate.-reset",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 68,
+      "symbol": "TRLURLTaskDelegate.-URLSession:task:didReceiveChallenge:completionHandler:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 73,
+      "symbol": "TRLURLTaskDelegate.-URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 79,
+      "symbol": "TRLURLTaskDelegate.-URLSession:task:didCompleteWithError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "headers/TrolleyCore/TRLURLTaskDelegate.h",
+      "line": 83,
+      "symbol": "TRLURLTaskDelegate.-URLSession:task:needNewBodyStream:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/harrywright/Frameworks/Test/B/TrolleyCore"
+}

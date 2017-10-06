@@ -26,10 +26,13 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TValidationsIndex: NSObject {
 
+    /// :nodoc:
     @objc public var validation: (() -> Void)
 
+    /// :nodoc:
     @objc public init(validation: @escaping (() -> Void)) {
         self.validation = validation
     }

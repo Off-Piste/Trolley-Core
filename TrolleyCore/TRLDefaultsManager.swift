@@ -26,6 +26,11 @@
 
 import Foundation
 
+/// A wrapper for UserDefaults
+///
+/// This allows for eaiser handling of items into and out
+/// of NSUserDefaults with just a key and object been needed
+/// and we do the rest.
 @objc public final class TRLDefaultsManager: NSObject {
 
     private var defaults: UserDefaults {
@@ -51,10 +56,10 @@ import Foundation
         return TRLDefaultsManager(withKey: key)
     }
 
-    /// <#Description#>
+    /// Method to retrive an object from persistance storage
     ///
-    /// - Returns: <#return value description#>
-    /// - Throws: <#throws value description#>
+    /// - Returns: The object for the key
+    /// - Throws: A Trolley.Error.nsudNilReturnValue if the object is nil
     @objc(retriveObject:)
     public final func retrieveObject() throws -> Any {
         guard let data = defaults.data(forKey: _key) else {
@@ -64,9 +69,9 @@ import Foundation
         return try Encoder.decode(data: data, forKey: _key)
     }
 
-    /// <#Description#>
+    /// Method to set the object
     ///
-    /// - Parameter object: <#object description#>
+    /// - Parameter object: The object you wish to store
     @objc(setObject:)
     public func set(_ object: Any) {
         let data = Encoder(withObject: object).data

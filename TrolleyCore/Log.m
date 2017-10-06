@@ -11,7 +11,30 @@
 #define OS_LOG_FMT_MAX_CMDS    48
 #define OS_LOG_FMT_BUF_SIZE    (2 + (2 + 16) * OS_LOG_FMT_MAX_CMDS)
 
-BOOL isLogging = NO;
+TRLLoggerLevel kGlobalLoggerLevel = TRLLoggerLevelDefault;
+
+BOOL canLog(TRLLoggerLevel level) {
+    // If in debug mode everything is logged
+#ifdef TRLDebugMode
+    if (TRLDebugMode) {
+        return YES;
+    }
+#endif
+    // If the kGlobalLoggerLevel is not TRLLoggerLevelDefault then check
+    // what the level is set to. If the level == kGlobalLoggerLevel then you
+    // can log
+    switch (kGlobalLoggerLevel) {
+        case TRLLoggerLevelDefault: break;
+        default: if (level == kGlobalLoggerLevel) { return YES; } else { return NO; }
+    }
+
+    // Default: If the logger is anything but TRLLoggerLevelDebug log it
+    if (level != TRLLoggerLevelDebug) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 TRLLoggerService TRLLoggerServiceCore = @"Trolley/Core";
 

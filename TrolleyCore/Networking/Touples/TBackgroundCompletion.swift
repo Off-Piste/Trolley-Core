@@ -26,10 +26,13 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TBackgroundCompletion: NSObject {
 
+    /// :nodoc:
     @objc public final var handler: (() -> Void)?
 
+    /// :nodoc:
     @objc public override init() {
         self.handler?()
     }

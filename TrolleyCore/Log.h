@@ -13,6 +13,7 @@
 /**
  The level for the Log message.
 
+ :nodoc:
  - TRLLoggerLevelDefault:   OS_LOG_TYPE_DEFAULT
  - TRLLoggerLevelInfo:      OS_LOG_TYPE_INFO
  - TRLLoggerLevelDebug:     OS_LOG_TYPE_DEBUG
@@ -27,10 +28,24 @@ typedef NS_ENUM(uint8_t, TRLLoggerLevel) {
     TRLLoggerLevelFault = OS_LOG_TYPE_FAULT,
 } NS_SWIFT_NAME(LoggerLevel);
 
-extern BOOL isLogging;
+/**
+ :nodoc:
+ */
+extern TRLLoggerLevel kGlobalLoggerLevel;
 
+/**
+ :nodoc:
+ */
+extern BOOL canLog(TRLLoggerLevel level);
+
+/**
+ :nodoc:
+ */
 typedef NSString *const TRLLoggerService NS_EXTENSIBLE_STRING_ENUM;
 
+/**
+ :nodoc:
+ */
 FOUNDATION_EXPORT TRLLoggerService TRLLoggerServiceCore;
 
 /**
@@ -44,9 +59,8 @@ NS_SWIFT_NAME(trl_logger_t)
  The main interface for the logger, uses TRLLoggerService to create the os_log_t
 
  :nodoc:
-
  @param service  The Current service the user is in, must be created inside that framework
- so we cannot use them in the wrong areas;
+                 so we cannot use them in the wrong areas;
  @return         The TRLLogger instance for the service.
  */
 + (instancetype)loggerForService:(TRLLoggerService)service;
@@ -55,7 +69,6 @@ NS_SWIFT_NAME(trl_logger_t)
  The Swift compatabil method, please only use from the swift ext
 
  :nodoc:
-
  @param level   TRLLoggerLevel for the log
  @param fmt     The string format
  @param args    The va_list

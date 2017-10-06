@@ -27,6 +27,7 @@
 import Foundation
 import TrolleyCore.Dynamic
 
+/// :nodoc:
 extension TRLJSON {
 
     var toCore: JSONCore {
@@ -52,10 +53,12 @@ extension Dictionary {
     }
 }
 
+/// <#Description#>
 public struct JSON {
 
     internal var _core: JSONCore
 
+    /// <#Description#>
     public var object: Any {
         get {
             return _core.base.object
@@ -69,10 +72,19 @@ public struct JSON {
         self._core = core
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameter object: <#object description#>
     public init(_ object: Any) {
         self.init(_core: TRLMutableJSON(object).toCore)
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - data: <#data description#>
+    ///   - options: <#options description#>
+    /// - Throws: <#throws value description#>
     public init(data: Data, options: JSONSerialization.ReadingOptions = []) throws {
         let object = try JSONSerialization.jsonObject(with: data, options: options)
         self._core = TRLJSON(object).toCore
@@ -82,6 +94,9 @@ public struct JSON {
 
 public extension JSON {
 
+    /// <#Description#>
+    ///
+    /// - Parameter key: <#key description#>
     public subscript(key: String) -> JSON {
         get {
             return JSON(_core: _core[key])
@@ -91,6 +106,9 @@ public extension JSON {
         }
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameter index: <#index description#>
     public subscript(index: Int) -> JSON {
         get {
             return JSON(_core: _core[index])
@@ -120,10 +138,14 @@ extension JSON: ExpressibleByStringLiteral {
 
 extension JSON: ExpressibleByNilLiteral {
 
+    /// <#Description#>
     public static var null: JSON {
         return self.init(_core: TRLJSON.null().toCore)
     }
 
+    /// <#Description#>
+    ///
+    /// - Parameter nilLiteral: <#nilLiteral description#>
     public init(nilLiteral: ()) {
         self = .null
     }
@@ -156,6 +178,7 @@ extension JSON: ExpressibleByArrayLiteral {
         self.init(elements)
     }
 
+    /// <#Description#>
     public var array: [JSON]? {
         if self._core.base.rawType == .array {
             return self._core.base.array.map { $0.map { JSON($0.rawValue) } }
@@ -164,10 +187,12 @@ extension JSON: ExpressibleByArrayLiteral {
         return nil
     }
 
+    /// <#Description#>
     public var arrayValue: [JSON] {
         return self.array ?? []
     }
 
+    /// <#Description#>
     public var arrayObject: [Any]? {
         get {
             if let arr = TRLJSONBaseRawValueForType(self._core.base, .array) as? TRLMutableArray {
@@ -234,6 +259,7 @@ extension JSON: ExpressibleByDictionaryLiteral {
         self.init(dict)
     }
 
+    /// <#Description#>
     var dictionary: [String: JSON]? {
         if self._core.base.rawType == .dictionary {
             return self._core.base.dictionary?.mapPairs { ($0, JSON($1.toCore)) }
@@ -241,10 +267,12 @@ extension JSON: ExpressibleByDictionaryLiteral {
         return nil
     }
 
+    /// <#Description#>
     var dictionaryValue: [String: JSON] {
         return self.dictionary ?? [:]
     }
 
+    /// <#Description#>
     var dictionaryObject: [String: Any]? {
         get {
             if let dict = TRLJSONBaseRawValueForType(self._core.base, .dictionary) as? TRLMutableDictionary, let dictionary = dict.dictionary() as? [String: Any]  {
@@ -282,14 +310,32 @@ extension JSON: Hashable {
 
 }
 
+/// <#Description#>
+///
+/// - Parameters:
+///   - lhs: <#lhs description#>
+///   - rhs: <#rhs description#>
+/// - Returns: <#return value description#>
 public func == (lhs: JSON, rhs: JSON) -> Bool {
     return lhs._core == rhs._core
 }
 
+/// <#Description#>
+///
+/// - Parameters:
+///   - lhs: <#lhs description#>
+///   - rhs: <#rhs description#>
+/// - Returns: <#return value description#>
 public func == (lhs: JSON, rhs: TRLJSON) -> Bool {
     return lhs._core.base.isEqual(rhs)
 }
 
+/// <#Description#>
+///
+/// - Parameters:
+///   - lhs: <#lhs description#>
+///   - rhs: <#rhs description#>
+/// - Returns: <#return value description#>
 public func == (lhs: TRLJSON, rhs: JSON) -> Bool {
     return lhs.isEqual(rhs._core.base)
 }

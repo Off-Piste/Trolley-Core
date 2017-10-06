@@ -19,50 +19,49 @@ internal var randomDouble: Double {
     return Double(arc4random()) / arc4random_max
 }
 
-@objc
-public final class TRLRetryHelperTask: NSObject {
+private final class TRLRetryHelperTask: NSObject {
 
-    @objc public var block: trl_void_void?
+    var block: trl_void_void?
 
-    public init(block: @escaping trl_void_void){
+    init(block: @escaping trl_void_void){
         self.block = block
     }
 
-    private override init() {
+    override init() {
         fatalError()
     }
 
-    @objc public var isCanceled: Bool {
+    var isCanceled: Bool {
         return self.block == nil
     }
 
-    public func cancel() {
+    func cancel() {
         self.block = nil
     }
 
-     public func execute() {
+    func execute() {
         block?()
     }
 }
 
-@objc
-public final class TRLRetryHelper: NSObject {
+/// :nodoc:
+@objc public final class TRLRetryHelper: NSObject {
 
-    internal var queue: DispatchQueue
+    private var queue: DispatchQueue
 
-    internal var minRetryDelayAfterFailure: TimeInterval
+    private var minRetryDelayAfterFailure: TimeInterval
 
-    internal var maxRetryDelay: TimeInterval
+    private var maxRetryDelay: TimeInterval
 
-    internal var retryExponent: Double
+    private var retryExponent: Double
 
-    internal var jitterFactor: Double
+    private var jitterFactor: Double
 
-    internal var lastWasSuccess: Bool = true
+    private var lastWasSuccess: Bool = true
 
-    internal var currentRetryDelay: TimeInterval = TimeInterval(NSNotFound)
+    private var currentRetryDelay: TimeInterval = TimeInterval(NSNotFound)
 
-    internal var scheduledRetry: TRLRetryHelperTask?
+    private var scheduledRetry: TRLRetryHelperTask?
 
     private override init() {
         fatalError()
@@ -104,19 +103,22 @@ public final class TRLRetryHelper: NSObject {
         self.lastWasSuccess = false
 
         let ns = DispatchTime.now().uptimeNanoseconds + UInt64(delay) * NSEC_PER_SEC
-        let popTime: DispatchTime = DispatchTime(uptimeNanoseconds: ns)
-        DispatchQueue.main.asyncAfter(deadline: popTime) {
+//        let popTime: DispatchTime = DispatchTime(uptimeNanoseconds: ns)
+//        DispatchQueue.main.asyncAfter(deadline: popTime) {
+//            if (!task.isCanceled) {
+//                self.scheduledRetry = nil
+//                task.execute()
+//            }
+//        }
+
+        let timer = TRLTimer(for: TimeInterval(ns))
+        timer.queue = .main
+        timer.once {
             if (!task.isCanceled) {
                 self.scheduledRetry = nil
                 task.execute()
             }
         }
-
-//        let timer = TRLTimer(for: delay * TimeInterval(NSEC_PER_SEC))
-//        timer.queue = .main
-//        timer.once {
-//
-//        }
     }
 
     @objc public func cancel() {

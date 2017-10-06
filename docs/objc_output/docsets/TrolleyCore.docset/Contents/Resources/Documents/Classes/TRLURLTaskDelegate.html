@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TRLURLTaskDelegate Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/TRLURLTaskDelegate" class="dashAnchor"></a>
+    <a title="TRLURLTaskDelegate Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TrolleyCore Docs</a> (20% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TrolleyCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TRLURLTaskDelegate Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/NSArray(Map).html">NSArray(Map)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSMutableURLRequest(Reqestable).html">NSMutableURLRequest(Reqestable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSON.html">TRLJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSONBase.html">TRLJSONBase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableArray.html">TRLMutableArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableDictionary.html">TRLMutableDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableJSON.html">TRLMutableJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLNetworkManager.html">TRLNetworkManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLRequest.html">TRLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataRequest.html">TRLURLDataRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataTaskDelegate.html">TRLURLDataTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLEncoding.html">TRLURLEncoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLRequest.html">TRLURLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLSessionManager.html">TRLURLSessionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLTaskDelegate.html">TRLURLTaskDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@AppleDeviceUUIDKey">AppleDeviceUUIDKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodDELETE">HTTPMethodDELETE</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodGET">HTTPMethodGET</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPOST">HTTPMethodPOST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPUT">HTTPMethodPUT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLErrorDomain">TRLErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLTrolleyStartingUpNotification">TRLTrolleyStartingUpNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kReachabilityChangedNotification">kReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/JSONType.html">JSONType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NetworkStatus.html">NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLError.html">TRLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLURLEncodingDestination.html">TRLURLEncodingDestination</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DataStream">DataStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidCompleteWithError">DidCompleteWithError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidReceiveChallenge">DidReceiveChallenge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPHeaders">HTTPHeaders</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPMethod">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@HTTPRedirection">HTTPRedirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@NeedNewBodyStream">NeedNewBodyStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@Parameters">Parameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@ProgressHandler">ProgressHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@StreamBlock">StreamBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidBecomeDownloadTask">TaskDidBecomeDownloadTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveData">TaskDidReceiveData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveResponse">TaskDidReceiveResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskWillCacheResponse">TaskWillCacheResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLException">TRLException</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLMakeError">TRLMakeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLSetErrorOrThrow">TRLSetErrorOrThrow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_bool">nsnumber_is_like_bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_integer">nsnumber_is_like_integer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@request">request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TNTUtils.h@F@trl_defer_cleanup_block">trl_defer_cleanup_block</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@trl_device_uuid_get">trl_device_uuid_get</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TRLURLTaskDelegate</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate@_taskLock"></a>
+                    <a name="//apple_ref/objc/Ivar/_taskLock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate@_taskLock">_taskLock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)init"></a>
+                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)init">-init</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)initWithTask:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithTask:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)initWithTask:">-initWithTask:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)queue"></a>
+                    <a name="//apple_ref/objc/Property/queue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)queue">queue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)task"></a>
+                    <a name="//apple_ref/objc/Property/task" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)task">task</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)_task"></a>
+                    <a name="//apple_ref/objc/Property/_task" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)_task">_task</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)initialResponseTime"></a>
+                    <a name="//apple_ref/objc/Property/initialResponseTime" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)initialResponseTime">initialResponseTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)credential"></a>
+                    <a name="//apple_ref/objc/Property/credential" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)credential">credential</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)metrics"></a>
+                    <a name="//apple_ref/objc/Property/metrics" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)metrics">metrics</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)data"></a>
+                    <a name="//apple_ref/objc/Property/data" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)data">data</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)error"></a>
+                    <a name="//apple_ref/objc/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)error">error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)taskWillPerformHTTPRedirection"></a>
+                    <a name="//apple_ref/objc/Property/taskWillPerformHTTPRedirection" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)taskWillPerformHTTPRedirection">taskWillPerformHTTPRedirection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)taskDidReceiveChallenge"></a>
+                    <a name="//apple_ref/objc/Property/taskDidReceiveChallenge" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)taskDidReceiveChallenge">taskDidReceiveChallenge</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)taskNeedNewBodyStream"></a>
+                    <a name="//apple_ref/objc/Property/taskNeedNewBodyStream" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)taskNeedNewBodyStream">taskNeedNewBodyStream</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(py)taskDidCompleteWithError"></a>
+                    <a name="//apple_ref/objc/Property/taskDidCompleteWithError" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(py)taskDidCompleteWithError">taskDidCompleteWithError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)reset"></a>
+                    <a name="//apple_ref/objc/Method/-reset" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)reset">-reset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:didReceiveChallenge:completionHandler:"></a>
+                    <a name="//apple_ref/objc/Method/-URLSession:task:didReceiveChallenge:completionHandler:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:didReceiveChallenge:completionHandler:">-URLSession:task:didReceiveChallenge:completionHandler:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:"></a>
+                    <a name="//apple_ref/objc/Method/-URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:">-URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:didCompleteWithError:"></a>
+                    <a name="//apple_ref/objc/Method/-URLSession:task:didCompleteWithError:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:didCompleteWithError:">-URLSession:task:didCompleteWithError:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:needNewBodyStream:"></a>
+                    <a name="//apple_ref/objc/Method/-URLSession:task:needNewBodyStream:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLURLTaskDelegate(im)URLSession:task:needNewBodyStream:">-URLSession:task:needNewBodyStream:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/harrytwright/trolley_core" target="_blank" rel="external">Trolley</a>. All rights reserved. (Last updated: 2017-10-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

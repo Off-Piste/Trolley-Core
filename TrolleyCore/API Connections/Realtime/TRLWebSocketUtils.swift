@@ -26,6 +26,7 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TRLWebSocketUtils: NSObject {
 
     @objc public static var kWebsocketConnectTimeout: TimeInterval = 30
@@ -42,8 +43,10 @@ import Foundation
 
 }
 
+/// :nodoc:
 extension NSString {
 
+    /// :nodoc:
     @objc public func splitString(intoMaxSize size: Int) -> [NSString] {
         if ((self as String).characters.count) <= size {
             return [self]

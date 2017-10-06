@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TRLRequest Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/TRLRequest" class="dashAnchor"></a>
+    <a title="TRLRequest Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TrolleyCore Docs</a> (20% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TrolleyCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TRLRequest Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/NSArray(Map).html">NSArray(Map)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSMutableURLRequest(Reqestable).html">NSMutableURLRequest(Reqestable)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSON.html">TRLJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLJSONBase.html">TRLJSONBase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableArray.html">TRLMutableArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableDictionary.html">TRLMutableDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLMutableJSON.html">TRLMutableJSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLNetworkManager.html">TRLNetworkManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLRequest.html">TRLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataRequest.html">TRLURLDataRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLDataTaskDelegate.html">TRLURLDataTaskDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLEncoding.html">TRLURLEncoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLRequest.html">TRLURLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLSessionManager.html">TRLURLSessionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TRLURLTaskDelegate.html">TRLURLTaskDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@AppleDeviceUUIDKey">AppleDeviceUUIDKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodDELETE">HTTPMethodDELETE</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodGET">HTTPMethodGET</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPOST">HTTPMethodPOST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@HTTPMethodPUT">HTTPMethodPUT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLErrorDomain">TRLErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@TRLTrolleyStartingUpNotification">TRLTrolleyStartingUpNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kReachabilityChangedNotification">kReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/JSONType.html">JSONType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NetworkStatus.html">NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLError.html">TRLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TRLURLEncodingDestination.html">TRLURLEncodingDestination</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DataStream">DataStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidCompleteWithError">DidCompleteWithError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@DidReceiveChallenge">DidReceiveChallenge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPHeaders">HTTPHeaders</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPMethod">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@HTTPRedirection">HTTPRedirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@NeedNewBodyStream">NeedNewBodyStream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TNTUtils.h@T@Parameters">Parameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@ProgressHandler">ProgressHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@StreamBlock">StreamBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidBecomeDownloadTask">TaskDidBecomeDownloadTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveData">TaskDidReceiveData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskDidReceiveResponse">TaskDidReceiveResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:TRLBlocks.h@T@TaskWillCacheResponse">TaskWillCacheResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLException">TRLException</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLMakeError">TRLMakeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@TRLSetErrorOrThrow">TRLSetErrorOrThrow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_bool">nsnumber_is_like_bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TRLURLEncoding.h@F@nsnumber_is_like_integer">nsnumber_is_like_integer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@request">request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:TNTUtils.h@F@trl_defer_cleanup_block">trl_defer_cleanup_block</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@trl_device_uuid_get">trl_device_uuid_get</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TRLRequest</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TRLRequest</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>TRLRequest is the end point for our Request</p>
+
+<p>Only thing that can be mutated here is the Parameters
+they can be added and removed based on the Trolley request that
+is been created.</p>
+
+<p>Please use like follows inside the internal code:</p>
+
+<p>@code
+   TRLURLDataRequest *req = [trlRequest request];
+   [req response:^(NSData *data, NSError *error) {
+       &hellip;
+   }];
+@endcode</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Please don&rsquo;t write to HTTPMethod, ran into an initalisation error so is not readonly
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(im)init"></a>
+                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(im)init">-init</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TRLRequest</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)request"></a>
+                    <a name="//apple_ref/objc/Property/request" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)request">request</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The underlying TRLURLDataRequest of the TRLRequest</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    TRLURLDataRequest
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n"><a href="../Classes/TRLURLDataRequest.html">TRLURLDataRequest</a></span> <span class="o">*</span><span class="n">request</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)url"></a>
+                    <a name="//apple_ref/objc/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)url">url</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The NSString/String representation of the URL</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">url</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)method"></a>
+                    <a name="//apple_ref/objc/Property/method" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)method">method</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The method for the HTTP request.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    For swift please just call <code>.GET</code> or <code>.POST</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPMethod">HTTPMethod</a></span> <span class="n">method</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)parameters"></a>
+                    <a name="//apple_ref/objc/Property/parameters" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)parameters">parameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The parameters for the URL, how this is added to the request if defined inside
+encoding.</p>
+
+<p>So if you need a custom encoding just add a new class that subclasses <code><a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a></code>
+and pass that in the encoding and it will work your way.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@Parameters">Parameters</a></span> <span class="o">*</span><span class="n">parameters</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)encoding"></a>
+                    <a name="//apple_ref/objc/Property/encoding" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)encoding">encoding</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The TRLURLParameterEncoding for the URL</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a></span><span class="o">&gt;</span>
+    <span class="n">encoding</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(py)headers"></a>
+                    <a name="//apple_ref/objc/Property/headers" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(py)headers">headers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Headers for the URLRequest</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Accept-Encoding, Accept-Language, User-Agent are added by default
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPHeaders">HTTPHeaders</a></span> <span class="o">*</span><span class="n">headers</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TRLRequest(im)initWithURL:method:parameters:encoding:headers:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithURL:method:parameters:encoding:headers:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TRLRequest(im)initWithURL:method:parameters:encoding:headers:">-initWithURL:method:parameters:encoding:headers:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initaliser for the Request, this should never be public, only to be created via 
+TRLNetworkManager or a sepcific Trolley subspec.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>This is for internal use, please do not use.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithURL</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span>
+                             <span class="nf">method</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPMethod">HTTPMethod</a></span><span class="p">)</span><span class="nv">method</span>
+                         <span class="nf">parameters</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@Parameters">Parameters</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
+                           <span class="nf">encoding</span><span class="p">:</span>
+                               <span class="p">(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/TRLURLParameterEncoding.html">TRLURLParameterEncoding</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">encoding</span>
+                            <span class="nf">headers</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:TNTUtils.h@T@HTTPHeaders">HTTPHeaders</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">headers</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NSString/String representation of the URL</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The method for the HTTP request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The parameters for the URL</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoding</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The TRLURLParameterEncoding for the URL</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Headers for the URLRequest</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A TRLRequest Instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/harrytwright/trolley_core" target="_blank" rel="external">Trolley</a>. All rights reserved. (Last updated: 2017-10-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

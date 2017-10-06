@@ -27,7 +27,10 @@
 
 import Foundation
 
+/// :nodoc:
 public extension NSLocale {
+
+    /// :nodoc:
     @objc public static var acceptLanguage: String {
         return NSLocale.preferredLanguages.prefix(6).enumerated().map { index, languageCode in
             let quality = 1.0 - (Double(index) * 0.1)

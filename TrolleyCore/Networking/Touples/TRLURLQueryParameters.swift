@@ -26,18 +26,23 @@
 
 import Foundation
 
+/// :nodoc:
 @objc public final class TRLURLQueryParameters: NSObject {
 
+    /// :nodoc:
     @objc public var field: Any
 
+    /// :nodoc:
     @objc public var value: Any
 
+    /// :nodoc:
     @objc public var URLEncodedStringValue: String {
         return "\(field)=\(value)"
     }
 
     private override init() { fatalError() }
 
+    /// :nodoc:
     @objc public init(field: Any, value: Any) {
         self.field = field
         self.value = value

@@ -27,7 +27,9 @@
 import Foundation
 import TrolleyCore.Dynamic
 
+/// :nodoc:
 extension JSON: _ObjectiveCBridgeable {
+
     // swiftlint:disable:next type_name
     public typealias _ObjectiveCType = TRLJSON
 
@@ -38,6 +40,8 @@ extension JSON: _ObjectiveCBridgeable {
     /// downcasting (e.g., via as?) and therefore must perform a
     /// complete conversion to the value type; it cannot defer checking
     /// to a later time.
+    ///
+    /// :nodoc:
     ///
     /// - parameter result: The location where the result is written.
     ///
@@ -64,6 +68,8 @@ extension JSON: _ObjectiveCBridgeable {
     /// from `NSArray` to `Array<Element>`, we can defer the checking
     /// for the individual elements of the array.
     ///
+    /// :nodoc:
+    ///
     /// - parameter source: The Objective-C object from which we are
     /// bridging. This optional value will only be `nil` in cases where
     /// an Objective-C method has returned a `nil` despite being marked
@@ -88,6 +94,8 @@ extension JSON: _ObjectiveCBridgeable {
     /// example, when bridging from `NSArray` to `Array<Element>`, we can defer
     /// the checking for the individual elements of the array.
     ///
+    /// :nodoc:
+    ///
     /// - parameter result: The location where the result is written. The optional
     ///   will always contain a value.
     public static func _forceBridgeFromObjectiveC(_ source: TRLJSON, result: inout JSON?) {
@@ -104,6 +112,8 @@ extension JSON: _ObjectiveCBridgeable {
     }
 
     /// Convert self to Objective-C.
+    ///
+    /// :nodoc:
     public func _bridgeToObjectiveC() -> _ObjectiveCType {
         return _core.copy
     }
