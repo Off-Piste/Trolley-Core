@@ -92,7 +92,7 @@ TRLBaseCaseSubclass(TrolleyTests)
     [Trolley open];
 
     // Then
-    [[Trolley shop] deleteAppWithHandler:^(BOOL deleted) {
+    [[Trolley shop] deleteShopWithHandler:^(BOOL deleted) {
         XCTAssertTrue(deleted);
     }];
 
@@ -101,7 +101,7 @@ TRLBaseCaseSubclass(TrolleyTests)
 
 - (void)testThatDeleteAppWillNotDeleteApp {
     // Given, When, Then
-    [[Trolley shop] deleteAppWithHandler:^(BOOL deleted) {
+    [[Trolley shop] deleteShopWithHandler:^(BOOL deleted) {
         XCTAssertFalse(deleted);
     }];
 }

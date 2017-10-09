@@ -48,7 +48,7 @@ NSString *kDefaultShopName = @"default";
     [super tearDown];
 
     if ([Trolley isShopOpen]) {
-        [[Trolley shop] deleteAppWithHandler:^(BOOL handler) {
+        [[Trolley shop] deleteShopWithHandler:^(BOOL handler) {
             XCTAssertTrue(handler);
         }];
     }
