@@ -58,13 +58,17 @@ typedef TRL_ERROR_ENUM(NSInteger, TRLError, TRLErrorDomain) {
     TRLErrorJSONIndexOutOfBounds = 900,
     TRLErrorJSONErrorNotExist = 490,
 
-    TRLErrorNSUDNilReturnValue = 500,
-    TRLErrorNSUDCouldNotUnarchive = 502,
+    TRLErrorDefaultsManagerNilReturnValue = 500,
+    TRLErrorDefaultsManagerCouldNotUnarchive = 502,
+    TRLErrorDefaultsManagerInvalidValueType = 504,
+    TRLErrorDefaultsManagerInvalidStruct = 504,
 
     TRLErrorOptionsCouldNotFindFile = 404,
     TRLErrorOptionsInvalidDefaultCurrency = 503,
     TRLErrorOptionsMissingShopID = 800,
     TRLErrorOptionsInvalidShopID = 801,
+
+    TRLErrorMirrorCouldNotFindDisplayStyle = 999,
 };
 
 NSException *TRLException(NSString *reason, NSDictionary *_Nullable additionalUserInfo);

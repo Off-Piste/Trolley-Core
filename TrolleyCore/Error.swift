@@ -51,8 +51,17 @@ extension Trolley {
         /// Error thrown by TRLJSON when an subscript cannot find the JSON
         public static let jsonErrorNotExist: Code = .jsonErrorNotExist
 
-        /// Error thrown by `TRLUserDefaults` when an UserDefaults returns nil
-        public static let NSUDNilReturnValue: Code = .nsudNilReturnValue
+        /// Error thrown by `TRLUserDefaults` when UserDefaults returns nil
+        public static let defaultsManagerNilReturnValue: Code = .defaultsManagerNilReturnValue
+
+        /// Error thrown by `TRLUserDefaults` when NSKeyedUnarchiver returns nil
+        public static let defaultsManagerCouldNotUnarchive: Code = .defaultsManagerCouldNotUnarchive
+
+        /// Error thrown by `TRLUserDefaults` when the value is not a `Class` or `Struct`
+        public static let defaultsManagerInvalidValueType: Code = .defaultsManagerInvalidValueType
+
+        /// Error thrown by `TRLUserDefaults` when the value does not conform to `_trl_encodable`
+        public static let defaultsManagerInvalidStruct: Code = .defaultsManagerInvalidStruct
 
         /// Error thrown by TRLOptions when the config file cannot be found
         public static let couldNotFindFile : Code = .optionsCouldNotFindFile
@@ -65,6 +74,8 @@ extension Trolley {
 
         /// Error thrown by TRLOptions when the ShopID is invalid
         public static let invalidShopID: Code = .optionsInvalidShopID
+
+        public static let mirrorCouldNotFindDisplayStyle: Code = .mirrorCouldNotFindDisplayStyle
 
         /// :nodoc:
         public var code: Code {

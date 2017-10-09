@@ -26,6 +26,49 @@
 
 import Foundation
 
+// MARK: Struct Helpers
+
+/// Workaround for:
+///
+/// Protocol 'IntegerType' can only be used as a generic constraint because it has
+/// Self or associated type requirements
+///
+/// :nodoc:
+public protocol _trl_encodable {
+
+    func encode() -> Data
+
+    func decode(for data: Data) throws -> Self
+
+}
+
+/// Workaround for:
+///
+/// Protocol 'IntegerType' can only be used as a generic constraint because it has
+/// Self or associated type requirements
+///
+/// :nodoc:
+public protocol _trl_encodable_associated_type {
+    associatedtype EncodingHelper: TRLEncodableHelper
+}
+
+/// :nodoc:
+public protocol TRLEncodableHelper: NSCoding, NSKeyedUnarchiverDelegate {
+    var structType: _trl_encodable { get }
+}
+
+/// If you wish to save your custom structs to the NSUserDefaults this Protocol is what you need.
+///
+/// - Note:
+/// Workaround for:
+/// *Protocol 'IntegerType' can only be used as a generic constraint because it has
+/// Self or associated type requirements*
+///
+/// :nodoc:
+public typealias TRLEncodable = _trl_encodable & _trl_encodable_associated_type
+
+// MARK: TRLDefaultsManager
+
 /// A wrapper for UserDefaults
 ///
 /// This allows for eaiser handling of items into and out
@@ -63,7 +106,7 @@ import Foundation
     @objc(retriveObject:)
     public final func retrieveObject() throws -> Any {
         guard let data = defaults.data(forKey: _key) else {
-            throw TRLMakeError(.nsudNilReturnValue, _key)
+            throw TRLMakeError(.defaultsManagerNilReturnValue, "Could not retrive value for: \(_key)")
         }
 
         return try Encoder.decode(data: data, forKey: _key)
@@ -72,9 +115,9 @@ import Foundation
     /// Method to set the object
     ///
     /// - Parameter object: The object you wish to store
-    @objc(setObject:)
-    public func set(_ object: Any) {
-        let data = Encoder(withObject: object).data
+    @objc(setObject:error:)
+    public func set(_ object: Any) throws {
+        let data = try Encoder(withObject: object).data
         self.defaults.set(data, forKey: self._key)
     }
 
@@ -97,8 +140,24 @@ fileprivate class Encoder {
     /// Initalsier to set the object and encode it as data
     ///
     /// - Parameter object: Any object, please confom custom objects to `NSCoding`
-    init(withObject object: Any) {
-        self.data = NSKeyedArchiver.archivedData(withRootObject: object)
+    init(withObject object: Any) throws {
+        guard let displayStyle = Mirror(reflecting: object).displayStyle else {
+            let msg: String = "Could not find displayStyle for \(Mirror(reflecting: object))"
+            throw TRLMakeError(.mirrorCouldNotFindDisplayStyle, msg)
+        }
+        switch displayStyle {
+        case .class:
+            self.data = NSKeyedArchiver.archivedData(withRootObject: object)
+        case .struct:
+            if let value = object as? _trl_encodable {
+                self.data = value.encode()
+            } else {
+                throw TRLMakeError(.defaultsManagerInvalidStruct, "\(object) does not conform to _trl_encodable")
+            }
+        default:
+            throw TRLMakeError(.defaultsManagerInvalidValueType, "\(displayStyle) is not valid")
+        }
+
     }
 
     /// The method for whichh objects are attemped to be decoded
@@ -112,7 +171,11 @@ fileprivate class Encoder {
     /// - Throws: An `ManagerError` if the object cannot be unarchived
     class func decode(data: Data, forKey key: String) throws -> Any {
         guard let object = NSKeyedUnarchiver.unarchiveObject(with: data) else {
-            throw TRLMakeError(.nsudCouldNotUnarchive, key)
+            throw TRLMakeError(.defaultsManagerCouldNotUnarchive, "Could not unarchiveObject for key: \(key)")
+        }
+
+        if let value = object as? TRLEncodableHelper {
+            return try value.structType.decode(for: data)
         }
 
         return object
