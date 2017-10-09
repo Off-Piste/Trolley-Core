@@ -46,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, readonly) NSDictionary<NSString *, TRLJSON *> *dictionaryValue;
 
+@property (strong, readonly) NSDictionary<NSString *, id> *dictionaryObject;
+
 @property (strong, readonly, nullable) NSString *string;
 
 @property (strong, readonly) NSString *stringValue;

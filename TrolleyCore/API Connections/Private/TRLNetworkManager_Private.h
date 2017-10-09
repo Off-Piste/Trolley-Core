@@ -27,6 +27,8 @@
 
 @interface TRLNetworkManager ()
 
+- (void)send:(NSDictionary *)data secure:(BOOL)secure;
+
 - (instancetype)initWithURL:(NSString *)url APIKey:(NSString *)key;
 
 @end

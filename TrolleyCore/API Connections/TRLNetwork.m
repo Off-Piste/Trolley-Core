@@ -162,6 +162,10 @@
 
 #pragma mark - Connection handling methods
 
+- (void)send:(NSDictionary *)data secure:(BOOL)secure {
+    [connection sendRequest:data sensitive:secure];
+}
+
 - (void)interruptForReason:(NSString *)reason {
     TRLDebugLogger(TRLLoggerServiceCore, "Connection interrupted for: %@", reason);
     [self->interruptReasons addObject:reason];

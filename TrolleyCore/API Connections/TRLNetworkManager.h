@@ -35,6 +35,10 @@
 
 #define TRLBaseURL @"http://www.trolleyio.co.uk"
 
+extern NSNotificationName _Nonnull TRLNetworkConnectedNotification;
+
+extern NSNotificationName _Nonnull TRLNetworkDisconnectedNotification;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TRLNetworkManager : NSObject {

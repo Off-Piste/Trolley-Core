@@ -28,6 +28,8 @@
 #import "Log.h"
 #import "TrolleyCore-Swift-Fixed.h"
 
+#import "TRLNetworkManager_Private.h"
+
 NSNotificationName TRLTrolleyStartingUpNotification = @"io.trolley.startingUpNotification";
 
 NSString *AppleDeviceUUIDKey = @"io.trolley.device_key";
@@ -58,4 +60,13 @@ NSString *trl_device_uuid_get() {
     return conectionID;
 
 
+}
+
+TRLNetworkManager *trl_get_network_manager(void) {
+    return [[Trolley shop] valueForKey:@"networkManager"];
+}
+
+void trl_network_manager_send(TRLNetworkManager *manager, NSDictionary *dictionary, BOOL secure) {
+    if (!manager) { return; }
+    [manager send:dictionary secure:secure];
 }

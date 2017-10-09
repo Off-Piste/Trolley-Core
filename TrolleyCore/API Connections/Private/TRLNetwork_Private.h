@@ -98,6 +98,8 @@ extern void trl_handle_for_reachabilty(id reach, TRLNetwork *network);
 
 - (BOOL)shouldReconnect;
 
+- (void)send:(NSDictionary *)data secure:(BOOL)secure;
+
 #pragma mark Delegate Methods
 - (void)onDataMessage:(TRLNetworkConnection *)trlNetworkConnection
           withMessage:(NSDictionary *)message;

@@ -58,9 +58,9 @@ var aTRLShop: Trolley!
     @objc public var options: TRLOptions
 
     #if swift(>=4.0)
-    private var networkManager: TRLNetworkManager!
+    @objc(networkManager) private var networkManager: TRLNetworkManager!
     #else
-    fileprivate var networkManager: TRLNetworkManager!
+    @objc(networkManager) fileprivate var networkManager: TRLNetworkManager!
     #endif
 
     /// Opens and configures the default Trolley shop.

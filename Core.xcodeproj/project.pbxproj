@@ -160,10 +160,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.release.xcconfig"; sourceTree = "<group>"; };
-		1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCore/Pods-TrolleyCore.debug.xcconfig"; sourceTree = "<group>"; };
-		5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.release.xcconfig"; sourceTree = "<group>"; };
-		7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrolleyCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrolleyCoreTests/Pods-TrolleyCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C81360B81F87937500E61A29 /* LogMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMarco.h; sourceTree = "<group>"; };
 		C82A87141F8395A50072B198 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C82A87151F8395A50072B198 /* TrolleyCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = TrolleyCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -321,17 +317,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C67866FEF163ED6DC0361E0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */,
-				06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */,
-				7FC9EB8234952018AF58BF8D /* Pods-TrolleyCoreTests.debug.xcconfig */,
-				5A533A8BF218B947C82D4EB8 /* Pods-TrolleyCoreTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C82A87181F8395A90072B198 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +335,6 @@
 				C8460FE21F4C665800CFF7E8 /* TrolleyCore */,
 				C8757AFC1F84EFEF00C4B4EB /* Example */,
 				C8460FE11F4C665800CFF7E8 /* Products */,
-				5C67866FEF163ED6DC0361E0 /* Pods */,
 				0A3E2044F41ABB193C33AC62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1081,7 +1065,6 @@
 		};
 		C8460FF51F4C665800CFF7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C14ED7D3D68654574633F55 /* Pods-TrolleyCore.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1118,7 +1101,6 @@
 		};
 		C8460FF61F4C665800CFF7E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06686AB229520C0E2F5F57DE /* Pods-TrolleyCore.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APPLICATION_EXTENSION_API_ONLY = YES;

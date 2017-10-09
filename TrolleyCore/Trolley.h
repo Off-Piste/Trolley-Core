@@ -26,10 +26,55 @@
 
 #import <Foundation/Foundation.h>
 
-/** Notification to be sent when the Shop is started up */
+@class TRLNetworkManager;
+
+/********************************************************************
+ *                                                                  *
+ * Trolley.h contains the important `private` methods               *
+ * and constants that are to be used only by Swift classes          *
+ * or our SDK's and by no one else.                                 *
+ *                                                                  *
+ * trl_get_network_manager() gets the shared TRLNetworkManager      *
+ *      - To be used by:                                            *
+ *          * Analytics                                             *
+ *          * Database                                              *
+ *                                                                  *
+ * trl_network_manager_send(TRLNetworkManager, NSDictionary, BOOL)  *
+ * sends the contents of the NSDictionary to the network.           *
+ *      - To be used by:                                            *
+ *          * Analytics                                             *
+ *                                                                  *
+ ********************************************************************/
+
+/**
+ Notification to be sent when the Shop is started up
+
+ :nodoc:
+ */
 extern NSNotificationName TRLTrolleyStartingUpNotification;
 
-/** @warning Please do not mutate, this is for internal purposes, changes can be done via Trolley/Auth */
+/**
+ @warning Please do not mutate, this is for internal purposes,
+          changes can be done via Trolley/Auth
+
+ :nodoc:
+ */
 extern NSString *AppleDeviceUUIDKey;
 
+/**
+ Function to get the devices Trolley UUID
+ :nodoc:
+ */
 extern NSString *trl_device_uuid_get(void);
+
+/**
+ Function to get the shared network manager
+ :nodoc:
+ */
+extern TRLNetworkManager *trl_get_network_manager(void);
+
+/**
+ Function send the NSDictionary to the network
+ :nodoc:
+ */
+extern void trl_network_manager_send(TRLNetworkManager *manager, NSDictionary *dictionary, BOOL secure);

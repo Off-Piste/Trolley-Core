@@ -143,6 +143,13 @@
     return self.dictionary ? self.dictionary : @{};
 }
 
+- (NSDictionary<NSString *,id> *)dictionaryObject {
+    if (self.rawType == JSONTypeDictionary) {
+        return [self->rawDictionary.dictionary copy];
+    }
+    return @{}.copy;
+}
+
 - (NSNumber *)number {
     switch (self.rawType) {
         case JSONTypeNumber: return self->rawNumber;

@@ -39,6 +39,10 @@
 
 #import "TrolleyCore-Swift-Fixed.h"
 
+NSNotificationName TRLNetworkConnectedNotification = @"io.trolley.connectedNotification";
+
+NSNotificationName TRLNetworkDisconnectedNotification = @"io.trolley.disconnectedNotification";
+
 static NSString *trl_strip_api_key(NSString *oldKey) {
     NSArray<NSString *> *comps = [oldKey componentsSeparatedByString:@":"];
     if (comps.count != 4) {
@@ -52,6 +56,10 @@ static NSString *trl_strip_api_key(NSString *oldKey) {
 
 - (NSURL *)connectionURL {
     return _network.connectionURL;
+}
+
+- (void)send:(NSDictionary *)data secure:(BOOL)secure {
+    [_network send:data secure:secure];
 }
 
 - (instancetype)initWithURL:(NSString *)url APIKey:(NSString *)key {
