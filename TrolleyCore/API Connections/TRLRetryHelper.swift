@@ -103,17 +103,8 @@ private final class TRLRetryHelperTask: NSObject {
         self.lastWasSuccess = false
 
         let ns = DispatchTime.now().uptimeNanoseconds + UInt64(delay) * NSEC_PER_SEC
-//        let popTime: DispatchTime = DispatchTime(uptimeNanoseconds: ns)
-//        DispatchQueue.main.asyncAfter(deadline: popTime) {
-//            if (!task.isCanceled) {
-//                self.scheduledRetry = nil
-//                task.execute()
-//            }
-//        }
-
-        let timer = TRLTimer(for: TimeInterval(ns))
-        timer.queue = .main
-        timer.once {
+        let popTime: DispatchTime = DispatchTime(uptimeNanoseconds: ns)
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
             if (!task.isCanceled) {
                 self.scheduledRetry = nil
                 task.execute()
