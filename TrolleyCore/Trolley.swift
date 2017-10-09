@@ -139,7 +139,6 @@ extension Trolley {
         self.deleteShop(handler: nil)
     }
 
-
     /// Method to set the Global logger level
     public class func setLoggingLevel(_ level: LoggerLevel) {
         TRLLog(for: .core, "Setting the global logger level to %lu, please note if we are in TRLDebugMode this will be ignored!", level.rawValue)
