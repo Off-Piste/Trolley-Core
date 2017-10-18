@@ -8,12 +8,26 @@
 
 #import "TRLBaseCase.h"
 
+#define NSNotficationObserver(name, ...) \
+[[NSNotificationCenter defaultCenter] addObserverForName:name object:nil queue:nil usingBlock:__VA_ARGS__];
+
 static NSTimeInterval kExpectationTimeout = 30;
 
 NSString *kDefaultShopName = @"default";
 
 @implementation TRLBaseCase {
     id _observer;
+    NSNotificationName _name;
+}
+
+- (void)setUp {
+    [super setUp];
+
+    // On the odd ocassion a shop will still be
+    // open after -[tearDown] is called.
+    if ([Trolley isShopOpen]) {
+        [[Trolley shop] deleteShop];
+    }
 }
 
 - (instancetype)initWithInvocation:(NSInvocation *)invocation {
@@ -29,28 +43,23 @@ NSString *kDefaultShopName = @"default";
 
 - (void)observeNotification:(NSNotificationName)name
                     handler:(trl_note_void)handler {
-    _observer = [[NSNotificationCenter defaultCenter]
-                 addObserverForName:name
-                             object:nil
-                              queue:nil
-                         usingBlock:^(NSNotification * _Nonnull note) {
-                             handler(note);
-                             // Remeber to remove observer or we hit an error.
-                             [self removeObserverForNotification:name];
-                         }];
+    _name = name;
+    _observer = NSNotficationObserver(name, handler);
 }
 
-- (void)removeObserverForNotification:(NSNotificationName)name {
-    [[NSNotificationCenter defaultCenter] removeObserver:_observer name:name object:nil];
+- (void)removeObserver:(id)observer forNotification:(NSNotificationName)name {
+    [[NSNotificationCenter defaultCenter] removeObserver:observer name:name object:nil];
 }
 
 - (void)tearDown {
     [super tearDown];
 
+    if (_name != nil && _observer != nil) {
+        [self removeObserver:_observer forNotification:_name];
+    }
+
     if ([Trolley isShopOpen]) {
-        [[Trolley shop] deleteShopWithHandler:^(BOOL handler) {
-            XCTAssertTrue(handler);
-        }];
+        [[Trolley shop] deleteShop];
     }
 }
 
