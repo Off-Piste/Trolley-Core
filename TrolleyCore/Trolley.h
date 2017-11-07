@@ -39,7 +39,7 @@
  *          * Analytics                                             *
  *          * Database                                              *
  *                                                                  *
- * trl_network_manager_send(TRLNetworkManager, NSDictionary, BOOL)  *
+ * _trl_network_manager_send_dictionary(NSDictionary, BOOL)         *
  * sends the contents of the NSDictionary to the network.           *
  *      - To be used by:                                            *
  *          * Analytics                                             *
@@ -51,6 +51,7 @@
 
  :nodoc:
  */
+//__attribute__((visibility("hidden")))
 extern NSNotificationName TRLTrolleyStartingUpNotification;
 
 /**
@@ -59,22 +60,19 @@ extern NSNotificationName TRLTrolleyStartingUpNotification;
 
  :nodoc:
  */
+__attribute__((visibility("hidden")))
 extern NSString *AppleDeviceUUIDKey;
 
 /**
  Function to get the devices Trolley UUID
  :nodoc:
  */
+__attribute__((visibility("hidden")))
 extern NSString *trl_device_uuid_get(void);
 
 /**
- Function to get the shared network manager
+ Function send the NSDictionary to the shared network
  :nodoc:
  */
-extern TRLNetworkManager *trl_get_network_manager(void);
-
-/**
- Function send the NSDictionary to the network
- :nodoc:
- */
-extern void trl_network_manager_send(TRLNetworkManager *manager, NSDictionary *dictionary, BOOL secure);
+//__attribute__((visibility("hidden")))
+extern void _trl_network_manager_send_dictionary(NSDictionary *dictionary, BOOL secure);

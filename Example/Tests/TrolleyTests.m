@@ -8,6 +8,7 @@
 
 #import "TRLBaseCase.h"
 @import TrolleyCore;
+//@import TrolleyCore;
 
 TRLBaseCaseSubclass(TrolleyTests)
 

@@ -145,17 +145,23 @@ fileprivate class Encoder {
             let msg: String = "Could not find displayStyle for \(Mirror(reflecting: object))"
             throw TRLMakeError(.mirrorCouldNotFindDisplayStyle, msg)
         }
-        switch displayStyle {
-        case .class:
-            self.data = NSKeyedArchiver.archivedData(withRootObject: object)
-        case .struct:
-            if let value = object as? _trl_encodable {
-                self.data = value.encode()
-            } else {
-                throw TRLMakeError(.defaultsManagerInvalidStruct, "\(object) does not conform to _trl_encodable")
+
+        // No need to rerchive???
+        if object is Data || object is NSData {
+            self.data = object as! Data
+        } else {
+            switch displayStyle {
+            case .class:
+                self.data = NSKeyedArchiver.archivedData(withRootObject: object)
+            case .struct:
+                if let value = object as? _trl_encodable {
+                    self.data = value.encode()
+                } else {
+                    throw TRLMakeError(.defaultsManagerInvalidStruct, "\(object) does not conform to _trl_encodable")
+                }
+            default:
+                throw TRLMakeError(.defaultsManagerInvalidValueType, "\(displayStyle) is not valid")
             }
-        default:
-            throw TRLMakeError(.defaultsManagerInvalidValueType, "\(displayStyle) is not valid")
         }
 
     }

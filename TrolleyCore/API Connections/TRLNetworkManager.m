@@ -115,6 +115,10 @@ static NSString *trl_strip_api_key(NSString *oldKey) {
 - (void)initalise {
     self->_network.onConnect = ^(TRLNetwork *network) {
         TRLDebugLogger(TRLLoggerServiceCore, "Connected to Network: %{private}@", network.connectionURL);
+
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:TRLNetworkConnectedNotification
+                       object:NULL];
     };
 
     self->_network.onDisconnect = ^(TRLNetwork *network) {

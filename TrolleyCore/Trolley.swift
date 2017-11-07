@@ -40,6 +40,12 @@ extension NSException {
     }
 }
 
+extension TRLNetworkManager {
+    @objc public static var shared: TRLNetworkManager {
+        return aTRLShop.networkManager
+    }
+}
+
 // Have to place this out of the class as all methods are created in Trolley.shared.configure()
 // so could do what firebase does and has configure as a sort of factory method and call this instead
 // or not
@@ -57,11 +63,7 @@ var aTRLShop: Trolley!
 
     @objc public var options: TRLOptions
 
-    #if swift(>=4.0)
-    @objc(networkManager) private var networkManager: TRLNetworkManager!
-    #else
     @objc(networkManager) fileprivate var networkManager: TRLNetworkManager!
-    #endif
 
     /// Opens and configures the default Trolley shop.
     ///
@@ -195,7 +197,7 @@ extension Trolley {
     #endif
 
     private class func send_notifications_to_SDK(_ shop: Trolley) {
-        let ui = ["TRLAppNameKey": shop.shopName]
+        let ui = ["TRLAppNameKey":shop.shopName, "DeviceUUID":trl_device_uuid_get()!]
 
         NotificationCenter.default.post(
             name: .TRLTrolleyStartingUp,

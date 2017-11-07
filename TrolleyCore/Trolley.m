@@ -62,11 +62,11 @@ NSString *trl_device_uuid_get() {
 
 }
 
-TRLNetworkManager *trl_get_network_manager(void) {
-    return [[Trolley shop] valueForKey:@"networkManager"];
-}
+void _trl_network_manager_send_dictionary(NSDictionary *dictionary, BOOL secure) {
+    if (![Trolley isShopOpen]) {
+        TRLErrorLogger(TRLLoggerServiceCore, "Cannot send a network message when no shop is open");
+        return;
+    }
 
-void trl_network_manager_send(TRLNetworkManager *manager, NSDictionary *dictionary, BOOL secure) {
-    if (!manager) { return; }
-    [manager send:dictionary secure:secure];
+    [[TRLNetworkManager shared] send:dictionary secure:secure];
 }

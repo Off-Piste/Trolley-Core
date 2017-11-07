@@ -67,7 +67,8 @@
 }
 
 - (instancetype)initWithData:(NSData *)data options:(NSJSONReadingOptions)opt {
-    return [self initWithData:data options:opt error:NULL];
+    NSError *error; // This stops any crashes
+    return [self initWithData:data options:opt error:&error];
 }
 
 - (instancetype)initWithData:(NSData *)data
