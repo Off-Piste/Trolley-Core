@@ -48,15 +48,15 @@ extension NSString {
 
     /// :nodoc:
     @objc public func splitString(intoMaxSize size: Int) -> [NSString] {
-        if ((self as String).characters.count) <= size {
+        if ((self as String).count) <= size {
             return [self]
         }
         var dataSegs = [String]()
         var c = 0
-        while c < ((self as String).characters.count) {
-            if c + size > ((self as String).characters.count) {
+        while c < ((self as String).count) {
+            if c + size > ((self as String).count) {
                 let rangeStart: Int = c
-                let rangeLength: Int = size - (c + size) - ((self as String).characters.count)
+                let rangeLength: Int = size - (c + size) - ((self as String).count)
                 dataSegs.append(self.substring(with: NSRange(location: rangeStart, length: rangeLength)))
             } else {
                 let rangeStart: Int = c

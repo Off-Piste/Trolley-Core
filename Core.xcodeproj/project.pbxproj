@@ -92,7 +92,7 @@
 		C84AEEB01F754FF5009E6019 /* TRLWebSocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE521F754FF3009E6019 /* TRLWebSocketUtils.swift */; };
 		C84AEEB11F754FF5009E6019 /* TRLNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE531F754FF3009E6019 /* TRLNetwork.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C84AEEB21F754FF5009E6019 /* TRLNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE541F754FF3009E6019 /* TRLNetwork.m */; };
-		C84AEEB31F754FF5009E6019 /* TRLNetworkBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE551F754FF3009E6019 /* TRLNetworkBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C84AEEB31F754FF5009E6019 /* TRLNetworkBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE551F754FF3009E6019 /* TRLNetworkBlocks.h */; };
 		C84AEEB41F754FF5009E6019 /* TRLNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE561F754FF3009E6019 /* TRLNetworkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84AEEB51F754FF5009E6019 /* TRLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AEE571F754FF3009E6019 /* TRLNetworkManager.m */; };
 		C84AEEB61F754FF5009E6019 /* TRLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AEE581F754FF3009E6019 /* TRLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -112,9 +112,7 @@
 		C8757AE11F84ED7A00C4B4EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8757AE01F84ED7A00C4B4EB /* main.m */; };
 		C8757AE51F84EDB800C4B4EB /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8757AE61F84EDB800C4B4EB /* TrolleyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C8757AEA1F84EDD300C4B4EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757ADF1F84ED7A00C4B4EB /* Info.plist */; };
 		C8757AF21F84EF6200C4B4EB /* TrolleyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8757AF11F84EF6200C4B4EB /* TrolleyTests.m */; };
-		C8757AF91F84EFA900C4B4EB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757AF31F84EF6200C4B4EB /* Info.plist */; };
 		C8757AFE1F84F16C00C4B4EB /* TrolleyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8460FE01F4C665800CFF7E8 /* TrolleyCore.framework */; };
 		C8757B011F84F2FF00C4B4EB /* TrolleyConfigFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8757AFD1F84F0F500C4B4EB /* TrolleyConfigFile.plist */; };
 		C8757B041F84F35C00C4B4EB /* TRLBaseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C8757B031F84F35C00C4B4EB /* TRLBaseCase.m */; };
@@ -738,7 +736,7 @@
 			attributes = {
 				CLASSPREFIX = TRL;
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Off-Piste";
 				TargetAttributes = {
 					C8460FDF1F4C665800CFF7E8 = {
@@ -795,7 +793,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8757B011F84F2FF00C4B4EB /* TrolleyConfigFile.plist in Resources */,
-				C8757AEA1F84EDD300C4B4EB /* Info.plist in Resources */,
 				C8757ADE1F84ED7A00C4B4EB /* LaunchScreen.storyboard in Resources */,
 				C8757ADB1F84ED7A00C4B4EB /* Assets.xcassets in Resources */,
 				C8757AD91F84ED7A00C4B4EB /* Main.storyboard in Resources */,
@@ -806,7 +803,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8757AF91F84EFA900C4B4EB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,6 +1067,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1107,6 +1104,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
 				DYLIB_COMPATIBILITY_VERSION = 1;
