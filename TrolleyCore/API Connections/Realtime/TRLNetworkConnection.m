@@ -223,6 +223,11 @@ NSString *const kTWPAsyncServerControlMessageShutdown = @"s";
 - (void)on_valid_connetion_handshake:(NSTimeInterval)timeInterval {
     TRLDebugLogger(TRLLoggerServiceCore, "Recived valid handshake, at: %@",
            [NSDate dateWithTimeIntervalSince1970:timeInterval]);
+
+    // Set the state to connected as we have passed the required validation
+    // also when the delegate method is called the connection will be used
+    _state = REALTIME_STATE_CONNECTED;
+
     [self.delegate onReady:self];
 }
 

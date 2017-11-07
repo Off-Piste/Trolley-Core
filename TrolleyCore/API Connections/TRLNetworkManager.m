@@ -123,6 +123,10 @@ static NSString *trl_strip_api_key(NSString *oldKey) {
 
     self->_network.onDisconnect = ^(TRLNetwork *network) {
         TRLDebugLogger(TRLLoggerServiceCore, "Disconnected from Network: %{private}@", network.connectionURL);
+
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:TRLNetworkDisconnectedNotification
+                       object:NULL];
     };
 
     [[NSNotificationCenter defaultCenter]
