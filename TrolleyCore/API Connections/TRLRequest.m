@@ -28,7 +28,15 @@
 
 #import "TRLURLDataRequest.h"
 
-@implementation TRLRequest
+#import <TrolleyCore/TrolleyCore-Swift.h>
+
+@implementation TRLRequest {
+    NSMutableDictionary *_headers;
+}
+
+- (HTTPHeaders *)headers {
+    return _headers;
+}
 
 - (TRLURLDataRequest *)request {
     return request(self.url, self.method, self.parameters, self.encoding, self.headers);
@@ -44,7 +52,12 @@
         self.method = method;
         self->_parameters = parameters;
         self->_encoding = encoding;
-        self->_headers = headers;
+        self->_headers = [NSMutableDictionary dictionaryWithDictionary:headers];
+
+        // Add Auth
+        NSString *auth = [NSString stringWithFormat:@"Bearer %@", [[Trolley shop] shopName]];
+        NSData *authorization = [auth dataUsingEncoding:NSUTF8StringEncoding];
+        [_headers addEntriesFromDictionary:@{@"Authorization":authorization}];
     }
     return self;
 }
